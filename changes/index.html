@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaMole Changelog</title>
+    <link rel="stylesheet" href="changelog.css">
+    <style>
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #4ecca3 0%, #2c3e50 100%);
+            border-radius: 15px;
+            color: white;
+        }
+        .header h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            border: none;
+        }
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            margin: 0;
+        }
+        .changelog-toc {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .changelog-entry {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .changelog-entry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .changelog-number {
+            font-size: 0.9rem;
+            color: #4ecca3;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .changelog-date {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .changelog-title {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        .changelog-summary {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AlphaMole Changelog</h1>
+        <p>Tracking the evolution of our molecular neural network</p>
+    </div>
+    <div id="changelog-toc" class="changelog-toc"></div>
+
+    <script>
+        // Changelog entries configuration
+        const changelogEntries = [
+            {
+                number: '002',
+                filename: 'CHANGELOG_2024_05_05.html',
+                title: 'Blog and Changelog System Improvements',
+                date: 'May 5, 2024',
+                summary: 'Enhanced blog system with modern table of contents and improved styling. Also modernized the changelog system with a new index page and centralized styling.'
+            },
+            {
+                number: '001',
+                filename: 'CHANGELOG_2024_05_04.html',
+                title: 'Initial Release',
+                date: 'May 4, 2024',
+                summary: 'Launched AlphaMole with periodic table integration and basic functionality.'
+            }
+        ];
+
+        // Function to create a changelog entry element
+        function createChangelogEntryElement(entry) {
+            const div = document.createElement('a');
+            div.href = entry.filename;
+            div.className = 'changelog-entry';
+            div.innerHTML = `
+                <div class="changelog-number">Changelog #${entry.number}</div>
+                <div class="changelog-date">${entry.date}</div>
+                <h2 class="changelog-title">${entry.title}</h2>
+                <p class="changelog-summary">${entry.summary}</p>
+            `;
+            return div;
+        }
+
+        // Function to load the table of contents
+        function loadTableOfContents() {
+            const container = document.getElementById('changelog-toc');
+            container.innerHTML = '<p class="loading">Loading changelog entries...</p>';
+            
+            try {
+                container.innerHTML = ''; // Clear loading message
+                changelogEntries.forEach(entry => {
+                    const element = createChangelogEntryElement(entry);
+                    container.appendChild(element);
+                });
+            } catch (error) {
+                console.error('Error loading changelog entries:', error);
+                container.innerHTML = `
+                    <div class="error-message">
+                        <h2>Error Loading Changelog</h2>
+                        <p>Sorry, there was an error loading the changelog entries: ${error.message}</p>
+                    </div>`;
+            }
+        }
+
+        // Load the table of contents when the page loads
+        window.addEventListener('load', loadTableOfContents);
+    </script>
+</body>
+</html> 

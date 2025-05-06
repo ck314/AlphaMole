@@ -4,113 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlphaMole Blog</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-        .blog-container {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        .date {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #4ecca3;
-            padding-bottom: 0.5rem;
-        }
-        p {
-            margin-bottom: 1.2rem;
-            text-align: justify;
-        }
-        .project-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin: 1.5rem 0 0.5rem 0;
-        }
-        .blog-entry {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-        .blog-entry:last-child {
-            border-bottom: none;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .header h1 {
-            color: #4ecca3;
-            font-size: 2.5rem;
-            border: none;
-        }
-        .header p {
-            color: #666;
-            font-style: italic;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="header">
         <h1>AlphaMole Blog</h1>
         <p>Chronicling the journey of building a molecular neural network</p>
     </div>
-    <div id="blog-entries"></div>
+    <div id="blog-toc" class="blog-toc"></div>
 
     <script>
-        // Array of blog entries to load
+        // Blog entries configuration
         const blogEntries = [
-            'blog001.html',
-            'blog002.html'
+            {
+                number: '002',
+                filename: 'blog002.html',
+                title: 'AlphaMole Finds a New Home',
+                date: 'May 5, 2024',
+                summary: 'Setting up GitHub and custom domain for AlphaMole.'
+            },
+            {
+                number: '001',
+                filename: 'blog001.html',
+                title: 'The Beginning',
+                date: 'May 4, 2024',
+                summary: 'Starting the journey of building AlphaMole.'
+            }
         ];
 
-        // Function to load a blog entry
-        async function loadBlogEntry(filename) {
-            try {
-                const response = await fetch(filename);
-                const text = await response.text();
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(text, 'text/html');
-                const content = doc.querySelector('.blog-container');
-                return content.innerHTML;
-            } catch (error) {
-                console.error(`Error loading ${filename}:`, error);
-                return `<div class="blog-container">
-                    <h1>Error Loading Entry</h1>
-                    <p>Sorry, there was an error loading this blog entry.</p>
-                </div>`;
-            }
+        // Function to create a blog entry element
+        function createBlogEntryElement(entry) {
+            const div = document.createElement('a');
+            div.href = entry.filename;
+            div.className = 'blog-entry';
+            div.innerHTML = `
+                <div class="blog-number">Blog #${entry.number}</div>
+                <div class="blog-date">${entry.date}</div>
+                <h2 class="blog-title">${entry.title}</h2>
+                <p class="blog-summary">${entry.summary}</p>
+            `;
+            return div;
         }
 
-        // Function to load all blog entries
-        async function loadAllBlogEntries() {
-            const container = document.getElementById('blog-entries');
+        // Function to load the table of contents
+        function loadTableOfContents() {
+            const container = document.getElementById('blog-toc');
+            container.innerHTML = '<p class="loading">Loading blog entries...</p>';
             
-            for (const entry of blogEntries) {
-                const content = await loadBlogEntry(entry);
-                const div = document.createElement('div');
-                div.className = 'blog-entry';
-                div.innerHTML = content;
-                container.appendChild(div);
+            try {
+                container.innerHTML = ''; // Clear loading message
+                blogEntries.forEach(entry => {
+                    const element = createBlogEntryElement(entry);
+                    container.appendChild(element);
+                });
+            } catch (error) {
+                console.error('Error loading blog entries:', error);
+                container.innerHTML = `
+                    <div class="error-message">
+                        <h2>Error Loading Blog</h2>
+                        <p>Sorry, there was an error loading the blog entries: ${error.message}</p>
+                    </div>`;
             }
         }
 
-        // Load all blog entries when the page loads
-        window.addEventListener('load', loadAllBlogEntries);
+        // Load the table of contents when the page loads
+        window.addEventListener('load', loadTableOfContents);
     </script>
 </body>
 </html> 
