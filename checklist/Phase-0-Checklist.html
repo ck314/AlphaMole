@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlphaMole Phase 0 Checklist</title>
+    <link rel="stylesheet" href="../navbar.css">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -66,9 +67,28 @@
     </style>
 </head>
 <body>
-
-    <h1>AlphaMole Phase 0: Web Showcase - Detailed Coding Checklist</h1>
-    <p><strong>Goal:</strong> To build a functional web application as per the Phase 0 PRD and Project Plan by implementing the client-side code.</p>
+    <div id="navbar"></div>
+    <script>
+        // Load navbar immediately
+        const navbarDiv = document.getElementById('navbar');
+        fetch('../navbar.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                navbarDiv.innerHTML = data;
+            })
+            .catch(error => {
+                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="../blog/index.html">Blog</a><a href="../changes/index.html">Changes</a><a href="index.html">Checklist</a></div></nav>';
+            });
+    </script>
+    <div class="header">
+        <center><h1>AlphaMole Phase 0: Web Showcase - Detailed Coding Checklist</h1>
+        <p><strong>Goal:</strong> To build a functional web application as per the Phase 0 PRD and Project Plan by implementing the client-side code.</p></center>
+    </div>
 
     <h2>Initial Setup (Local Environment & GitHub)</h2>
     <ul>

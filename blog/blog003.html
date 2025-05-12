@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog #003 - Creating a checklist for the first phase of building</title>
+    <title>AlphaMole Blog #003</title>
+    <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="navbar"></div>
+    <script>
+        // Load navbar immediately
+        const navbarDiv = document.getElementById('navbar');
+        fetch('../navbar.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                navbarDiv.innerHTML = data;
+            })
+            .catch(error => {
+                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="index.html">Blog</a><a href="../changes/index.html">Changes</a><a href="../checklist/index.html">Checklist</a></div></nav>';
+            });
+    </script>
     <div class="header">
         <h1>Blog #003</h1>
         <p class="date">May 11, 2025</p>

@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlphaMole Changelog</title>
+    <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="changelog.css">
     <style>
         .header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin: 4rem 0 3rem 0;
             padding: 2rem;
             background: linear-gradient(135deg, #4ecca3 0%, #2c3e50 100%);
             border-radius: 15px;
@@ -70,6 +71,7 @@
     </style>
 </head>
 <body>
+    <div id="navbar"></div>
     <div class="header">
         <h1>AlphaMole Changelog</h1>
         <p>Tracking the evolution of our molecular neural network</p>
@@ -77,28 +79,56 @@
     <div id="changelog-toc" class="changelog-toc"></div>
 
     <script>
+        // Load navbar immediately
+        const navbarDiv = document.getElementById('navbar');
+        console.log('Loading navbar...');
+        
+        fetch('../navbar.html')
+            .then(response => {
+                console.log('Navbar response:', response.status);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('Navbar content loaded');
+                navbarDiv.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="../blog/index.html">Blog</a><a href="index.html">Changes</a><a href="../checklist/index.html">Checklist</a></div></nav>';
+            });
+
         // Changelog entries configuration - Updated to include all three entries
         const changelogEntries = [
             {
+                number: '004',
+                filename: 'changelog004.html',
+                title: 'Unified Navigation Bar',
+                date: 'May 12, 2025',
+                summary: 'A unified, fixed navigation bar now appears on every page and subpage of AlphaMole.'
+            },
+            {
                 number: '003',
                 filename: 'changelog003.html',
-                title: 'Creating a checklist for the project',
+                title: 'Adding a checklist for the first phase of building',
                 date: 'May 11, 2025',
-                summary: 'Updates include the creation of a Phase 0 checklist and a new blog entry.'
+                summary: 'AlphaMole now has a checklist for what we are going to build going forward.'
             },
             {
                 number: '002',
                 filename: 'changelog002.html',
-                title: 'Blog and Changelog System Improvements',
+                title: 'GitHub Setup',
                 date: 'May 5, 2025',
-                summary: 'Enhanced blog system with modern table of contents and improved styling. Also modernized the changelog system with a new index page and centralized styling.'
+                summary: 'Set up GitHub repository and custom domain.'
             },
             {
                 number: '001',
                 filename: 'changelog001.html',
-                title: 'Initial Release',
+                title: 'Initial Setup',
                 date: 'May 4, 2025',
-                summary: 'Launched AlphaMole with periodic table integration and basic functionality.'
+                summary: 'Initial project setup and structure.'
             }
         ];
 

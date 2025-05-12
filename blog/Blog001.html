@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpha Mole - Day 1</title>
+    <title>AlphaMole Blog #001</title>
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,8 +45,26 @@
     </style>
 </head>
 <body>
+    <div id="navbar"></div>
+    <script>
+        // Load navbar immediately
+        const navbarDiv = document.getElementById('navbar');
+        fetch('../navbar.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                navbarDiv.innerHTML = data;
+            })
+            .catch(error => {
+                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="index.html">Blog</a><a href="../changes/index.html">Changes</a><a href="../checklist/index.html">Checklist</a></div></nav>';
+            });
+    </script>
     <div class="blog-container">
-        <div class="date">May 4, 2024</div>
+        <div class="date">May 4, 2025</div>
         <h1>Alpha Mole Day 1</h1>
         
         <p>Today I started to build Alpha Mole, a neural network project grounded in an exploration of Chemistry.</p>
