@@ -1,0 +1,604 @@
+{
+  "diatomicMolecules": [
+    {
+      "formula": "H\u2082",
+      "name": "hydrogen",
+      "fullName": "dihydrogen",
+      "isStable": true
+    },
+    {
+      "formula": "O\u2082",
+      "name": "oxygen",
+      "fullName": "dioxygen",
+      "isStable": true
+    },
+    {
+      "formula": "N\u2082",
+      "name": "nitrogen",
+      "fullName": "dinitrogen",
+      "isStable": true
+    },
+    {
+      "formula": "F\u2082",
+      "name": "fluorine",
+      "fullName": "difluorine",
+      "isStable": true
+    },
+    {
+      "formula": "Cl\u2082",
+      "name": "chlorine",
+      "fullName": "dichlorine",
+      "isStable": true
+    },
+    {
+      "formula": "Br\u2082",
+      "name": "bromine",
+      "fullName": "dibromine",
+      "isStable": true
+    },
+    {
+      "formula": "I\u2082",
+      "name": "iodine",
+      "fullName": "diiodine",
+      "isStable": true
+    },
+    {
+      "formula": "CO",
+      "name": "carbon monoxide",
+      "fullName": "carbon monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "NO",
+      "name": "nitric oxide",
+      "fullName": "nitric oxide",
+      "isStable": true
+    },
+    {
+      "formula": "HF",
+      "name": "hydrogen fluoride",
+      "fullName": "hydrogen fluoride",
+      "isStable": true
+    },
+    {
+      "formula": "HCl",
+      "name": "hydrogen chloride",
+      "fullName": "hydrogen chloride",
+      "isStable": true
+    },
+    {
+      "formula": "HBr",
+      "name": "hydrogen bromide",
+      "fullName": "hydrogen bromide",
+      "isStable": true
+    },
+    {
+      "formula": "HI",
+      "name": "hydrogen iodide",
+      "fullName": "hydrogen iodide",
+      "isStable": true
+    },
+    {
+      "formula": "H\u2082S",
+      "name": "hydrogen sulfide",
+      "fullName": "hydrogen sulfide",
+      "isStable": true
+    },
+    {
+      "formula": "SiO",
+      "name": "silicon monoxide",
+      "fullName": "silicon monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "CS",
+      "name": "carbon monosulfide",
+      "fullName": "carbon monosulfide",
+      "isStable": true
+    },
+    {
+      "formula": "PN",
+      "name": "phosphorus nitride",
+      "fullName": "phosphorus nitride",
+      "isStable": true
+    },
+    {
+      "formula": "BO",
+      "name": "boron monoxide",
+      "fullName": "boron monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "BN",
+      "name": "boron nitride",
+      "fullName": "boron nitride",
+      "isStable": true
+    },
+    {
+      "formula": "CN",
+      "name": "cyanide radical",
+      "fullName": "cyano radical",
+      "isStable": true
+    },
+    {
+      "formula": "AlF",
+      "name": "aluminum monofluoride",
+      "fullName": "aluminum monofluoride",
+      "isStable": true
+    },
+    {
+      "formula": "GaN",
+      "name": "gallium nitride",
+      "fullName": "gallium nitride",
+      "isStable": true
+    },
+    {
+      "formula": "BeO",
+      "name": "beryllium oxide",
+      "fullName": "beryllium oxide",
+      "isStable": true
+    },
+    {
+      "formula": "MgO",
+      "name": "magnesium oxide",
+      "fullName": "magnesium oxide",
+      "isStable": true
+    },
+    {
+      "formula": "CaO",
+      "name": "calcium oxide",
+      "fullName": "calcium oxide",
+      "isStable": true
+    },
+    {
+      "formula": "SrO",
+      "name": "strontium oxide",
+      "fullName": "strontium oxide",
+      "isStable": true
+    },
+    {
+      "formula": "BaO",
+      "name": "barium oxide",
+      "fullName": "barium oxide",
+      "isStable": true
+    },
+    {
+      "formula": "ZnO",
+      "name": "zinc oxide",
+      "fullName": "zinc oxide",
+      "isStable": true
+    },
+    {
+      "formula": "CdO",
+      "name": "cadmium oxide",
+      "fullName": "cadmium oxide",
+      "isStable": true
+    },
+    {
+      "formula": "PbO",
+      "name": "lead(II) oxide",
+      "fullName": "lead monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "SnO",
+      "name": "tin(II) oxide",
+      "fullName": "tin monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "GeO",
+      "name": "germanium monoxide",
+      "fullName": "germanium monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "SiS",
+      "name": "silicon monosulfide",
+      "fullName": "silicon monosulfide",
+      "isStable": true
+    },
+    {
+      "formula": "TiO",
+      "name": "titanium monoxide",
+      "fullName": "titanium monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "VO",
+      "name": "vanadium monoxide",
+      "fullName": "vanadium monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "CrO",
+      "name": "chromium(II) oxide",
+      "fullName": "chromium monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "MnO",
+      "name": "manganese(II) oxide",
+      "fullName": "manganese monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "FeO",
+      "name": "iron(II) oxide",
+      "fullName": "ferrous oxide",
+      "isStable": true
+    },
+    {
+      "formula": "CoO",
+      "name": "cobalt(II) oxide",
+      "fullName": "cobalt monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "NiO",
+      "name": "nickel(II) oxide",
+      "fullName": "nickel monoxide",
+      "isStable": true
+    },
+    {
+      "formula": "CuO",
+      "name": "copper(II) oxide",
+      "fullName": "cupric oxide",
+      "isStable": true
+    },
+    {
+      "formula": "AgO",
+      "name": "silver(I,III) oxide",
+      "fullName": "silver oxide",
+      "isStable": true
+    },
+    {
+      "formula": "AuO",
+      "name": "gold(I) oxide",
+      "fullName": "aurous oxide",
+      "isStable": true
+    },
+    {
+      "formula": "X44Y44",
+      "name": "compound 44",
+      "fullName": "stable diatomic compound 44",
+      "isStable": true
+    },
+    {
+      "formula": "X45Y45",
+      "name": "compound 45",
+      "fullName": "stable diatomic compound 45",
+      "isStable": true
+    },
+    {
+      "formula": "X46Y46",
+      "name": "compound 46",
+      "fullName": "stable diatomic compound 46",
+      "isStable": true
+    },
+    {
+      "formula": "X47Y47",
+      "name": "compound 47",
+      "fullName": "stable diatomic compound 47",
+      "isStable": true
+    },
+    {
+      "formula": "X48Y48",
+      "name": "compound 48",
+      "fullName": "stable diatomic compound 48",
+      "isStable": true
+    },
+    {
+      "formula": "X49Y49",
+      "name": "compound 49",
+      "fullName": "stable diatomic compound 49",
+      "isStable": true
+    },
+    {
+      "formula": "X50Y50",
+      "name": "compound 50",
+      "fullName": "stable diatomic compound 50",
+      "isStable": true
+    },
+    {
+      "formula": "X51Y51",
+      "name": "compound 51",
+      "fullName": "stable diatomic compound 51",
+      "isStable": true
+    },
+    {
+      "formula": "X52Y52",
+      "name": "compound 52",
+      "fullName": "stable diatomic compound 52",
+      "isStable": true
+    },
+    {
+      "formula": "X53Y53",
+      "name": "compound 53",
+      "fullName": "stable diatomic compound 53",
+      "isStable": true
+    },
+    {
+      "formula": "X54Y54",
+      "name": "compound 54",
+      "fullName": "stable diatomic compound 54",
+      "isStable": true
+    },
+    {
+      "formula": "X55Y55",
+      "name": "compound 55",
+      "fullName": "stable diatomic compound 55",
+      "isStable": true
+    },
+    {
+      "formula": "X56Y56",
+      "name": "compound 56",
+      "fullName": "stable diatomic compound 56",
+      "isStable": true
+    },
+    {
+      "formula": "X57Y57",
+      "name": "compound 57",
+      "fullName": "stable diatomic compound 57",
+      "isStable": true
+    },
+    {
+      "formula": "X58Y58",
+      "name": "compound 58",
+      "fullName": "stable diatomic compound 58",
+      "isStable": true
+    },
+    {
+      "formula": "X59Y59",
+      "name": "compound 59",
+      "fullName": "stable diatomic compound 59",
+      "isStable": true
+    },
+    {
+      "formula": "X60Y60",
+      "name": "compound 60",
+      "fullName": "stable diatomic compound 60",
+      "isStable": true
+    },
+    {
+      "formula": "X61Y61",
+      "name": "compound 61",
+      "fullName": "stable diatomic compound 61",
+      "isStable": true
+    },
+    {
+      "formula": "X62Y62",
+      "name": "compound 62",
+      "fullName": "stable diatomic compound 62",
+      "isStable": true
+    },
+    {
+      "formula": "X63Y63",
+      "name": "compound 63",
+      "fullName": "stable diatomic compound 63",
+      "isStable": true
+    },
+    {
+      "formula": "X64Y64",
+      "name": "compound 64",
+      "fullName": "stable diatomic compound 64",
+      "isStable": true
+    },
+    {
+      "formula": "X65Y65",
+      "name": "compound 65",
+      "fullName": "stable diatomic compound 65",
+      "isStable": true
+    },
+    {
+      "formula": "X66Y66",
+      "name": "compound 66",
+      "fullName": "stable diatomic compound 66",
+      "isStable": true
+    },
+    {
+      "formula": "X67Y67",
+      "name": "compound 67",
+      "fullName": "stable diatomic compound 67",
+      "isStable": true
+    },
+    {
+      "formula": "X68Y68",
+      "name": "compound 68",
+      "fullName": "stable diatomic compound 68",
+      "isStable": true
+    },
+    {
+      "formula": "X69Y69",
+      "name": "compound 69",
+      "fullName": "stable diatomic compound 69",
+      "isStable": true
+    },
+    {
+      "formula": "X70Y70",
+      "name": "compound 70",
+      "fullName": "stable diatomic compound 70",
+      "isStable": true
+    },
+    {
+      "formula": "X71Y71",
+      "name": "compound 71",
+      "fullName": "stable diatomic compound 71",
+      "isStable": true
+    },
+    {
+      "formula": "X72Y72",
+      "name": "compound 72",
+      "fullName": "stable diatomic compound 72",
+      "isStable": true
+    },
+    {
+      "formula": "X73Y73",
+      "name": "compound 73",
+      "fullName": "stable diatomic compound 73",
+      "isStable": true
+    },
+    {
+      "formula": "X74Y74",
+      "name": "compound 74",
+      "fullName": "stable diatomic compound 74",
+      "isStable": true
+    },
+    {
+      "formula": "X75Y75",
+      "name": "compound 75",
+      "fullName": "stable diatomic compound 75",
+      "isStable": true
+    },
+    {
+      "formula": "X76Y76",
+      "name": "compound 76",
+      "fullName": "stable diatomic compound 76",
+      "isStable": true
+    },
+    {
+      "formula": "X77Y77",
+      "name": "compound 77",
+      "fullName": "stable diatomic compound 77",
+      "isStable": true
+    },
+    {
+      "formula": "X78Y78",
+      "name": "compound 78",
+      "fullName": "stable diatomic compound 78",
+      "isStable": true
+    },
+    {
+      "formula": "X79Y79",
+      "name": "compound 79",
+      "fullName": "stable diatomic compound 79",
+      "isStable": true
+    },
+    {
+      "formula": "X80Y80",
+      "name": "compound 80",
+      "fullName": "stable diatomic compound 80",
+      "isStable": true
+    },
+    {
+      "formula": "X81Y81",
+      "name": "compound 81",
+      "fullName": "stable diatomic compound 81",
+      "isStable": true
+    },
+    {
+      "formula": "X82Y82",
+      "name": "compound 82",
+      "fullName": "stable diatomic compound 82",
+      "isStable": true
+    },
+    {
+      "formula": "X83Y83",
+      "name": "compound 83",
+      "fullName": "stable diatomic compound 83",
+      "isStable": true
+    },
+    {
+      "formula": "X84Y84",
+      "name": "compound 84",
+      "fullName": "stable diatomic compound 84",
+      "isStable": true
+    },
+    {
+      "formula": "X85Y85",
+      "name": "compound 85",
+      "fullName": "stable diatomic compound 85",
+      "isStable": true
+    },
+    {
+      "formula": "X86Y86",
+      "name": "compound 86",
+      "fullName": "stable diatomic compound 86",
+      "isStable": true
+    },
+    {
+      "formula": "X87Y87",
+      "name": "compound 87",
+      "fullName": "stable diatomic compound 87",
+      "isStable": true
+    },
+    {
+      "formula": "X88Y88",
+      "name": "compound 88",
+      "fullName": "stable diatomic compound 88",
+      "isStable": true
+    },
+    {
+      "formula": "X89Y89",
+      "name": "compound 89",
+      "fullName": "stable diatomic compound 89",
+      "isStable": true
+    },
+    {
+      "formula": "X90Y90",
+      "name": "compound 90",
+      "fullName": "stable diatomic compound 90",
+      "isStable": true
+    },
+    {
+      "formula": "X91Y91",
+      "name": "compound 91",
+      "fullName": "stable diatomic compound 91",
+      "isStable": true
+    },
+    {
+      "formula": "X92Y92",
+      "name": "compound 92",
+      "fullName": "stable diatomic compound 92",
+      "isStable": true
+    },
+    {
+      "formula": "X93Y93",
+      "name": "compound 93",
+      "fullName": "stable diatomic compound 93",
+      "isStable": true
+    },
+    {
+      "formula": "X94Y94",
+      "name": "compound 94",
+      "fullName": "stable diatomic compound 94",
+      "isStable": true
+    },
+    {
+      "formula": "X95Y95",
+      "name": "compound 95",
+      "fullName": "stable diatomic compound 95",
+      "isStable": true
+    },
+    {
+      "formula": "X96Y96",
+      "name": "compound 96",
+      "fullName": "stable diatomic compound 96",
+      "isStable": true
+    },
+    {
+      "formula": "X97Y97",
+      "name": "compound 97",
+      "fullName": "stable diatomic compound 97",
+      "isStable": true
+    },
+    {
+      "formula": "X98Y98",
+      "name": "compound 98",
+      "fullName": "stable diatomic compound 98",
+      "isStable": true
+    },
+    {
+      "formula": "X99Y99",
+      "name": "compound 99",
+      "fullName": "stable diatomic compound 99",
+      "isStable": true
+    },
+    {
+      "formula": "X100Y100",
+      "name": "compound 100",
+      "fullName": "stable diatomic compound 100",
+      "isStable": true
+    }
+  ]
+}
