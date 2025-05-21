@@ -6,63 +6,10 @@
     <title>AlphaMole Blog #001</title>
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-        .blog-container {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .date {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid #4ecca3;
-            padding-bottom: 0.5rem;
-        }
-        p {
-            margin-bottom: 1.2rem;
-            text-align: justify;
-        }
-        .project-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin: 1.5rem 0 0.5rem 0;
-        }
-    </style>
+    <script src="blogs.js"></script>
 </head>
 <body>
     <div id="navbar"></div>
-    <script>
-        // Load navbar immediately
-        const navbarDiv = document.getElementById('navbar');
-        fetch('../navbar.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                navbarDiv.innerHTML = data;
-            })
-            .catch(error => {
-                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="index.html">Blog</a><a href="../changes/index.html">Changes</a><a href="../checklist/index.html">Checklist</a></div></nav>';
-            });
-    </script>
     <div class="blog-container">
         <div class="date">May 4, 2025</div>
         <h1>Alpha Mole Day 1</h1>

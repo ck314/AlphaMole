@@ -6,26 +6,10 @@
     <title>AlphaMole Blog #004</title>
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="blogs.js"></script>
 </head>
 <body>
     <div id="navbar"></div>
-    <script>
-        // Load navbar immediately
-        const navbarDiv = document.getElementById('navbar');
-        fetch('../navbar.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                navbarDiv.innerHTML = data;
-            })
-            .catch(error => {
-                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="index.html">Blog</a><a href="../changes/index.html">Changes</a><a href="../checklist/index.html">Checklist</a></div></nav>';
-            });
-    </script>
     <div class="header">
         <h1>Blog #004</h1>
         <p class="date">May 12, 2025</p>

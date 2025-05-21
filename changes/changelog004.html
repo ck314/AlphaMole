@@ -3,39 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Changelog #004 - Unified Navigation Bar</title>
+    <title>Changelog #004 - Navigation Unification</title>
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="changelog.css">
+    <script src="changes.js"></script>
 </head>
 <body>
     <div id="navbar"></div>
-    <script>
-        // Load navbar immediately
-        const navbarDiv = document.getElementById('navbar');
-        fetch('../navbar.html')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();
-            })
-            .then(data => {
-                navbarDiv.innerHTML = data;
-            })
-            .catch(error => {
-                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="../blog/index.html">Blog</a><a href="index.html">Changes</a><a href="../checklist/index.html">Checklist</a></div></nav>';
-            });
-    </script>
     <div class="changelog-container">
         <h1>Changelog #004</h1>
         <div class="date">May 12, 2025</div>
+        
         <ul>
-            <li><span class="emoji">🧭</span> Introduced a unified, fixed navigation bar across all major pages and subpages (main, blog, changes, checklist).</li>
-            <li><span class="emoji">🎨</span> Created a dedicated <code>navbar.css</code> for consistent styling and spacing everywhere.</li>
-            <li><span class="emoji">🔄</span> Made the navbar load dynamically with JavaScript <code>fetch</code> for easy updates and maintenance.</li>
-            <li><span class="emoji">🧩</span> Ensured the navbar appears on all blog entries, changelog entries, and the detailed Phase 0 checklist.</li>
-            <li><span class="emoji">📐</span> Adjusted whitespace and layout so the navbar never overlaps content and always looks clean.</li>
-            <li><span class="emoji">🚀</span> Improved navigation and user experience throughout the AlphaMole project.</li>
+            <li><span class="emoji">🔗</span> Unified navigation bar across all pages</li>
+            <li><span class="emoji">🎨</span> Added modern glassmorphism effect to navbar</li>
+            <li><span class="emoji">📱</span> Improved mobile responsiveness</li>
+            <li><span class="emoji">⚡</span> Implemented dynamic navbar loading</li>
+            <li><span class="emoji">🎯</span> Enhanced navigation consistency</li>
+            <li><span class="emoji">📝</span> Updated documentation for navbar implementation</li>
         </ul>
     </div>
 </body>
