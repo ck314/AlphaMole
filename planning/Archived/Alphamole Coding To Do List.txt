@@ -1,0 +1,113 @@
+Okay, here's that Project Plan transformed into a focused Coding To-Do List. This assumes the student will work through these steps sequentially, likely within Jupyter Notebooks or Python scripts.
+
+---
+
+**Coding To-Do List: Incremental Molecular Stability Predictor**
+
+**Goal:** Write Python code to generate atom combinations, label them using PubChem, build/train neural networks for N=2, 3, 4, and evaluate their ability to predict potential molecular stability.
+
+**Setup & Preparation:**
+
+*   `[ ]` Create a main project directory.
+*   `[ ]` Set up a Python virtual environment (e.g., using conda or venv).
+*   `[ ]` Install necessary libraries: `numpy`, `pandas`, `tensorflow`/`pytorch`, `scikit-learn`, `pubchempy`, `matplotlib`, `seaborn`.
+*   `[ ]` Create initial Python script files or Jupyter Notebook sections for:
+    *   `01_data_generation.ipynb` (or `.py`)
+    *   `02_model_training.ipynb` (or `.py`)
+    *   `03_evaluation.ipynb` (or `.py`)
+*   `[ ]` (Optional) Initialize Git repository (`git init`).
+
+**Phase 1: N=2 (Diatomics) Development**
+
+*   **Data Generation & Labeling (in `01_data_generation.ipynb`):**
+    *   `[ ]` Define the element list: `elements = ['H', 'C', 'N', 'O']`.
+    *   `[ ]` Write a Python function `generate_combinations(elements, N)` that returns a list of dictionaries representing all unique combinations (e.g., `{'H': 1, 'C': 1, 'N': 0, 'O': 0}`).
+    *   `[ ]` Run `generate_combinations` for N=2 and store the results.
+    *   `[ ]` Write a Python function `get_formula_string(combination_dict)` that converts the dictionary to a formula string (e.g., `{'H':2, 'O':1}` -> `H2O`).
+    *   `[ ]` Write a Python function `label_combination(formula_string)` that uses `pubchempy.get_compounds(formula_string, 'formula')`. It should return `1` if found, `0` if not found (handle `pubchempy` exceptions/empty results). *Tip: Add `time.sleep()` to avoid overwhelming the API.*
+    *   `[ ]` Loop through the N=2 combinations, call `label_combination` for each, and store the results (combination + label).
+    *   `[ ]` Save the labeled N=2 combinations data to a CSV file (e.g., `data_n2_labeled.csv`).
+
+*   **Model Training (in `02_model_training.ipynb`):**
+    *   `[ ]` Load the `data_n2_labeled.csv` file into a Pandas DataFrame.
+    *   `[ ]` Write a function `featurize(data_row, element_list)` that takes a row (combination dict + label) and returns a feature vector (e.g., `[count_H, count_C, count_N, count_O, total_valence_electrons]`) and the label.
+    *   `[ ]` Apply the `featurize` function to create feature matrix `X` and target vector `y` for N=2.
+    *   `[ ]` Split the data (X, y) into training, validation, and testing sets using `sklearn.model_selection.train_test_split`.
+    *   `[ ]` Define a simple MLP model architecture using Keras (`Sequential`) or PyTorch (`nn.Module`) suitable for binary classification (e.g., Input layer -> Dense hidden layer(s) with ReLU -> Dense output layer with Sigmoid).
+    *   `[ ]` Compile the Keras model (`model.compile`) with an optimizer (e.g., 'adam'), loss function ('binary_crossentropy'), and metrics (['accuracy']). (Or define loss/optimizer in PyTorch).
+    *   `[ ]` Train the model using `model.fit` (Keras) or a custom training loop (PyTorch) on the N=2 training/validation data. Store the training history.
+    *   `[ ]` Save the trained N=2 model (e.g., `model_n2.h5` or `model_n2.pth`).
+
+*   **Prediction Function (can be in `02_model_training` or a separate `utils.py`):**
+    *   `[ ]` Write a function `predict_stability_n2(atom_counts_dict, model_path, element_list)` that:
+        *   Loads the saved N=2 model.
+        *   Takes a dictionary of atom counts (e.g., `{'H': 1, 'O': 1}`).
+        *   Converts it into the correct feature vector format (using parts of `featurize`).
+        *   Uses the model to predict (`model.predict`).
+        *   Returns the prediction (0 or 1) and probability.
+
+**Phase 2: N=3 (Triatomics) Development**
+
+*   **Data Generation & Labeling (in `01_data_generation.ipynb`):**
+    *   `[ ]` Run `generate_combinations` for N=3.
+    *   `[ ]` Loop through N=3 combinations, call `label_combination` for each.
+    *   `[ ]` Save the labeled N=3 combinations data to a CSV file (e.g., `data_n3_labeled.csv`).
+
+*   **Model Training (in `02_model_training.ipynb`):**
+    *   `[ ]` Load the `data_n3_labeled.csv` file.
+    *   `[ ]` Apply the `featurize` function and split into train/validation/test sets for N=3.
+    *   `[ ]` Define/Re-use the MLP model architecture.
+    *   `[ ]` Train the model on the N=3 data. Store the history.
+    *   `[ ]` Save the trained N=3 model (e.g., `model_n3.h5` or `model_n3.pth`).
+
+*   **Prediction Function:**
+    *   `[ ]` Adapt or create `predict_stability_n3` function, similar to the N=2 version but loading `model_n3`.
+
+**Phase 3: N=4 (Tetratomics) Development**
+
+*   **Data Generation & Labeling (in `01_data_generation.ipynb`):**
+    *   `[ ]` Run `generate_combinations` for N=4.
+    *   `[ ]` Loop through N=4 combinations, call `label_combination` (this might take longer).
+    *   `[ ]` Save the labeled N=4 combinations data to a CSV file (e.g., `data_n4_labeled.csv`).
+
+*   **Model Training (in `02_model_training.ipynb`):**
+    *   `[ ]` Load the `data_n4_labeled.csv` file.
+    *   `[ ]` Apply the `featurize` function and split into train/validation/test sets for N=4.
+    *   `[ ]` Define/Re-use the MLP model architecture.
+    *   `[ ]` Train the model on the N=4 data. Store the history.
+    *   `[ ]` Save the trained N=4 model (e.g., `model_n4.h5` or `model_n4.pth`).
+
+*   **Prediction Function:**
+    *   `[ ]` Adapt or create `predict_stability_n4` function, loading `model_n4`.
+
+**Phase 4: Evaluation & Visualization (in `03_evaluation.ipynb`)**
+
+*   `[ ]` Write a function `evaluate_model(model_path, X_test, y_test)` that:
+    *   Loads the specified model.
+    *   Makes predictions on the test set (`X_test`).
+    *   Calculates and prints: Accuracy, Precision, Recall, F1-score (use `sklearn.metrics`).
+    *   Calculates and prints/plots the Confusion Matrix (use `sklearn.metrics.confusion_matrix` and `seaborn.heatmap` or `sklearn.metrics.ConfusionMatrixDisplay`).
+*   `[ ]` Run `evaluate_model` for the N=2, N=3, and N=4 models using their respective test sets.
+*   `[ ]` Write code to load and plot the training history (loss and accuracy curves vs. epochs) for each model using Matplotlib/Seaborn.
+
+**Phase 5: Code Cleanup & Documentation**
+
+*   `[ ]` Review all code: Add comments explaining functions, complex logic, and data structures.
+*   `[ ]` Ensure consistent variable naming and code formatting.
+*   `[ ]` Create a `README.md` file explaining how to run the code (installation, execution steps).
+*   `[ ]` (Optional) Add docstrings to major functions.
+
+**Phase 6: Optional Extensions**
+
+*   `[ ]` **Combined Model:**
+    *   `[ ]` Combine `data_n2`, `data_n3`, `data_n4` labeled datasets.
+    *   `[ ]` Modify the `featurize` function to include 'N' (the total number of atoms) as an input feature.
+    *   `[ ]` Split the combined data.
+    *   `[ ]` Train a single model on the combined data.
+    *   `[ ]` Evaluate the combined model (consider its performance on test subsets for each N).
+*   `[ ]` Explore adding different features (e.g., electronegativity differences, more complex counts).
+*   `[ ]` Experiment with different NN architectures (more layers, different activation functions).
+
+---
+
+This checklist provides concrete coding steps. Remember to test frequently and debug as you go! Good luck!

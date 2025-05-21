@@ -3,68 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlphaMole Phase 0 Checklist</title>
+    <title>AlphaMole Sprint 1 Checklist</title>
     <link rel="stylesheet" href="../css/navbar.css">
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        h1 {
-            color: #0056b3;
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #007bff;
-            margin-top: 30px;
-            border-bottom: 1px solid #dee2e6;
-            padding-bottom: 5px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            margin-bottom: 10px;
-            background-color: #fff;
-            padding: 10px 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        li > strong {
-            font-weight: 600;
-            color: #495057;
-        }
-        li ul {
-            margin-top: 8px;
-            padding-left: 20px;
-            list-style-type: disc;
-        }
-        li ul li {
-            font-size: 0.95em;
-            margin-bottom: 5px;
-            background-color: transparent;
-            padding: 5px 0;
-            box-shadow: none;
-            border-left: 3px solid #007bff;
-            padding-left: 10px;
-        }
-        code {
-            background-color: #e9ecef;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            font-size: 0.9em;
-        }
-        .task-checkbox {
-            margin-right: 8px;
-            vertical-align: middle;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="navbar"></div>
@@ -86,8 +27,8 @@
             });
     </script>
     <div class="header">
-        <center><h1>AlphaMole Phase 0: Web Showcase - Detailed Coding Checklist</h1>
-        <p><strong>Goal:</strong> To build a functional web application as per the Phase 0 PRD and Project Plan by implementing the client-side code.</p></center>
+        <center><h1>AlphaMole Sprint 1: Web Showcase - Detailed Coding Checklist</h1>
+        <p><strong>Goal:</strong> To build a functional web application as per the Sprint 1 PRD and Project Plan by implementing the client-side code.</p></center>
     </div>
 
     <h2>Initial Setup (Local Environment & GitHub)</h2>
@@ -190,15 +131,15 @@
         </li>
         <li><strong>14.0 Create Section B (Compound Info):</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task14.1"><label for="task14.1">14.1 Inside .container, add &lt;section id="sectionB"&gt;.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task14.2"><label for="task14.2">14.2 Inside #sectionB, add &lt;h2&gt;Compound Information&lt;/h2&gt;.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task14.3"><label for="task14.3">14.3 Add &lt;p&gt;Selected Atoms: &lt;span id="selectedAtomsText"&gt;-&lt;/span&gt;&lt;/p&gt;.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task14.4"><label for="task14.4">14.4 Add &lt;p&gt;Potential Formula: &lt;span id="formulaText"&gt;-&lt;/span&gt;&lt;/p&gt;.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task14.5"><label for="task14.5">14.5 Add &lt;p&gt;Common Name: &lt;span id="commonNameText"&gt;-&lt;/span&gt;&lt;/p&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task14.1" checked><label for="task14.1">14.1 Inside .container, add &lt;section id="sectionB"&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task14.2" checked><label for="task14.2">14.2 Inside #sectionB, add &lt;h2&gt;Compound Information&lt;/h2&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task14.3" checked><label for="task14.3">14.3 Add &lt;p&gt;Selected Atoms: &lt;span id="selectedAtomsText"&gt;-&lt;/span&gt;&lt;/p&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task14.4" checked><label for="task14.4">14.4 Add &lt;p&gt;Potential Formula: &lt;span id="formulaText"&gt;-&lt;/span&gt;&lt;/p&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task14.5" checked><label for="task14.5">14.5 Add &lt;p&gt;Common Name: &lt;span id="commonNameText"&gt;-&lt;/span&gt;&lt;/p&gt;.</label></li>
             </ul>
         </li>
-        <li><strong>15.0 Create Section C (3D Representation):</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>15.0 Create Section C (3D Representation) (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task15.1"><label for="task15.1">15.1 Inside .container, add &lt;section id="sectionC"&gt;.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task15.2"><label for="task15.2">15.2 Inside #sectionC, add &lt;h2&gt;3D Structure&lt;/h2&gt;.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task15.3"><label for="task15.3">15.3 Add &lt;div id="moleculeViewer"&gt;&lt;p&gt;Loading 3D viewer...&lt;/p&gt;&lt;/div&gt;.</label></li>
@@ -206,9 +147,9 @@
         </li>
         <li><strong>16.0 Create Section D (Stability Indicator):</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task16.1"><label for="task16.1">16.1 Inside .container, add &lt;section id="sectionD"&gt;.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task16.2"><label for="task16.2">16.2 Inside #sectionD, add &lt;h2&gt;Known Diatomic?&lt;/h2&gt;.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task16.3"><label for="task16.3">16.3 Add &lt;p&gt;&lt;span id="stabilityIndicator"&gt;Checking...&lt;/span&gt;&lt;/p&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task16.1" checked><label for="task16.1">16.1 Inside .container, add &lt;section id="sectionD"&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task16.2" checked><label for="task16.2">16.2 Inside #sectionD, add &lt;h2&gt;Known Diatomic?&lt;/h2&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task16.3" checked><label for="task16.3">16.3 Add &lt;p&gt;&lt;span id="stabilityIndicator"&gt;Checking...&lt;/span&gt;&lt;/p&gt;.</label></li>
             </ul>
         </li>
         <li><strong>17.0 Create "Next Molecule" Button:</strong>
@@ -218,16 +159,16 @@
         </li>
         <li><strong>18.0 Include JavaScript Files:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task18.1"><label for="task18.1">18.1 Before closing &lt;/body&gt;, add &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task18.2"><label for="task18.2">18.2 (Placeholder) Add comment for OrbitControls.js script tag.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task18.3"><label for="task18.3">18.3 Add &lt;script src="js/script.js"&gt;&lt;/script&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task18.1" checked><label for="task18.1">18.1 Before closing &lt;/body&gt;, add &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"&gt;&lt;/script&gt;.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task18.2" checked><label for="task18.2">18.2 (Placeholder) Add comment for OrbitControls.js script tag.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task18.3" checked><label for="task18.3">18.3 Add &lt;script src="js/script.js"&gt;&lt;/script&gt;.</label></li>
             </ul>
         </li>
         <li><strong>19.0 Commit HTML Structure:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task19.1"><label for="task19.1">19.1 git add index.html.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task19.2"><label for="task19.2">19.2 git commit -m "Add complete HTML structure for AlphaMole UI sections".</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task19.3"><label for="task19.3">19.3 git push.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task19.1" checked><label for="task19.1">19.1 git add index.html.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task19.2" checked><label for="task19.2">19.2 git commit -m "Add complete HTML structure for AlphaMole UI sections".</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task19.3" checked><label for="task19.3">19.3 git push.</label></li>
             </ul>
         </li>
     </ul>
@@ -259,8 +200,8 @@
                 <li><input type="checkbox" class="task-checkbox" id="task23.3" checked><label for="task23.3">23.3 Add #sectionB p { margin: 10px 0; }.</label></li>
             </ul>
         </li>
-        <li><strong>24.0 Style Section C (3D Representation):</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>24.0 Style Section C (3D Representation) (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task24.1"><label for="task24.1">24.1 Add #sectionC { margin-bottom: 20px; }.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task24.2"><label for="task24.2">24.2 Add #sectionC h2 { color: #444; margin-bottom: 15px; }.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task24.3"><label for="task24.3">24.3 Add #moleculeViewer { width: 100%; height: 400px; background: #eee; border: 1px solid #ddd; }.</label></li>
@@ -371,29 +312,29 @@
         </li>
         <li><strong>39.0 Implement generateDiatomicInfo() Function:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task39.1"><label for="task39.1">39.1 Define function generateDiatomicInfo().</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task39.2"><label for="task39.2">39.2 Call getRandomElement() to get atom1.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task39.3"><label for="task39.3">39.3 Call getRandomElement() to get atom2.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task39.4"><label for="task39.4">39.4 Handle !atom1 || !atom2 case by returning a default structure.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task39.5"><label for="task39.5">39.5 Create selectedAtomsDisplay string.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task39.6"><label for="task39.6">39.6 Initialize formulasToTest = [] and displayFormula = "N/A".</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task39.7"><label for="task39.7">39.7 If atom1.symbol === atom2.symbol (A2 type):</label>
+                <li><input type="checkbox" class="task-checkbox" id="task39.1" checked><label for="task39.1">39.1 Define function generateDiatomicInfo().</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task39.2" checked><label for="task39.2">39.2 Call getRandomElement() to get atom1.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task39.3" checked><label for="task39.3">39.3 Call getRandomElement() to get atom2.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task39.4" checked><label for="task39.4">39.4 Handle !atom1 || !atom2 case by returning a default structure.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task39.5" checked><label for="task39.5">39.5 Create selectedAtomsDisplay string.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task39.6" checked><label for="task39.6">39.6 Initialize formulasToTest = [] and displayFormula = "N/A".</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task39.7" checked><label for="task39.7">39.7 If atom1.symbol === atom2.symbol (A2 type):</label>
                     <ul>
-                        <li><input type="checkbox" class="task-checkbox" id="task39.7.1"><label for="task39.7.1">39.7.1 Set displayFormula = `${atom1.symbol}2`.</label></li>
-                        <li><input type="checkbox" class="task-checkbox" id="task39.7.2"><label for="task39.7.2">39.7.2 Push displayFormula to formulasToTest.</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task39.7.1" checked><label for="task39.7.1">39.7.1 Set displayFormula = `${atom1.symbol}2`.</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task39.7.2" checked><label for="task39.7.2">39.7.2 Push displayFormula to formulasToTest.</label></li>
                     </ul>
                 </li>
-                <li><input type="checkbox" class="task-checkbox" id="task39.8"><label for="task39.8">39.8 Else (AB type):</label>
+                <li><input type="checkbox" class="task-checkbox" id="task39.8" checked><label for="task39.8">39.8 Else (AB type):</label>
                     <ul>
-                        <li><input type="checkbox" class="task-checkbox" id="task39.8.1"><label for="task39.8.1">39.8.1 Implement canonical ordering logic (H first, then C, N, O, then alphabetical) for displayFormula.</label></li>
-                        <li><input type="checkbox" class="task-checkbox" id="task39.8.2"><label for="task39.8.2">39.8.2 Push displayFormula to formulasToTest.</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task39.8.1" checked><label for="task39.8.1">39.8.1 Implement canonical ordering logic (H first, then C, N, O, then alphabetical) for displayFormula.</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task39.8.2" checked><label for="task39.8.2">39.8.2 Push displayFormula to formulasToTest.</label></li>
                     </ul>
                 </li>
-                <li><input type="checkbox" class="task-checkbox" id="task39.9"><label for="task39.9">39.9 Return an object with atom1, atom2, selectedAtomsText, formulasToTest, displayFormula.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task39.9" checked><label for="task39.9">39.9 Return an object with atom1, atom2, selectedAtomsText, formulasToTest, displayFormula.</label></li>
             </ul>
         </li>
-        <li><strong>40.0 Implement checkStabilityAndDisplay() Function:</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>40.0 Implement checkStabilityAndDisplay() Function (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task40.1"><label for="task40.1">40.1 Define function checkStabilityAndDisplay(diatomicInfo).</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task40.2"><label for="task40.2">40.2 Update selectedAtomsTextElem.textContent.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task40.3"><label for="task40.3">40.3 Set default text for formulaTextElem, commonNameTextElem, stabilityIndicatorElem.</label></li>
@@ -433,45 +374,45 @@
         </li>
         <li><strong>41.0 Implement <code>displayNewMolecule()</code> Function:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task41.1"><label for="task41.1">41.1 Define <code>function displayNewMolecule()</code>.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task41.2"><label for="task41.2">41.2 Call <code>generateDiatomicInfo()</code>.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task41.3"><label for="task41.3">41.3 If <code>diatomicInfo.atom1</code> (elements were generated):</label>
+                <li><input type="checkbox" class="task-checkbox" id="task41.1" checked><label for="task41.1">41.1 Define <code>function displayNewMolecule()</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task41.2" checked><label for="task41.2">41.2 Call <code>generateDiatomicInfo()</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task41.3" checked><label for="task41.3">41.3 If <code>diatomicInfo.atom1</code> (elements were generated):</label>
                     <ul>
-                        <li><input type="checkbox" class="task-checkbox" id="task41.3.1"><label for="task41.3.1">41.3.1 Call <code>checkStabilityAndDisplay(diatomicInfo)</code>.</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task41.3.1" checked><label for="task41.3.1">41.3.1 Call <code>checkStabilityAndDisplay(diatomicInfo)</code>.</label></li>
                     </ul>
                 </li>
-                <li><input type="checkbox" class="task-checkbox" id="task41.4"><label for="task41.4">41.4 Else:</label>
+                <li><input type="checkbox" class="task-checkbox" id="task41.4" checked><label for="task41.4">41.4 Else:</label>
                     <ul>
-                        <li><input type="checkbox" class="task-checkbox" id="task41.4.1"><label for="task41.4.1">41.4.1 Update UI to show atom generation error.</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task41.4.1" checked><label for="task41.4.1">41.4.1 Update UI to show atom generation error.</label></li>
                     </ul>
                 </li>
             </ul>
         </li>
         <li><strong>42.0 Add Event Listener & Initial Call:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task42.1"><label for="task42.1">42.1 Add event listener to <code>nextButton</code> for 'click', calling <code>displayNewMolecule</code>.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task42.2"><label for="task42.2">42.2 Add event listener to <code>document</code> for 'DOMContentLoaded', calling <code>loadData</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task42.1" checked><label for="task42.1">42.1 Add event listener to <code>nextButton</code> for 'click', calling <code>displayNewMolecule</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task42.2" checked><label for="task42.2">42.2 Add event listener to <code>document</code> for 'DOMContentLoaded', calling <code>loadData</code>.</label></li>
             </ul>
         </li>
         <li><strong>43.0 Commit JavaScript (Part 1):</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task43.1"><label for="task43.1">43.1 <code>git add js/script.js data/elements.json data/diatomics.json</code>.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task43.2"><label for="task43.2">43.2 <code>git commit -m "Implement core JS: data loading, random selection, stability check, basic UI updates"</code>.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task43.3"><label for="task43.3">43.3 <code>git push</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task43.1" checked><label for="task43.1">43.1 <code>git add js/script.js data/elements.json data/diatomics.json</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task43.2" checked><label for="task43.2">43.2 <code>git commit -m "Implement core JS: data loading, random selection, stability check, basic UI updates"</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task43.3" checked><label for="task43.3">43.3 <code>git push</code>.</label></li>
             </ul>
         </li>
     </ul>
 
     <h2>JavaScript Logic (<code>js/script.js</code>) - Part 2: Three.js Integration</h2>
     <ul>
-        <li><strong>44.0 Declare Three.js Global Variables:</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>44.0 Declare Three.js Global Variables (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task44.1"><label for="task44.1">44.1 At top of <code>js/script.js</code>, declare <code>scene</code>, <code>camera</code>, <code>renderer</code>, <code>controls</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task44.2"><label for="task44.2">44.2 Declare <code>atomRadius</code> and <code>bondRadius</code> constants.</label></li>
             </ul>
         </li>
-        <li><strong>45.0 Implement <code>initThreeScene()</code> Function:</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>45.0 Implement <code>initThreeScene()</code> Function (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task45.1"><label for="task45.1">45.1 Define <code>function initThreeScene()</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task45.2"><label for="task45.2">45.2 Check if <code>moleculeViewerElem</code> exists.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task45.3"><label for="task45.3">45.3 Create <code>scene = new THREE.Scene()</code>.</label></li>
@@ -513,8 +454,8 @@
                 </li>
             </ul>
         </li>
-        <li><strong>46.0 Implement <code>clearScene()</code> Function:</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>46.0 Implement <code>clearScene()</code> Function (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task46.1"><label for="task46.1">46.1 Define <code>function clearScene()</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task46.2"><label for="task46.2">46.2 Check if <code>scene</code> exists.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task46.3"><label for="task46.3">46.3 Loop <code>while (scene.children.length > 0)</code>:</label>
@@ -528,15 +469,15 @@
                 <li><input type="checkbox" class="task-checkbox" id="task46.4"><label for="task46.4">46.4 Re-add lights to the scene.</label></li>
             </ul>
         </li>
-        <li><strong>47.0 Implement <code>clearAndShowMessageInViewer()</code> Function:</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>47.0 Implement <code>clearAndShowMessageInViewer()</code> Function (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task47.1"><label for="task47.1">47.1 Define <code>function clearAndShowMessageInViewer(messageHtml)</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task47.2"><label for="task47.2">47.2 If <code>scene</code>, call <code>clearScene()</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task47.3"><label for="task47.3">47.3 Handle display of message: if renderer canvas is present, consider overlay or log; otherwise, set <code>moleculeViewerElem.innerHTML</code>. (This logic might need refinement for visual consistency).</label></li>
             </ul>
         </li>
-        <li><strong>48.0 Implement <code>initAndRenderMolecule()</code> Function (Initial Structure):</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>48.0 Implement <code>initAndRenderMolecule()</code> Function (Initial Structure) (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task48.1"><label for="task48.1">48.1 Define <code>async function initAndRenderMolecule(formula)</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task48.2"><label for="task48.2">48.2 Call <code>clearScene()</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task48.3"><label for="task48.3">48.3 Check if <code>scene</code> and <code>renderer</code> are initialized; show error in viewer if not.</label></li>
@@ -545,8 +486,8 @@
                 <li><input type="checkbox" class="task-checkbox" id="task48.6"><label for="task48.6">48.6 (Placeholder for atom/bond rendering logic)</label></li>
             </ul>
         </li>
-        <li><strong>49.0 Commit JavaScript (Three.js Setup):</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>49.0 Commit JavaScript (Three.js Setup) (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task49.1"><label for="task49.1">49.1 <code>git add js/script.js</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task49.2"><label for="task49.2">49.2 <code>git commit -m "Integrate Three.js: setup scene, camera, renderer, lights, and basic animation loop"</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task49.3"><label for="task49.3">49.3 <code>git push</code>.</label></li>
@@ -556,8 +497,8 @@
 
     <h2>JavaScript Logic (<code>js/script.js</code>) - Part 3: Fetching & Parsing SDF (NCI Cactus)</h2>
     <ul>
-        <li><strong>50.0 Implement <code>fetchSDF()</code> Function:</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>50.0 Implement <code>fetchSDF()</code> Function (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task50.1"><label for="task50.1">50.1 Define <code>async function fetchSDF(identifier)</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task50.2"><label for="task50.2">50.2 Construct <code>url</code> for NCI Cactus (consider CORS proxy if needed).</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task50.3"><label for="task50.3">50.3 <code>console.log</code> the fetch URL.</label></li>
@@ -584,8 +525,8 @@
                 </li>
             </ul>
         </li>
-        <li><strong>51.0 Implement <code>parseSDFForDiatomic()</code> Function:</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>51.0 Implement <code>parseSDFForDiatomic()</code> Function (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task51.1"><label for="task51.1">51.1 Define <code>function parseSDFForDiatomic(sdfData)</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task51.2"><label for="task51.2">51.2 Initialize <code>atoms = []</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task51.3"><label for="task51.3">51.3 Split <code>sdfData</code> into <code>lines</code> (handle <code>\r\n</code> and <code>\n</code>).</label></li>
@@ -623,8 +564,8 @@
                 <li><input type="checkbox" class="task-checkbox" id="task51.11"><label for="task51.11">51.11 Return <code>atoms.slice(0, 2)</code> (ensure only two atoms for diatomics).</label></li>
             </ul>
         </li>
-        <li><strong>52.0 Update <code>initAndRenderMolecule()</code> to use Fetch & Parse:</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>52.0 Update <code>initAndRenderMolecule()</code> to use Fetch & Parse (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task52.1"><label for="task52.1">52.1 Inside <code>async function initAndRenderMolecule(formula)</code>:</label>
                     <ul>
                         <li><input type="checkbox" class="task-checkbox" id="task52.1.1"><label for="task52.1.1">52.1.1 Call <code>const sdfData = await fetchSDF(formula)</code>.</label></li>
@@ -664,15 +605,15 @@
                 </li>
             </ul>
         </li>
-        <li><strong>53.0 Integrate OrbitControls (Optional):</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>53.0 Integrate OrbitControls (Optional) (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task53.1"><label for="task53.1">53.1 (If doing this) Download <code>OrbitControls.js</code> and place in <code>js/</code> folder.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task53.2"><label for="task53.2">53.2 (If doing this) Add <code><script src="js/OrbitControls.js"></script></code> to <code>index.html</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task53.3"><label for="task53.3">53.3 (If doing this) Ensure the <code>OrbitControls</code> related code in <code>initThreeScene()</code> and <code>animate()</code> is uncommented and functional.</label></li>
             </ul>
         </li>
-        <li><strong>54.0 Commit JavaScript (SDF Fetch, Parse, Dynamic 3D Rendering):</strong>
-            <ul>
+        <li class="to-be-done-later"><strong>54.0 Commit JavaScript (SDF Fetch, Parse, Dynamic 3D Rendering) (To Be Done Later):</strong>
+            <ul class="to-be-done-later-items">
                 <li><input type="checkbox" class="task-checkbox" id="task54.1"><label for="task54.1">54.1 <code>git add js/script.js</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task54.2"><label for="task54.2">54.2 (If added) <code>git add js/OrbitControls.js</code>.</label></li>
                 <li><input type="checkbox" class="task-checkbox" id="task54.3"><label for="task54.3">54.3 <code>git commit -m "Implement SDF fetch, parse, and dynamic 3D rendering of diatomics"</code>.</label></li>
@@ -685,56 +626,56 @@
     <ul>
         <li><strong>55.0 Perform Thorough Testing on GitHub Pages Site:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task55.1"><label for="task55.1">55.1 Click "Next Molecule" repeatedly.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task55.2"><label for="task55.2">55.2 Verify random atom pairs.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task55.3"><label for="task55.3">55.3 Verify correct formula display.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task55.4"><label for="task55.4">55.4 Verify correct stability indication (✔️/❌) against <code>diatomics.json</code>.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task55.5"><label for="task55.5">55.5 For known diatomics:</label>
+                <li><input type="checkbox" class="task-checkbox" id="task55.1" checked><label for="task55.1">55.1 Click "Next Molecule" repeatedly.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task55.2" checked><label for="task55.2">55.2 Verify random atom pairs.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task55.3" checked><label for="task55.3">55.3 Verify correct formula display.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task55.4" checked><label for="task55.4">55.4 Verify correct stability indication (✔️/❌) against <code>diatomics.json</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task55.5" checked><label for="task55.5">55.5 For known diatomics:</label>
                     <ul>
-                        <li><input type="checkbox" class="task-checkbox" id="task55.5.1"><label for="task55.5.1">55.5.1 Check if SDF fetch is attempted (see console).</label></li>
-                        <li><input type="checkbox" class="task-checkbox" id="task55.5.2"><label for="task55.5.2">55.5.2 Verify 3D model renders (2 spheres, 1 bond).</label></li>
-                        <li><input type="checkbox" class="task-checkbox" id="task55.5.3"><label for="task55.5.3">55.5.3 Verify atom colors.</label></li>
-                        <li><input type="checkbox" class="task-checkbox" id="task55.5.4"><label for="task55.5.4">55.5.4 Verify model is rotatable (if OrbitControls active).</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task55.5.1" checked><label for="task55.5.1">55.5.1 Check if SDF fetch is attempted (see console).</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task55.5.2" checked><label for="task55.5.2">55.5.2 Verify 3D model renders (2 spheres, 1 bond).</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task55.5.3" checked><label for="task55.5.3">55.5.3 Verify atom colors.</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task55.5.4" checked><label for="task55.5.4">55.5.4 Verify model is rotatable (if OrbitControls active).</label></li>
                     </ul>
                 </li>
-                <li><input type="checkbox" class="task-checkbox" id="task55.6"><label for="task55.6">55.6 For unknown/unfetchable:</label>
+                <li><input type="checkbox" class="task-checkbox" id="task55.6" checked><label for="task55.6">55.6 For unknown/unfetchable:</label>
                     <ul>
-                        <li><input type="checkbox" class="task-checkbox" id="task55.6.1"><label for="task55.6.1">55.6.1 Verify appropriate messages in Section C and D.</label></li>
+                        <li><input type="checkbox" class="task-checkbox" id="task55.6.1" checked><label for="task55.6.1">55.6.1 Verify appropriate messages in Section C and D.</label></li>
                     </ul>
                 </li>
-                <li><input type="checkbox" class="task-checkbox" id="task55.7"><label for="task55.7">55.7 Check browser console for critical errors.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task55.7" checked><label for="task55.7">55.7 Check browser console for critical errors.</label></li>
             </ul>
         </li>
         <li><strong>56.0 (If needed) Expand <code>data/diatomics.json</code>:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task56.1"><label for="task56.1">56.1 Add more known stable diatomics from <code>elementsList</code> for more test cases.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task56.2"><label for="task56.2">56.2 Commit and push changes to <code>data/diatomics.json</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task56.1" checked><label for="task56.1">56.1 Add more known stable diatomics from <code>elementsList</code> for more test cases.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task56.2" checked><label for="task56.2">56.2 Commit and push changes to <code>data/diatomics.json</code>.</label></li>
             </ul>
         </li>
         <li><strong>57.0 (If needed) Refine SDF Parser:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task57.1"><label for="task57.1">57.1 Test with various SDFs. If parser fails, analyze SDF structure and adjust parsing logic in <code>parseSDFForDiatomic()</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task57.1" checked><label for="task57.1">57.1 Test with various SDFs. If parser fails, analyze SDF structure and adjust parsing logic in <code>parseSDFForDiatomic()</code>.</label></li>
             </ul>
         </li>
         <li><strong>58.0 (If needed) Refine CSS and UI Messages:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task58.1"><label for="task58.1">58.1 Make final CSS adjustments for appearance.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task58.2"><label for="task58.2">58.2 Improve clarity of user messages.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task58.1" checked><label for="task58.1">58.1 Make final CSS adjustments for appearance.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task58.2" checked><label for="task58.2">58.2 Improve clarity of user messages.</label></li>
             </ul>
         </li>
         <li><strong>59.0 Create/Update <code>README.md</code>:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task59.1"><label for="task59.1">59.1 Create <code>README.md</code> in project root.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task59.2"><label for="task59.2">59.2 Add project description.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task59.3"><label for="task59.3">59.3 Add setup instructions (if any beyond cloning).</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task59.4"><label for="task59.4">59.4 Add link to the live GitHub Pages site.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task59.1" checked><label for="task59.1">59.1 Create <code>README.md</code> in project root.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task59.2" checked><label for="task59.2">59.2 Add project description.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task59.3" checked><label for="task59.3">59.3 Add setup instructions (if any beyond cloning).</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task59.4" checked><label for="task59.4">59.4 Add link to the live GitHub Pages site.</label></li>
             </ul>
         </li>
         <li><strong>60.0 Final Commit & Push:</strong>
             <ul>
-                <li><input type="checkbox" class="task-checkbox" id="task60.1"><label for="task60.1">60.1 <code>git add .</code>.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task60.2"><label for="task60.2">60.2 <code>git commit -m "Phase 0: AlphaMole Web Showcase complete. Final testing and refinements."</code>.</label></li>
-                <li><input type="checkbox" class="task-checkbox" id="task60.3"><label for="task60.3">60.3 <code>git push</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task60.1" checked><label for="task60.1">60.1 <code>git add .</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task60.2" checked><label for="task60.2">60.2 <code>git commit -m "Sprint 1: AlphaMole Web Showcase complete. Final testing and refinements."</code>.</label></li>
+                <li><input type="checkbox" class="task-checkbox" id="task60.3" checked><label for="task60.3">60.3 <code>git push</code>.</label></li>
             </ul>
         </li>
     </ul>
