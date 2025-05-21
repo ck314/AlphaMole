@@ -1,0 +1,638 @@
+Okay, here is a JSON object containing 100 stable (or well-characterized, existing) diatomic formulas, their chemical compound names, full names, and isStable set to true.
+
+Many of these, especially metal halides, are primarily observed as diatomic molecules in the gas phase at elevated temperatures, while they might be ionic solids at standard conditions. The "stability" refers to the existence of the diatomic molecular form.
+
+{
+  "diatomicMolecules": [
+    {
+      "formula": "H2",
+      "chemicalCompoundName": "Hydrogen",
+      "fullName": "Hydrogen molecule (Dihydrogen)",
+      "isStable": true
+    },
+    {
+      "formula": "N2",
+      "chemicalCompoundName": "Nitrogen",
+      "fullName": "Nitrogen molecule (Dinitrogen)",
+      "isStable": true
+    },
+    {
+      "formula": "O2",
+      "chemicalCompoundName": "Oxygen",
+      "fullName": "Oxygen molecule (Dioxygen)",
+      "isStable": true
+    },
+    {
+      "formula": "F2",
+      "chemicalCompoundName": "Fluorine",
+      "fullName": "Fluorine molecule (Difluorine)",
+      "isStable": true
+    },
+    {
+      "formula": "Cl2",
+      "chemicalCompoundName": "Chlorine",
+      "fullName": "Chlorine molecule (Dichlorine)",
+      "isStable": true
+    },
+    {
+      "formula": "Br2",
+      "chemicalCompoundName": "Bromine",
+      "fullName": "Bromine molecule (Dibromine)",
+      "isStable": true
+    },
+    {
+      "formula": "I2",
+      "chemicalCompoundName": "Iodine",
+      "fullName": "Iodine molecule (Diiodine)",
+      "isStable": true
+    },
+    {
+      "formula": "CO",
+      "chemicalCompoundName": "Carbon monoxide",
+      "fullName": "Carbon monoxide molecule",
+      "isStable": true
+    },
+    {
+      "formula": "NO",
+      "chemicalCompoundName": "Nitric oxide",
+      "fullName": "Nitric oxide (Nitrogen monoxide) molecule",
+      "isStable": true
+    },
+    {
+      "formula": "HF",
+      "chemicalCompoundName": "Hydrogen fluoride",
+      "fullName": "Hydrogen fluoride molecule",
+      "isStable": true
+    },
+    {
+      "formula": "HCl",
+      "chemicalCompoundName": "Hydrogen chloride",
+      "fullName": "Hydrogen chloride molecule",
+      "isStable": true
+    },
+    {
+      "formula": "HBr",
+      "chemicalCompoundName": "Hydrogen bromide",
+      "fullName": "Hydrogen bromide molecule",
+      "isStable": true
+    },
+    {
+      "formula": "HI",
+      "chemicalCompoundName": "Hydrogen iodide",
+      "fullName": "Hydrogen iodide molecule",
+      "isStable": true
+    },
+    {
+      "formula": "LiF",
+      "chemicalCompoundName": "Lithium fluoride",
+      "fullName": "Lithium fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "LiCl",
+      "chemicalCompoundName": "Lithium chloride",
+      "fullName": "Lithium chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "LiBr",
+      "chemicalCompoundName": "Lithium bromide",
+      "fullName": "Lithium bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "LiI",
+      "chemicalCompoundName": "Lithium iodide",
+      "fullName": "Lithium iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "NaF",
+      "chemicalCompoundName": "Sodium fluoride",
+      "fullName": "Sodium fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "NaCl",
+      "chemicalCompoundName": "Sodium chloride",
+      "fullName": "Sodium chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "NaBr",
+      "chemicalCompoundName": "Sodium bromide",
+      "fullName": "Sodium bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "NaI",
+      "chemicalCompoundName": "Sodium iodide",
+      "fullName": "Sodium iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "KF",
+      "chemicalCompoundName": "Potassium fluoride",
+      "fullName": "Potassium fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "KCl",
+      "chemicalCompoundName": "Potassium chloride",
+      "fullName": "Potassium chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "KBr",
+      "chemicalCompoundName": "Potassium bromide",
+      "fullName": "Potassium bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "KI",
+      "chemicalCompoundName": "Potassium iodide",
+      "fullName": "Potassium iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "RbF",
+      "chemicalCompoundName": "Rubidium fluoride",
+      "fullName": "Rubidium fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "RbCl",
+      "chemicalCompoundName": "Rubidium chloride",
+      "fullName": "Rubidium chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "RbBr",
+      "chemicalCompoundName": "Rubidium bromide",
+      "fullName": "Rubidium bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "RbI",
+      "chemicalCompoundName": "Rubidium iodide",
+      "fullName": "Rubidium iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CsF",
+      "chemicalCompoundName": "Caesium fluoride",
+      "fullName": "Caesium fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CsCl",
+      "chemicalCompoundName": "Caesium chloride",
+      "fullName": "Caesium chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CsBr",
+      "chemicalCompoundName": "Caesium bromide",
+      "fullName": "Caesium bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CsI",
+      "chemicalCompoundName": "Caesium iodide",
+      "fullName": "Caesium iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "ClF",
+      "chemicalCompoundName": "Chlorine monofluoride",
+      "fullName": "Chlorine monofluoride molecule",
+      "isStable": true
+    },
+    {
+      "formula": "BrF",
+      "chemicalCompoundName": "Bromine monofluoride",
+      "fullName": "Bromine monofluoride molecule",
+      "isStable": true
+    },
+    {
+      "formula": "BrCl",
+      "chemicalCompoundName": "Bromine monochloride",
+      "fullName": "Bromine monochloride molecule",
+      "isStable": true
+    },
+    {
+      "formula": "ICl",
+      "chemicalCompoundName": "Iodine monochloride",
+      "fullName": "Iodine monochloride molecule",
+      "isStable": true
+    },
+    {
+      "formula": "IBr",
+      "chemicalCompoundName": "Iodine monobromide",
+      "fullName": "Iodine monobromide molecule",
+      "isStable": true
+    },
+    {
+      "formula": "IF",
+      "chemicalCompoundName": "Iodine monofluoride",
+      "fullName": "Iodine monofluoride molecule",
+      "isStable": true
+    },
+    {
+      "formula": "SiO",
+      "chemicalCompoundName": "Silicon monoxide",
+      "fullName": "Silicon monoxide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CS",
+      "chemicalCompoundName": "Carbon monosulfide",
+      "fullName": "Carbon monosulfide molecule",
+      "isStable": true
+    },
+    {
+      "formula": "PN",
+      "chemicalCompoundName": "Phosphorus nitride",
+      "fullName": "Phosphorus nitride molecule (Phosphenous nitride)",
+      "isStable": true
+    },
+    {
+      "formula": "SO",
+      "chemicalCompoundName": "Sulfur monoxide",
+      "fullName": "Sulfur monoxide molecule",
+      "isStable": true
+    },
+    {
+      "formula": "C2",
+      "chemicalCompoundName": "Dicarbon",
+      "fullName": "Dicarbon molecule",
+      "isStable": true
+    },
+    {
+      "formula": "P2",
+      "chemicalCompoundName": "Diphosphorus",
+      "fullName": "Diphosphorus molecule",
+      "isStable": true
+    },
+    {
+      "formula": "S2",
+      "chemicalCompoundName": "Disulfur",
+      "fullName": "Disulfur molecule",
+      "isStable": true
+    },
+    {
+      "formula": "BF",
+      "chemicalCompoundName": "Boron monofluoride",
+      "fullName": "Boron monofluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "BCl",
+      "chemicalCompoundName": "Boron monochloride",
+      "fullName": "Boron monochloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "BBr",
+      "chemicalCompoundName": "Boron monobromide",
+      "fullName": "Boron monobromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "BI",
+      "chemicalCompoundName": "Boron monoiodide",
+      "fullName": "Boron monoiodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AlF",
+      "chemicalCompoundName": "Aluminum monofluoride",
+      "fullName": "Aluminum monofluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AlCl",
+      "chemicalCompoundName": "Aluminum monochloride",
+      "fullName": "Aluminum monochloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AlBr",
+      "chemicalCompoundName": "Aluminum monobromide",
+      "fullName": "Aluminum monobromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AlI",
+      "chemicalCompoundName": "Aluminum monoiodide",
+      "fullName": "Aluminum monoiodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "GaF",
+      "chemicalCompoundName": "Gallium(I) fluoride",
+      "fullName": "Gallium(I) fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "GaCl",
+      "chemicalCompoundName": "Gallium(I) chloride",
+      "fullName": "Gallium(I) chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "GaBr",
+      "chemicalCompoundName": "Gallium(I) bromide",
+      "fullName": "Gallium(I) bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "GaI",
+      "chemicalCompoundName": "Gallium(I) iodide",
+      "fullName": "Gallium(I) iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "InF",
+      "chemicalCompoundName": "Indium(I) fluoride",
+      "fullName": "Indium(I) fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "InCl",
+      "chemicalCompoundName": "Indium(I) chloride",
+      "fullName": "Indium(I) chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "InBr",
+      "chemicalCompoundName": "Indium(I) bromide",
+      "fullName": "Indium(I) bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "InI",
+      "chemicalCompoundName": "Indium(I) iodide",
+      "fullName": "Indium(I) iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "TlF",
+      "chemicalCompoundName": "Thallium(I) fluoride",
+      "fullName": "Thallium(I) fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "TlCl",
+      "chemicalCompoundName": "Thallium(I) chloride",
+      "fullName": "Thallium(I) chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "TlBr",
+      "chemicalCompoundName": "Thallium(I) bromide",
+      "fullName": "Thallium(I) bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "TlI",
+      "chemicalCompoundName": "Thallium(I) iodide",
+      "fullName": "Thallium(I) iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "GeO",
+      "chemicalCompoundName": "Germanium monoxide",
+      "fullName": "Germanium monoxide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "SnO",
+      "chemicalCompoundName": "Tin(II) oxide",
+      "fullName": "Tin(II) oxide (Tin monoxide, diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "PbO",
+      "chemicalCompoundName": "Lead(II) oxide",
+      "fullName": "Lead(II) oxide (Lead monoxide, diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "SiS",
+      "chemicalCompoundName": "Silicon monosulfide",
+      "fullName": "Silicon monosulfide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "GeS",
+      "chemicalCompoundName": "Germanium monosulfide",
+      "fullName": "Germanium monosulfide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "SnS",
+      "chemicalCompoundName": "Tin(II) sulfide",
+      "fullName": "Tin(II) sulfide (Tin monosulfide, diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "PbS",
+      "chemicalCompoundName": "Lead(II) sulfide",
+      "fullName": "Lead(II) sulfide (Lead monosulfide, diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "BeF",
+      "chemicalCompoundName": "Beryllium monofluoride",
+      "fullName": "Beryllium monofluoride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "BeCl",
+      "chemicalCompoundName": "Beryllium monochloride",
+      "fullName": "Beryllium monochloride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "MgF",
+      "chemicalCompoundName": "Magnesium monofluoride",
+      "fullName": "Magnesium monofluoride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "MgCl",
+      "chemicalCompoundName": "Magnesium monochloride",
+      "fullName": "Magnesium monochloride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CaF",
+      "chemicalCompoundName": "Calcium monofluoride",
+      "fullName": "Calcium monofluoride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CaCl",
+      "chemicalCompoundName": "Calcium monochloride",
+      "fullName": "Calcium monochloride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "SrF",
+      "chemicalCompoundName": "Strontium monofluoride",
+      "fullName": "Strontium monofluoride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "SrCl",
+      "chemicalCompoundName": "Strontium monochloride",
+      "fullName": "Strontium monochloride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "BaF",
+      "chemicalCompoundName": "Barium monofluoride",
+      "fullName": "Barium monofluoride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "BaCl",
+      "chemicalCompoundName": "Barium monochloride",
+      "fullName": "Barium monochloride (diatomic radical, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AgF",
+      "chemicalCompoundName": "Silver(I) fluoride",
+      "fullName": "Silver(I) fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AgCl",
+      "chemicalCompoundName": "Silver(I) chloride",
+      "fullName": "Silver(I) chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AgBr",
+      "chemicalCompoundName": "Silver(I) bromide",
+      "fullName": "Silver(I) bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AgI",
+      "chemicalCompoundName": "Silver(I) iodide",
+      "fullName": "Silver(I) iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CuF",
+      "chemicalCompoundName": "Copper(I) fluoride",
+      "fullName": "Copper(I) fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CuCl",
+      "chemicalCompoundName": "Copper(I) chloride",
+      "fullName": "Copper(I) chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CuBr",
+      "chemicalCompoundName": "Copper(I) bromide",
+      "fullName": "Copper(I) bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "CuI",
+      "chemicalCompoundName": "Copper(I) iodide",
+      "fullName": "Copper(I) iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AuF",
+      "chemicalCompoundName": "Gold(I) fluoride",
+      "fullName": "Gold(I) fluoride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AuCl",
+      "chemicalCompoundName": "Gold(I) chloride",
+      "fullName": "Gold(I) chloride (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AuBr",
+      "chemicalCompoundName": "Gold(I) bromide",
+      "fullName": "Gold(I) bromide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "AuI",
+      "chemicalCompoundName": "Gold(I) iodide",
+      "fullName": "Gold(I) iodide (diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "SeO",
+      "chemicalCompoundName": "Selenium monoxide",
+      "fullName": "Selenium monoxide molecule",
+      "isStable": true
+    },
+    {
+      "formula": "TeO",
+      "chemicalCompoundName": "Tellurium monoxide",
+      "fullName": "Tellurium monoxide molecule",
+      "isStable": true
+    },
+    {
+      "formula": "CN",
+      "chemicalCompoundName": "Cyanogen radical",
+      "fullName": "Cyanogen radical (diatomic)",
+      "isStable": true
+    },
+    {
+      "formula": "CP",
+      "chemicalCompoundName": "Carbon monophosphide",
+      "fullName": "Carbon monophosphide radical (Phosphaethynylidyne)",
+      "isStable": true
+    },
+    {
+      "formula": "SiN",
+      "chemicalCompoundName": "Silicon nitride radical",
+      "fullName": "Silicon mononitride radical",
+      "isStable": true
+    },
+    {
+      "formula": "BO",
+      "chemicalCompoundName": "Boron monoxide",
+      "fullName": "Boron monoxide radical (Oxidoboron)",
+      "isStable": true
+    },
+    {
+      "formula": "AlO",
+      "chemicalCompoundName": "Aluminum monoxide",
+      "fullName": "Aluminum monoxide radical (Oxidoaluminum)",
+      "isStable": true
+    },
+    {
+      "formula": "TiO",
+      "chemicalCompoundName": "Titanium(II) oxide",
+      "fullName": "Titanium(II) oxide (Titanium monoxide, diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "VO",
+      "chemicalCompoundName": "Vanadium(II) oxide",
+      "fullName": "Vanadium(II) oxide (Vanadium monoxide, diatomic, gas phase)",
+      "isStable": true
+    },
+    {
+      "formula": "OH",
+      "chemicalCompoundName": "Hydroxyl radical",
+      "fullName": "Hydroxyl radical (diatomic)",
+      "isStable": true
+    }
+  ]
+}

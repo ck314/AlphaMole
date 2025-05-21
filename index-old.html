@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaMole</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div id="navbar"></div>
+    <div class="container">
+        <h1>AlphaMole</h1>
+        <div class="number-selector">
+            <select id="numberSelect">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="elements-container">
+            <div class="element-box">
+                <div class="combined-word" id="combinedWord"></div>
+                <div class="molecule" id="molecule"></div>
+            </div>
+            <div class="evaluation-box">
+                <div class="symbol" id="symbol"></div>
+            </div>
+        </div>
+        <button id="nextModule">Next Molecule</button>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+        // Load navbar immediately
+        const navbarDiv = document.getElementById('navbar');
+        console.log('Loading navbar...');
+        
+        fetch('navbar.html')
+            .then(response => {
+                console.log('Navbar response:', response.status);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('Navbar content loaded');
+                navbarDiv.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="blog/index.html">Blog</a><a href="changes/index.html">Changes</a><a href="checklist/index.html">Checklist</a></div></nav>';
+            });
+    </script>
+</body>
+</html> 
