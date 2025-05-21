@@ -1,0 +1,111 @@
+Okay, let's craft a detailed Product Plan specifically for "Phase 0: AlphaMole Web Showcase," based on the PRD you just provided.
+
+---
+
+**Product Plan: AlphaMole Web Showcase (Phase 0)**
+
+**Version:** 0.1
+**Date:** October 26, 2023
+**Project Lead:** (Student's Name / Team Name)
+**Mentor (if applicable):** (Mentor's Name)
+
+**1. Project Overview & Goals (Phase 0)**
+
+*   **Project Vision:** To create an engaging web-based showcase for the AlphaMole project, demonstrating fundamental chemical data retrieval and 3D molecular visualization.
+*   **Specific Goals (Phase 0):**
+    1.  Launch a basic website (`alphamole.ca` or staging) hosted on GitHub Pages.
+    2.  Implement a feature to randomly select pairs of atoms and check if they form a known stable diatomic molecule (using a pre-compiled list).
+    3.  Integrate Three.js to visualize known stable diatomic molecules in 3D, fetching structural data from a public API.
+    4.  Structure the UI into four distinct, labeled sections displaying project name, compound info, 3D view, and stability indication.
+*   **Success Criteria:** Website is live, core functionality works (random pairs, stability check, 3D view for knowns), UI is as specified. (Refer to PRD SM0.1-SM0.5).
+
+**2. Target Audience (Phase 0)**
+
+*   General public with an interest in science/chemistry.
+*   Educators and students looking for engaging chemistry tools.
+*   Stakeholders/reviewers of the broader AlphaMole project.
+
+**3. Scope & Deliverables (Phase 0)**
+
+*   **In Scope:** As defined in PRD Section 3.1 for Phase 0. Key elements include: static website, random diatomic generator, curated diatomic stability list, 3D visualization for knowns via Three.js and public API, UI with 4 sections.
+*   **Out of Scope:** As defined in PRD Section 3.2 for Phase 0. Notably: no ML, no user accounts, limited to diatomics for core interaction.
+*   **Key Deliverables:**
+    1.  Live, functional website hosted on GitHub Pages.
+    2.  Source code (HTML, CSS, JavaScript) for the website, including Three.js integration.
+    3.  A curated JSON file (or equivalent) containing formulas of known stable diatomic molecules.
+    4.  (Optional) Python script used to generate the curated diatomic list.
+    5.  Brief documentation/README explaining setup and how to run/deploy.
+
+**4. Team & Resources**
+
+*   **Team:** Primarily the student developer. Mentor for guidance.
+*   **Technical Resources:**
+    *   Computer with internet access.
+    *   Code editor (VS Code, Sublime Text, etc.).
+    *   Web browser (for testing).
+    *   Git & GitHub account.
+    *   Domain name (`alphamole.ca` or free GitHub Pages domain).
+    *   Access to public APIs (PubChem/NIST for diatomic list, NCI/CADD for structures).
+    *   Three.js library.
+
+**5. Project Phases, Tasks, and Timeline (Phase 0)**
+
+| Phase                                    | Task ID | Task Description                                                                           | Estimated Duration* | Dependencies        | Key Output(s)                                                                 |
+| :--------------------------------------- | :------ | :----------------------------------------------------------------------------------------- | :------------------ | :------------------ | :---------------------------------------------------------------------------- |
+| **P0.1: Foundation & Setup**             | P0.T1.1 | Secure domain `alphamole.ca` (or decide on GitHub Pages domain like `username.github.io/alphamole`). | 1-2 Days            | -                   | Domain access / decision.                                                     |
+|                                          | P0.T1.2 | Set up GitHub repository for the project.                                                  | 0.5 Day             | -                   | GitHub repo created.                                                          |
+|                                          | P0.T1.3 | Create basic HTML (index.html), CSS (style.css), and JavaScript (script.js) file structure. | 0.5 Day             | P0.T1.2             | Initial project files in repo.                                                |
+|                                          | P0.T1.4 | Implement basic layout for the 4 UI sections (A, B, C, D) using HTML/CSS placeholders.     | 1 Day               | P0.T1.3             | Webpage with static layout.                                                   |
+|                                          | P0.T1.5 | Set up GitHub Pages deployment for the repository.                                         | 0.5 Day             | P0.T1.2             | Basic site live on GitHub Pages.                                              |
+| **P0.2: Diatomic Data Acquisition**      | P0.T2.1 | Define the list of elements for random generation (e.g., H, C, N, O, F, Cl, Na, S).         | 0.5 Day             | -                   | Documented element list.                                                      |
+|                                          | P0.T2.2 | Research and select a primary public database for known diatomics (e.g., PubChem, NIST).    | 0.5 Day             | -                   | Chosen database and API details.                                              |
+|                                          | P0.T2.3 | (Optional) Develop a Python script to query the database (P0.T2.2) for all stable diatomics from element list (P0.T2.1). Handle A2 and AB type formulas. | 2-3 Days            | P0.T2.1, P0.T2.2    | Python script, raw data output.                                               |
+|                                          | P0.T2.4 | Curate and format the collected diatomic data into a clean JSON file (e.g., `diatomics.json`). Add this to the project repo. | 1 Day               | P0.T2.3 (or manual) | `diatomics.json` file.                                                        |
+| **P0.3: Core Logic & Basic UI**          | P0.T3.1 | Implement JavaScript function to load `diatomics.json`.                                    | 0.5 Day             | P0.T2.4, P0.T1.3    | JS function.                                                                  |
+|                                          | P0.T3.2 | Implement JS function to randomly select two atoms from element list (P0.T2.1).            | 0.5 Day             | P0.T2.1             | JS function.                                                                  |
+|                                          | P0.T3.3 | Implement JS logic to form potential diatomic formulas (AB, A2/B2) from selected atoms.    | 0.5 Day             | P0.T3.2             | JS logic.                                                                     |
+|                                          | P0.T3.4 | Implement JS function to check if a formula exists in the loaded `diatomics.json` data.    | 0.5 Day             | P0.T3.1, P0.T3.3    | JS function.                                                                  |
+|                                          | P0.T3.5 | Connect a "Next" button to trigger random selection, formula check, and update UI sections B (formula) & D (stability icon: check/X). | 1 Day               | P0.T1.4, P0.T3.2-4  | Interactive basic UI showing random pairs and their known stability.          |
+|                                          | P0.T3.6 | Display "AlphaMole" in Section A.                                                          | 0.1 Day             | P0.T1.4             | App name displayed.                                                           |
+| **P0.4: 3D Visualization Integration**   | P0.T4.1 | Integrate Three.js library into the project.                                               | 0.5 Day             | P0.T1.3             | Three.js setup.                                                               |
+|                                          | P0.T4.2 | Set up a basic Three.js scene, camera, and renderer within UI Section C.                   | 1 Day               | P0.T4.1, P0.T1.4    | Empty 3D canvas visible.                                                      |
+|                                          | P0.T4.3 | Research NCI/CADD (or similar) API for fetching molecular structures (e.g., SDF by formula/name). | 1 Day               | -                   | Understanding of structural data API.                                         |
+|                                          | P0.T4.4 | Implement JS function to fetch SDF/PDB data from NCI/CADD for a given *known stable* diatomic formula. Handle API responses and errors. | 1-2 Days            | P0.T4.3, P0.T3.4    | JS function for API calls.                                                    |
+|                                          | P0.T4.5 | Implement JS logic to parse SDF/PDB data (atom types & coordinates) for simple diatomics. *This can be complex, start with parsing simple cases.* | 2-3 Days            | P0.T4.4             | JS parser for structural data.                                                |
+|                                          | P0.T4.6 | Implement JS function to create 3D atom (spheres) and bond (cylinders/lines) objects in Three.js using parsed data and standard CPK colors. | 2-3 Days            | P0.T4.2, P0.T4.5    | Function to render molecule.                                                  |
+|                                          | P0.T4.7 | Connect logic: If molecule is known stable (P0.T3.4) and structural data fetched (P0.T4.4) & parsed (P0.T4.5), render it (P0.T4.6) in Section C. Update Section B with common name if available. | 1-2 Days            | All P0.T4 tasks     | 3D visualization of known diatomics.                                          |
+|                                          | P0.T4.8 | Implement basic mouse controls for 3D model rotation (e.g., OrbitControls).              | 0.5 Day             | P0.T4.7             | Interactive 3D model.                                                         |
+| **P0.5: Refinement & Testing**           | P0.T5.1 | Test thoroughly across different random pairs. Debug API calls, parsing, and rendering.    | 1-2 Days            | All previous        | Stable application.                                                           |
+|                                          | P0.T5.2 | Refine CSS for visual appeal and clarity of the 4 sections.                              | 1 Day               | P0.T1.4             | Polished UI.                                                                  |
+|                                          | P0.T5.3 | Add graceful handling for cases where 3D data is unavailable for a known molecule, or molecule is not in the curated list. | 0.5 Day             | P0.T4.7             | Clear messaging for different states.                                         |
+|                                          | P0.T5.4 | Write a brief `README.md` for the GitHub repository.                                       | 0.5 Day             | P0.T1.2             | Project documentation.                                                        |
+| **Total Estimated Duration (Phase 0):**  |         |                                                                                            | **~3-6 Weeks***     |                     |                                                                               |
+
+*\* **Estimated Duration:** Assumes dedicated part-time effort (e.g., 5-10 hours/week). Actual time will vary. Tasks involving API integration and 3D graphics (P0.T4.x) can be particularly time-consuming due to unforeseen complexities and debugging.*
+
+**6. Milestones (Phase 0)**
+
+*   **M0.1 (End of Week 1-2):** Basic website structure live on GitHub Pages. Diatomic data acquisition plan and initial `diatomics.json` created. Core logic for random selection and stability check (without 3D) functional.
+*   **M0.2 (End of Week 2-4):** Three.js integrated. Able to fetch and parse structural data for *at least one* example diatomic. Basic rendering of an example molecule.
+*   **M0.3 (End of Week 3-6):** Full loop: Random selection -> stability check -> structural data fetch -> 3D rendering for knowns -> UI updates for all 4 sections. Thoroughly tested and basic styling applied. Project ready for Phase 0 review.
+
+**7. Risk Management (Phase 0)**
+
+| Risk                                                            | Likelihood | Impact | Mitigation Strategy                                                                                                                               |
+| :-------------------------------------------------------------- | :--------- | :----- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Difficulty with `alphamole.ca` domain setup/DNS propagation.    | Low-Med    | Low    | Start with default GitHub Pages domain (`username.github.io/alphamole`). Resolve custom domain later if problematic.                                |
+| Python script for diatomic list generation is too complex/slow. | Medium     | Medium | Start with a smaller, manually curated `diatomics.json` for common elements. The script is "optional" for core functionality if manual curation is feasible for initial scope. |
+| Public APIs (PubChem, NCI/CADD) change, are unreliable, or rate limit. | Medium     | High   | Have backup API options in mind if possible. Implement robust error handling and user feedback. For `diatomics.json`, it's generated once, so less ongoing risk. NCI/CADD is more critical. |
+| Parsing SDF/PDB files in JavaScript is too difficult.         | High       | High   | Start with very simple SDF structures. Look for existing JS libraries for SDF/PDB parsing if available (e.g., `ngl.js` has parsers, though integrating full NGL might be overkill). Focus on extracting only coordinates and atom types for diatomics. Simplify scope if needed. |
+| Three.js integration and custom molecule rendering is complex.  | High       | High   | Follow Three.js examples closely. Break down rendering into small steps (scene, camera, single sphere, two spheres, bond). Seek help/tutorials.    |
+| Overall project scope for Phase 0 is too ambitious for timeline. | Medium     | High   | Prioritize: 1) Static site with random pair & stability check (from JSON). 2) 3D rendering of ONE hardcoded example. 3) API integration for 3D data. Scale back 3D features or number of elements if necessary. |
+
+**8. Communication Plan (Phase 0)**
+
+*   Regular check-ins with mentor (if applicable), e.g., weekly.
+*   Use GitHub Issues for tracking bugs and tasks.
+*   Maintain a developer log/journal of progress, challenges, and solutions.
+
+---
+
+This detailed plan should guide the student through the development of Phase 0. The emphasis on breaking down complex tasks, especially around API interaction and 3D graphics, is crucial. Good luck!

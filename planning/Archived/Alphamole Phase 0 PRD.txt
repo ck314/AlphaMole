@@ -1,0 +1,138 @@
+Okay, this "Phase 0" is an ambitious and exciting foundation for the AlphaMole project! It focuses heavily on the front-end presentation, data acquisition, and 3D visualization, setting the stage for later ML integration.
+
+Here's a Product Requirements Document (PRD) specifically for this "Phase 0: AlphaMole Web Showcase."
+
+---
+
+**Product Requirements Document: AlphaMole Web Showcase (Phase 0)**
+
+**Version:** 0.1
+**Date:** October 26, 2023
+**Author:** AI Assistant (based on user request)
+**Status:** Draft
+
+**1. Introduction**
+
+*   **1.1 Purpose:** This document outlines the requirements for "Phase 0: AlphaMole Web Showcase," the initial public-facing component of the AlphaMole project. This phase focuses on establishing the project's web presence, demonstrating basic chemical compound information retrieval, and showcasing 3D molecular visualization capabilities.
+*   **1.2 Project Goal (Phase 0):** To create an engaging and informative web application that allows users to view random diatomic (2-atom) combinations, identify known stable diatomic molecules from this random selection, and visualize these molecules in 3D. This phase serves as a proof-of-concept for data handling and visualization, and establishes the brand and platform for future machine learning developments.
+*   **1.3 Target Audience (Phase 0):** General public interested in science and chemistry, potential future users of the full AlphaMole project (including students and educators).
+
+**2. Goals (Phase 0)**
+
+*   **2.1 Functional Goals:**
+    *   Establish a live website at `alphamole.ca` (or a suitable staging domain).
+    *   Display randomly selected pairs of atoms.
+    *   Indicate whether a known stable diatomic molecule exists for the displayed pair.
+    *   Retrieve and display the 3D structure of known diatomic molecules.
+    *   Provide basic navigation (e.g., a "Next" button to get a new random pair).
+*   **2.2 Technical Goals:**
+    *   Build a static or client-side rendered website using HTML, CSS, and JavaScript.
+    *   Integrate with GitHub Pages for hosting.
+    *   Develop or utilize an API/script to fetch a comprehensive list of known diatomic molecules from a public, free database.
+    *   Store this list of known diatomics in an accessible data store (e.g., JSON file, simple cloud database).
+    *   Implement 3D molecular visualization using Three.js, adapting existing examples.
+    *   Utilize a public API (e.g., NCI/CADD Chemical Identifier Resolver) to fetch structural data (like PDB/SDF files) for 3D rendering.
+*   **2.3 User Experience (UX) Goals:**
+    *   Provide a clean, visually appealing, and intuitive user interface.
+    *   Ensure the 3D visualization is clear and interactive (e.g., rotatable).
+    *   Make information (compound name, stability, 3D model) easily digestible.
+
+**3. Scope (Phase 0)**
+
+*   **3.1 In Scope:**
+    *   **Website Foundation:**
+        *   Domain name: `alphamole.ca` (or suitable temporary/staging domain).
+        *   Basic HTML, CSS, JavaScript structure for the landing page/application.
+        *   Deployment via GitHub Pages.
+    *   **Core Diatomic Interaction:**
+        *   Randomly select two atoms from a predefined list (e.g., H, C, N, O, F, Cl, Br, I, Na, K, etc. - define a manageable set).
+        *   Display the chosen atoms textually (e.g., "H and O").
+        *   Form a potential diatomic formula (e.g., HO, H2, O2 - need rules for this, or just check permutations like AB and A2).
+    *   **Diatomic Database & Lookup:**
+        *   **API/Script for Data Acquisition:** Create a one-time or periodically run script to pull all known, stable diatomic molecules (involving the predefined element list) from a public, free database (e.g., PubChem, NIST Chemistry WebBook). *Focus is on formulas of stable species.*
+        *   **Data Storage:** Store the collected list of valid diatomic formulas (e.g., "H2", "CO", "NaCl") in a simple, accessible format (e.g., a JSON file hosted with the site, or a simple database like Replit DB, Firebase Realtime DB - free tier).
+        *   **Lookup:** When a random pair is generated, check against this stored list to determine if it forms a known stable diatomic.
+    *   **3D Visualization:**
+        *   Adapt the Three.js CSS3D Molecules example (or similar WebGL-based example).
+        *   Use standard atom color schemes (e.g., CPK colors: Carbon-black/grey, Hydrogen-white, Oxygen-red, Nitrogen-blue).
+        *   For *known stable diatomics*, fetch structural data (e.g., PDB or SDF format) using a public API (like NCI/CADD Chemical Identifier Resolver: `cactus.nci.nih.gov/chemical/structure/{identifier}/sdf`).
+        *   Render the 3D structure of the diatomic molecule using the fetched data.
+    *   **User Interface (UI) Layout:**
+        *   **Section A:** App Name ("AlphaMole").
+        *   **Section B:** Compound Name/Formula (e.g., "Hydrogen Oxide (HO)" or "Carbon Monoxide (CO)").
+        *   **Section C:** 3D representation of the molecule (if known and data available).
+        *   **Section D:** Indicator of known stability (e.g., a checkmark for known stable, an 'X' or specific message for unknown/not stable based on the curated list).
+        *   A "Next" button to generate a new random pair.
+*   **3.2 Out of Scope (for Phase 0):**
+    *   User accounts or login functionality.
+    *   Machine learning model integration or prediction.
+    *   Handling polyatomic molecules (more than 2 atoms) in the primary interaction loop.
+    *   Complex chemical property calculations beyond basic formula lookup.
+    *   Dynamic generation of 3D structures for *hypothetical* or non-existent molecules. Visualization is only for known molecules with available structural data.
+    *   Server-side backend beyond simple data file hosting or basic serverless functions for API proxying if absolutely necessary (aim for client-side rendering primarily).
+    *   Advanced 3D interactions beyond rotation/zoom (e.g., measurements, editing).
+    *   Comprehensive error handling for all edge cases in API calls (basic handling is expected).
+    *   Mobile-first responsive design (desktop experience is the priority, though basic responsiveness is a plus).
+
+**4. Functional Requirements (FR) (Phase 0)**
+
+*   **FR0.1: Website Setup:** The website `alphamole.ca` (or staging) must be live and accessible, hosted via GitHub Pages.
+*   **FR0.2: Random Atom Pair Generation:** The system must randomly select two atoms from a predefined list of elements upon user action (e.g., page load, "Next" button click). The system should consider forming both `AB` and `A2`/`B2` type formulas from the selected atoms.
+*   **FR0.3: Diatomic Database Creation:** A one-time script/process must be created to query a public chemical database (e.g., PubChem) for all known stable diatomic molecules formed from the predefined list of elements.
+*   **FR0.4: Diatomic Database Storage:** The curated list of known diatomic formulas from FR0.3 must be stored in a client-accessible format (e.g., JSON file deployed with the site, or a simple free-tier cloud database).
+*   **FR0.5: Stability Lookup:** When a potential diatomic formula is generated (from FR0.2), the system must check its presence in the stored database (FR0.4).
+*   **FR0.6: Structural Data Retrieval:** For known stable diatomic molecules (identified via FR0.5), the system must attempt to retrieve structural data (e.g., SDF/PDB file or coordinates) from a public API (e.g., NCI/CADD using the formula or name as an identifier).
+*   **FR0.7: 3D Molecule Rendering:**
+    *   The system must use Three.js (or equivalent) to render a 3D representation of the diatomic molecule if structural data is successfully retrieved (FR0.6).
+    *   The rendering must use standard CPK-like atomic coloring.
+    *   The 3D model should be interactive (e.g., rotatable via mouse drag).
+*   **FR0.8: UI Display - App Name:** The text "AlphaMole" must be prominently displayed (Section A).
+*   **FR0.9: UI Display - Compound Information:** The system must display the generated diatomic formula (e.g., "CO", "H2") and, if available from the structural data API, a common name (Section B).
+*   **FR0.10: UI Display - 3D Viewport:** A dedicated area must display the 3D rendered molecule (Section C). If a molecule is not known/stable or 3D data is unavailable, this area might show a placeholder or be hidden.
+*   **FR0.11: UI Display - Stability Indicator:** The system must display a visual cue (e.g., checkmark for known/stable, 'X' for unknown/not in curated list) based on the lookup result (FR0.5) (Section D).
+*   **FR0.12: Navigation - Next Button:** A "Next" button must be present, which, when clicked, triggers FR0.2 and subsequent display updates.
+*   **FR0.13 (Placeholder):** For atom combinations not found in the curated diatomic database OR for which 3D structural data cannot be retrieved, the UI must gracefully handle this (e.g., display "Molecule not found in our current diatomic set" or "3D data unavailable" in relevant sections).
+
+**5. Non-Functional Requirements (NFR) (Phase 0)**
+
+*   **NFR0.1: Usability:** The website should be simple to understand and use. The "Next" button functionality should be obvious.
+*   **NFR0.2: Performance:** Page load time should be reasonable. 3D rendering should be relatively smooth on modern desktop browsers. API calls should have timeouts to prevent indefinite hanging.
+*   **NFR0.3: Visual Appeal:** The website should have a clean, modern, and scientifically appropriate aesthetic.
+*   **NFR0.4: Maintainability:** Code (HTML, CSS, JS) should be well-organized and commented, especially the Three.js integration and API interaction parts.
+*   **NFR0.5: Browser Compatibility:** Should function correctly on recent versions of major desktop browsers (Chrome, Firefox, Edge, Safari).
+*   **NFR0.6: Data Accuracy (Curated List):** The curated list of known diatomics should be reasonably accurate, derived from reputable sources. The limitations of this curated list should be understood.
+
+**6. Data Requirements (Phase 0)**
+
+*   **DR0.1: Predefined Element List:** A list of chemical elements to be used for random pair generation (e.g., first 20 elements, or common non-metals + alkali/alkaline earth metals).
+*   **DR0.2: Known Diatomic Molecules Database:** A list of molecular formulas for known stable diatomic species (e.g., "H2", "N2", "O2", "F2", "Cl2", "Br2", "I2", "CO", "NO", "CN", "HCl", "HF", "LiF", "NaCl", etc.) derived from a public chemical database.
+*   **DR0.3: Structural Data Format:** The system must be able to parse structural data from a common format like SDF or PDB to extract atomic coordinates and types for 3D rendering.
+
+**7. Technical Stack / Key Technologies (Phase 0)**
+
+*   **TR0.1: Frontend:** HTML5, CSS3, JavaScript (ES6+).
+*   **TR0.2: 3D Rendering:** Three.js library.
+*   **TR0.3: Hosting:** GitHub Pages.
+*   **TR0.4: Data Acquisition (Diatomics List):** Python script (using libraries like `requests`, `pubchempy`) run locally/manually, or a simple serverless function if dynamic updates are ever needed (out of scope for initial build).
+*   **TR0.5: Data Storage (Diatomics List):** JSON file hosted with the site, or a simple free-tier cloud DB like Replit DB or Firebase (if preferred over a static file).
+*   **TR0.6: API (Structural Data):** NCI/CADD Chemical Identifier Resolver (`cactus.nci.nih.gov`) or similar public API for fetching PDB/SDF files.
+*   **TR0.7: Version Control:** Git.
+
+**8. Success Metrics (Phase 0)**
+
+*   **SM0.1:** Website is live on GitHub Pages under the intended domain (or staging).
+*   **SM0.2:** Users can click "Next" to see different randomly generated diatomic combinations.
+*   **SM0.3:** Known stable diatomic molecules (from the curated list) are correctly identified with a positive indicator (checkmark) and non-listed combinations with a negative indicator (X).
+*   **SM0.4:** For identified known stable diatomics, a 3D molecular model is successfully fetched (if available via API) and rendered interactively.
+*   **SM0.5:** The four UI sections (A, B, C, D) are clearly displayed with the correct information.
+
+**9. Future Considerations (Beyond Phase 0)**
+
+*   Integration of ML models from subsequent project phases.
+*   Expansion to triatomic and larger molecules.
+*   More sophisticated 3D rendering features.
+*   User input for specific molecule requests.
+
+---
+
+This PRD should provide a solid foundation for developing Phase 0. It's ambitious, especially the 3D rendering and API integration parts, but very achievable and will result in a visually impressive starting point!

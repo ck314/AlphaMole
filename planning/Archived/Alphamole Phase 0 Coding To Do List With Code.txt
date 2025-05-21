@@ -1,0 +1,731 @@
+While achieving a **100% chance** of a working end result by following a to-do list to the letter is theoretically impossible in software development due to unforeseen issues, differing environments, API changes, and human error, I can provide an extremely detailed, step-by-step coding to-do list that gets as close as possible to that ideal for "Phase 0: AlphaMole Web Showcase."
+
+This list assumes a competent engineer with knowledge of HTML, CSS, JavaScript, basic Git, and the ability to read documentation for libraries and APIs. It will be very prescriptive.
+
+---
+
+**Ultra-Detailed Coding To-Do List: AlphaMole Web Showcase (Phase 0)**
+
+**Goal:** To build a functional web application as per the Phase 0 PRD and Project Plan.
+
+**Initial Setup (Local Environment & GitHub)**
+
+1.  `[ ]` **Create Project Folder:**
+    *   On your local machine, create a new folder named `alphamole-phase0`.
+2.  `[ ]` **Initialize Git Repository:**
+    *   Open a terminal/command prompt.
+    *   Navigate into the `alphamole-phase0` folder: `cd path/to/alphamole-phase0`.
+    *   Initialize a Git repository: `git init`.
+3.  `[ ]` **Create GitHub Repository:**
+    *   Go to GitHub.com and create a new public repository named `alphamole` (or `alphamole-phase0`). Do *not* initialize it with a README, .gitignore, or license yet.
+4.  `[ ]` **Link Local to Remote Repository:**
+    *   In your terminal (still in `alphamole-phase0` folder):
+        *   `git remote add origin <URL_of_your_GitHub_repo.git>`
+        *   `git branch -M main`
+5.  `[ ]` **Create Core Files:**
+    *   Inside `alphamole-phase0`, create the following files:
+        *   `index.html`
+        *   `css/style.css` (create a `css` subfolder first)
+        *   `js/script.js` (create a `js` subfolder first)
+        *   `data/elements.json` (create a `data` subfolder first)
+        *   `data/diatomics.json`
+6.  `[ ]` **Define Initial Element List (`data/elements.json`):**
+    *   Open `data/elements.json` and add the following content (or your chosen initial list):
+        ```json
+        [
+            {"symbol": "H", "name": "Hydrogen", "atomic_number": 1, "color": "0xFFFFFF"},
+            {"symbol": "C", "name": "Carbon", "atomic_number": 6, "color": "0x303030"},
+            {"symbol": "N", "name": "Nitrogen", "atomic_number": 7, "color": "0x0000FF"},
+            {"symbol": "O", "name": "Oxygen", "atomic_number": 8, "color": "0xFF0000"},
+            {"symbol": "F", "name": "Fluorine", "atomic_number": 9, "color": "0x90E050"},
+            {"symbol": "Cl", "name": "Chlorine", "atomic_number": 17, "color": "0x1FF01F"},
+            {"symbol": "Na", "name": "Sodium", "atomic_number": 11, "color": "0xAB5CF2"}
+        ]
+        ```
+7.  `[ ]` **Create Initial Diatomics List (`data/diatomics.json`):**
+    *   Open `data/diatomics.json`. For now, put a few known stable diatomics. We will populate this more thoroughly later (manually or via script). *Ensure formulas are canonical (e.g., alphabetical if not H first, or standard convention like HCl).*
+        ```json
+        {
+            "H2": {"name": "Hydrogen", "isStable": true},
+            "O2": {"name": "Oxygen", "isStable": true},
+            "N2": {"name": "Nitrogen", "isStable": true},
+            "CO": {"name": "Carbon Monoxide", "isStable": true},
+            "HCl": {"name": "Hydrogen Chloride", "isStable": true},
+            "HF": {"name": "Hydrogen Fluoride", "isStable": true},
+            "F2": {"name": "Fluorine", "isStable": true},
+            "Cl2": {"name": "Chlorine", "isStable": true},
+            "NaCl": {"name": "Sodium Chloride", "isStable": true}
+        }
+        ```
+8.  `[ ]` **First Commit & Push:**
+    *   In your terminal:
+        *   `git add .`
+        *   `git commit -m "Initial project structure and data files"`
+        *   `git push -u origin main`
+9.  `[ ]` **Enable GitHub Pages:**
+    *   Go to your GitHub repository settings.
+    *   Navigate to the "Pages" section.
+    *   Under "Branch," select `main` and `/ (root)` folder, then click "Save."
+    *   Note the URL provided (e.g., `https://username.github.io/alphamole/`). It might take a few minutes to become active.
+
+**HTML Structure (`index.html`)**
+
+10. `[ ]` **Basic HTML Boilerplate:**
+    *   Open `index.html` and add:
+        ```html
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>AlphaMole</title>
+            <link rel="stylesheet" href="css/style.css">
+        </head>
+        <body>
+            <div class="container">
+                <!-- Section A: App Name -->
+                <header id="sectionA">
+                    <h1>AlphaMole</h1>
+                </header>
+
+                <!-- Section B: Compound Info -->
+                <section id="sectionB">
+                    <h2>Compound Information</h2>
+                    <p>Selected Atoms: <span id="selectedAtomsText">-</span></p>
+                    <p>Formula: <span id="formulaText">-</span></p>
+                    <p>Common Name: <span id="commonNameText">-</span></p>
+                </section>
+
+                <!-- Section C: 3D Representation -->
+                <section id="sectionC">
+                    <h2>3D Structure</h2>
+                    <div id="moleculeViewer"></div>
+                </section>
+
+                <!-- Section D: Stability Indicator -->
+                <section id="sectionD">
+                    <h2>Stability</h2>
+                    <p>Known Stable Molecule? <span id="stabilityIndicator">-</span></p>
+                </section>
+
+                <button id="nextButton">Next Molecule</button>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+            <!-- <script src="path/to/OrbitControls.js"></script> Optional: if downloaded separately -->
+            <script src="js/script.js"></script>
+        </body>
+        </html>
+        ```
+11. `[ ]` **Commit HTML Structure:**
+    *   `git add index.html`
+    *   `git commit -m "Add basic HTML structure for AlphaMole UI sections"`
+    *   `git push`
+
+**CSS Styling (`css/style.css`)**
+
+12. `[ ]` **Basic Styling:**
+    *   Open `css/style.css` and add some basic styling for layout and readability:
+        ```css
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 900px;
+        }
+        header#sectionA h1 {
+            text-align: center;
+            color: #2a628f; /* A nice blue */
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #moleculeViewer {
+            width: 100%;
+            height: 400px; /* Adjust as needed */
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            position: relative; /* For potential overlays or controls */
+        }
+        #stabilityIndicator {
+            font-weight: bold;
+        }
+        .stable { color: green; }
+        .unstable { color: red; }
+        button#nextButton {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            padding: 10px 15px;
+            background-color: #2a628f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button#nextButton:hover {
+            background-color: #1e4a75;
+        }
+        ```
+13. `[ ]` **Commit CSS:**
+    *   `git add css/style.css`
+    *   `git commit -m "Add basic CSS styling for layout"`
+    *   `git push`
+    *   Check your GitHub Pages site to see the basic layout.
+
+**JavaScript Logic (`js/script.js`) - Part 1: Core Data & UI Updates**
+
+14. `[ ]` **DOM Element References & Initial Data Loading:**
+    *   Open `js/script.js`. At the top, add:
+        ```javascript
+        // DOM Elements
+        const selectedAtomsTextElem = document.getElementById('selectedAtomsText');
+        const formulaTextElem = document.getElementById('formulaText');
+        const commonNameTextElem = document.getElementById('commonNameText');
+        const stabilityIndicatorElem = document.getElementById('stabilityIndicator');
+        const nextButton = document.getElementById('nextButton');
+        const moleculeViewerElem = document.getElementById('moleculeViewer');
+
+        let elementsList = [];
+        let diatomicsData = {};
+
+        // --- Load Initial Data ---
+        async function loadData() {
+            try {
+                const elementsResponse = await fetch('../data/elements.json'); // Relative to js/script.js
+                elementsList = await elementsResponse.json();
+
+                const diatomicsResponse = await fetch('../data/diatomics.json');
+                diatomicsData = await diatomicsResponse.json();
+
+                console.log("Data loaded successfully:", elementsList, diatomicsData);
+                // Initial molecule display on load
+                displayNewMolecule();
+            } catch (error) {
+                console.error("Failed to load data:", error);
+                selectedAtomsTextElem.textContent = "Error loading data.";
+            }
+        }
+        ```
+15. `[ ]` **Random Atom Selection & Formula Generation:**
+    *   Add these functions to `js/script.js`:
+        ```javascript
+        function getRandomElement() {
+            if (elementsList.length === 0) return null;
+            const randomIndex = Math.floor(Math.random() * elementsList.length);
+            return elementsList[randomIndex];
+        }
+
+        function generateDiatomicInfo() {
+            const atom1 = getRandomElement();
+            const atom2 = getRandomElement();
+
+            if (!atom1 || !atom2) {
+                return {
+                    atom1: null, atom2: null,
+                    selectedAtomsText: "N/A",
+                    formulas: [],
+                    displayFormula: "N/A"
+                };
+            }
+
+            const selectedAtomsDisplay = `${atom1.name} (${atom1.symbol}) and ${atom2.name} (${atom2.symbol})`;
+
+            // Generate potential formulas (A2, B2, AB)
+            // Ensure canonical order for AB type (e.g., alphabetical, or H first)
+            let formulasToTest = [];
+            let displayFormula = "N/A";
+
+            // For simplicity, let's try atom1-atom2 and atom2-atom1 if different, and atom1-atom1
+            // A more robust approach considers standard chemical formula conventions.
+            // Here, we prioritize the combination of the two *distinct* atoms if they are different.
+            // If they are the same, it's A2.
+
+            let f1_sym = atom1.symbol;
+            let f2_sym = atom2.symbol;
+
+            if (f1_sym === f2_sym) { // A2 type
+                displayFormula = `${f1_sym}2`;
+                formulasToTest.push(displayFormula);
+            } else { // AB type - try both orders, or canonical one
+                // Simple canonical: alphabetical, unless one is H, then H first
+                let formulaCandidate1, formulaCandidate2;
+                if (f1_sym === 'H') {
+                    formulaCandidate1 = f1_sym + f2_sym;
+                } else if (f2_sym === 'H') {
+                    formulaCandidate1 = f2_sym + f1_sym;
+                } else {
+                    formulaCandidate1 = [f1_sym, f2_sym].sort().join('');
+                }
+                formulasToTest.push(formulaCandidate1);
+                // For display, we'll use the first one found, or the canonical one
+                displayFormula = formulaCandidate1;
+            }
+
+
+            return {
+                atom1: atom1,
+                atom2: atom2,
+                selectedAtomsText: selectedAtomsDisplay,
+                formulas: formulasToTest, // List of formulas to check in diatomicsData
+                displayFormula: displayFormula // The primary formula string to display
+            };
+        }
+        ```
+16. `[ ]` **Stability Check & UI Update Logic:**
+    *   Add these functions to `js/script.js`:
+        ```javascript
+        function checkStabilityAndDisplay(diatomicInfo) {
+            selectedAtomsTextElem.textContent = diatomicInfo.selectedAtomsText;
+            formulaTextElem.textContent = "N/A"; // Default
+            commonNameTextElem.textContent = "N/A"; // Default
+            stabilityIndicatorElem.textContent = "Unknown";
+            stabilityIndicatorElem.className = "";
+            moleculeViewerElem.innerHTML = ""; // Clear previous 3D view
+
+            let foundStableMolecule = null;
+
+            for (const formula of diatomicInfo.formulas) {
+                if (diatomicsData[formula] && diatomicsData[formula].isStable) {
+                    foundStableMolecule = {
+                        formula: formula,
+                        name: diatomicsData[formula].name || formula, // Use formula if name not present
+                        ...diatomicsData[formula]
+                    };
+                    break; // Found a stable one
+                }
+            }
+
+            if (foundStableMolecule) {
+                formulaTextElem.textContent = foundStableMolecule.formula;
+                commonNameTextElem.textContent = foundStableMolecule.name;
+                stabilityIndicatorElem.textContent = "✔️ Yes";
+                stabilityIndicatorElem.className = "stable";
+                // Call 3D rendering function here later
+                initAndRenderMolecule(foundStableMolecule.formula); // Placeholder for 3D
+            } else {
+                // If no specific stable formula found from generated candidates, display the primary one
+                formulaTextElem.textContent = diatomicInfo.displayFormula;
+                stabilityIndicatorElem.textContent = "❌ No (in our dataset)";
+                stabilityIndicatorElem.className = "unstable";
+                moleculeViewerElem.innerHTML = "<p>No 3D model available.</p>";
+            }
+        }
+
+        function displayNewMolecule() {
+            const diatomicInfo = generateDiatomicInfo();
+            if (diatomicInfo.atom1) { // Check if elements were successfully fetched
+                checkStabilityAndDisplay(diatomicInfo);
+            }
+        }
+        ```
+17. `[ ]` **Event Listener & Initial Call:**
+    *   Add this to the end of `js/script.js`:
+        ```javascript
+        // --- Event Listeners ---
+        nextButton.addEventListener('click', displayNewMolecule);
+
+        // --- Initialize ---
+        loadData(); // Load data and display first molecule on page load
+        ```
+18. `[ ]` **Commit JavaScript (Part 1):**
+    *   `git add js/script.js data/elements.json data/diatomics.json`
+    *   `git commit -m "Implement core JS logic for random atom selection, stability check, and basic UI updates"`
+    *   `git push`
+    *   Test on GitHub Pages. You should see random atom pairs, formulas, and stability indicators. 3D view will be empty or show placeholder.
+
+**JavaScript Logic (`js/script.js`) - Part 2: Three.js Integration**
+
+19. `[ ]` **Three.js Scene Setup Globals:**
+    *   At the top of `js/script.js`, under DOM elements, add:
+        ```javascript
+        // Three.js specific globals
+        let scene, camera, renderer, controls; // controls will be for OrbitControls
+        const atomRadius = 0.6; // Example radius
+        const bondRadius = 0.1; // Example bond radius
+        ```
+20. `[ ]` **Initialize Three.js Scene Function:**
+    *   Add this function to `js/script.js`:
+        ```javascript
+        function initThreeScene() {
+            // Scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xeeeeee);
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(75, moleculeViewerElem.clientWidth / moleculeViewerElem.clientHeight, 0.1, 1000);
+            camera.position.z = 5; // Adjust as needed
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(moleculeViewerElem.clientWidth, moleculeViewerElem.clientHeight);
+            moleculeViewerElem.appendChild(renderer.domElement);
+
+            // Lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(5, 5, 5);
+            scene.add(directionalLight);
+
+            // OrbitControls (Optional but highly recommended)
+            // You'll need to include OrbitControls.js or use a module version
+            // For CDN version, ensure it's compatible with r128 or adjust
+            // If you downloaded OrbitControls.js:
+            // controls = new THREE.OrbitControls(camera, renderer.domElement);
+            // controls.enableDamping = true;
+            // controls.dampingFactor = 0.25;
+            // controls.screenSpacePanning = false;
+
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                // if (controls) controls.update(); // If using OrbitControls
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                camera.aspect = moleculeViewerElem.clientWidth / moleculeViewerElem.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(moleculeViewerElem.clientWidth, moleculeViewerElem.clientHeight);
+            }, false);
+        }
+        ```
+21. `[ ]` **Placeholder `initAndRenderMolecule` Function:**
+    *   Modify the placeholder `initAndRenderMolecule` function:
+        ```javascript
+        async function initAndRenderMolecule(formula) {
+            // Clear previous molecule from scene if any
+            while(scene && scene.children.length > 0){
+                scene.remove(scene.children[0]);
+            }
+            // Re-add lights as they might be removed if they were children of a group
+            if (scene) {
+                 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+                 scene.add(ambientLight);
+                 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+                 directionalLight.position.set(5, 5, 5);
+                 scene.add(directionalLight);
+            }
+
+
+            console.log(`Attempting to render 3D for: ${formula}`);
+            // TODO: Fetch SDF/PDB, parse, and render
+            // For now, let's just draw two spheres as a placeholder if it's, for example, CO
+            if (formula === "CO") {
+                drawPlaceholderDiatomic();
+            } else {
+                moleculeViewerElem.innerHTML = "<p>3D rendering for this specific molecule not yet implemented or data unavailable.</p>";
+            }
+        }
+
+        function drawPlaceholderDiatomic() {
+            if (!scene) return; // Scene not initialized
+
+            const elementC = elementsList.find(el => el.symbol === 'C');
+            const elementO = elementsList.find(el => el.symbol === 'O');
+
+            if (!elementC || !elementO) return;
+
+            // Atom 1 (Carbon)
+            const geometry1 = new THREE.SphereGeometry(atomRadius, 32, 32);
+            const material1 = new THREE.MeshStandardMaterial({ color: parseInt(elementC.color) });
+            const sphere1 = new THREE.Mesh(geometry1, material1);
+            sphere1.position.x = -0.7; // Example position
+            scene.add(sphere1);
+
+            // Atom 2 (Oxygen)
+            const geometry2 = new THREE.SphereGeometry(atomRadius, 32, 32);
+            const material2 = new THREE.MeshStandardMaterial({ color: parseInt(elementO.color) });
+            const sphere2 = new THREE.Mesh(geometry2, material2);
+            sphere2.position.x = 0.7; // Example position
+            scene.add(sphere2);
+
+            // Bond (Cylinder) - simplified
+            const bondMaterial = new THREE.MeshStandardMaterial({ color: 0x505050 });
+            const bondGeometry = new THREE.CylinderGeometry(bondRadius, bondRadius, 1.4, 8);
+            const bond = new THREE.Mesh(bondGeometry, bondMaterial);
+            bond.rotation.z = Math.PI / 2; // Rotate to be horizontal
+            // Position will be at the midpoint, but it's centered by default
+            scene.add(bond);
+        }
+        ```
+22. `[ ]` **Call `initThreeScene`:**
+    *   In the `loadData` function, *after* data is successfully loaded and *before* `displayNewMolecule()` is called for the first time, initialize the Three.js scene:
+        ```javascript
+        // --- Load Initial Data ---
+        async function loadData() {
+            try {
+                // ... (fetch elements and diatomics) ...
+                console.log("Data loaded successfully:", elementsList, diatomicsData);
+
+                initThreeScene(); // Initialize Three.js scene once
+
+                displayNewMolecule(); // Initial molecule display on load
+            } catch (error) {
+                // ... (error handling) ...
+            }
+        }
+        ```
+23. `[ ]` **Commit JavaScript (Three.js Setup):**
+    *   `git add js/script.js`
+    *   `git commit -m "Integrate Three.js, setup basic scene, and add placeholder diatomic rendering"`
+    *   `git push`
+    *   Test. If you get "CO", you should see two spheres and a cylinder. Other known molecules will show the "not yet implemented" message.
+
+**JavaScript Logic (`js/script.js`) - Part 3: Fetching & Parsing SDF (NCI Cactus)**
+
+24. `[ ]` **SDF Fetch Function:**
+    *   Add this function to `js/script.js`:
+        ```javascript
+        async function fetchSDF(identifier) {
+            // Using NCI Cactus Resolver: identifier can be name, SMILES, formula (less reliable for specific isomers)
+            // For diatomics, formula should be specific enough.
+            const url = `https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(identifier)}/sdf`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    console.error(`Failed to fetch SDF for ${identifier}: ${response.status}`);
+                    return null;
+                }
+                const sdfData = await response.text();
+                return sdfData;
+            } catch (error) {
+                console.error(`Error fetching SDF for ${identifier}:`, error);
+                return null;
+            }
+        }
+        ```
+25. `[ ]` **Simple SDF Parser Function:**
+    *   Add this *very basic* SDF parser to `js/script.js`. This parser is simplified and assumes a V2000 SDF format for diatomics.
+        ```javascript
+        function parseSDFForDiatomic(sdfData) {
+            const atoms = [];
+            const lines = sdfData.split('\n');
+
+            // Find the counts line (usually 4th line in V2000 format)
+            // Example: "  2  1  0  0  0  0  0  0  0  0999 V2000"
+            // The first number is atom count, second is bond count.
+            let atomCount = 0;
+            let bondCount = 0; // We might not use bond info directly for simple diatomics
+            let atomLinesStart = -1;
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (line.endsWith("V2000")) { // Found the counts line
+                    const parts = line.split(/\s+/);
+                    if (parts.length > 2) {
+                        atomCount = parseInt(parts[0]);
+                        bondCount = parseInt(parts[1]);
+                        atomLinesStart = i + 1;
+                        break;
+                    }
+                }
+            }
+
+            if (atomCount === 0 || atomLinesStart === -1) {
+                console.error("Could not parse atom count from SDF or malformed SDF.");
+                return null;
+            }
+
+            // Read atom lines
+            for (let i = 0; i < atomCount; i++) {
+                const atomLineIndex = atomLinesStart + i;
+                if (atomLineIndex >= lines.length) break;
+
+                const line = lines[atomLineIndex].trim();
+                // Example: "   -0.6235    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0"
+                // Parts: x, y, z, symbol, ...
+                const parts = line.split(/\s+/);
+                if (parts.length >= 4) {
+                    atoms.push({
+                        x: parseFloat(parts[0]),
+                        y: parseFloat(parts[1]),
+                        z: parseFloat(parts[2]),
+                        symbol: parts[3]
+                    });
+                }
+            }
+
+            if (atoms.length !== 2 && atomCount === 2) { // Expecting 2 atoms for diatomic
+                console.warn(`Expected 2 atoms for diatomic, but parsed ${atoms.length} from SDF.`);
+                 // Return null if not exactly 2, or handle as desired
+                if (atoms.length < 2) return null;
+            }
+             if (atoms.length === 0) return null;
+
+
+            return atoms; // Returns an array of atom objects {x, y, z, symbol}
+        }
+        ```
+26. `[ ]` **Update `initAndRenderMolecule` to use Fetch & Parse:**
+    *   Modify `initAndRenderMolecule` in `js/script.js`:
+        ```javascript
+        async function initAndRenderMolecule(formula) {
+            // Clear previous molecule
+            while(scene.children.length > 0){
+                const child = scene.children[0];
+                scene.remove(child);
+                if (child.geometry) child.geometry.dispose();
+                if (child.material) {
+                    if (Array.isArray(child.material)) {
+                        child.material.forEach(m => m.dispose());
+                    } else {
+                        child.material.dispose();
+                    }
+                }
+            }
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Re-add lights
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(5, 5, 5);
+            scene.add(directionalLight);
+
+            console.log(`Fetching SDF for: ${formula}`);
+            const sdfData = await fetchSDF(formula);
+
+            if (!sdfData) {
+                moleculeViewerElem.innerHTML = "<p>Could not fetch 3D data (SDF).</p>";
+                return;
+            }
+
+            const parsedAtoms = parseSDFForDiatomic(sdfData);
+
+            if (!parsedAtoms || parsedAtoms.length < 2) { // Ensure we have at least two atoms for a bond
+                moleculeViewerElem.innerHTML = "<p>Could not parse 3D data or not enough atoms found.</p>";
+                console.error("Parsed atoms error or not enough atoms:", parsedAtoms);
+                return;
+            }
+
+            // Center the molecule approximately
+            let centerX = 0, centerY = 0, centerZ = 0;
+            if (parsedAtoms.length >= 2) {
+                 centerX = (parsedAtoms[0].x + parsedAtoms[1].x) / 2;
+                 centerY = (parsedAtoms[0].y + parsedAtoms[1].y) / 2;
+                 centerZ = (parsedAtoms[0].z + parsedAtoms[1].z) / 2;
+            } else if (parsedAtoms.length === 1) { // Should not happen for diatomics from SDF usually
+                 centerX = parsedAtoms[0].x;
+                 centerY = parsedAtoms[0].y;
+                 centerZ = parsedAtoms[0].z;
+            }
+
+
+            // Render atoms
+            parsedAtoms.forEach(atomData => {
+                const elementInfo = elementsList.find(el => el.symbol.toUpperCase() === atomData.symbol.toUpperCase());
+                const color = elementInfo ? parseInt(elementInfo.color) : 0x808080; // Default grey
+
+                const geometry = new THREE.SphereGeometry(atomRadius, 32, 32);
+                const material = new THREE.MeshStandardMaterial({ color: color });
+                const sphere = new THREE.Mesh(geometry, material);
+                sphere.position.set(atomData.x - centerX, atomData.y - centerY, atomData.z - centerZ);
+                scene.add(sphere);
+            });
+
+            // Render bond (if two atoms are present)
+            if (parsedAtoms.length >= 2) {
+                const atom1Pos = new THREE.Vector3(parsedAtoms[0].x - centerX, parsedAtoms[0].y - centerY, parsedAtoms[0].z - centerZ);
+                const atom2Pos = new THREE.Vector3(parsedAtoms[1].x - centerX, parsedAtoms[1].y - centerY, parsedAtoms[1].z - centerZ);
+
+                const distance = atom1Pos.distanceTo(atom2Pos);
+                if (distance > 0.01) { // Only draw bond if atoms are not coincident
+                    const bondMaterial = new THREE.MeshStandardMaterial({ color: 0x555555 }); // Dark grey bond
+                    // CylinderGeometry: radiusTop, radiusBottom, height, radialSegments
+                    const bondGeometry = new THREE.CylinderGeometry(bondRadius, bondRadius, distance, 8);
+                    const bond = new THREE.Mesh(bondGeometry, bondMaterial);
+
+                    // Position and orient the bond
+                    bond.position.copy(atom1Pos).lerp(atom2Pos, 0.5); // Midpoint
+                    bond.lookAt(atom2Pos); // Make it look towards atom2
+                    bond.rotateX(Math.PI / 2); // Align cylinder axis with the direction vector
+
+                    scene.add(bond);
+                }
+            }
+            // Ensure moleculeViewerElem is empty if using canvas
+            moleculeViewerElem.innerHTML = "";
+            moleculeViewerElem.appendChild(renderer.domElement); // Re-append if cleared
+        }
+        ```
+27. `[ ]` **Add OrbitControls (Optional but Recommended):**
+    *   **Download `OrbitControls.js`:** Go to the Three.js GitHub repository (`examples/jsm/controls/OrbitControls.js` for module version, or find a non-module version for r128 if using global `THREE`). Place it in your `js/` folder.
+    *   **Include in `index.html`:**
+        ```html
+        <!-- After three.min.js -->
+        <script src="js/OrbitControls.js"></script>
+        ```
+    *   **Uncomment and use in `initThreeScene`:**
+        ```javascript
+        // ... in initThreeScene ...
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.1; // Adjust for smoother damping
+        controls.screenSpacePanning = false;
+        // ...
+        // in animate loop ...
+        if (controls) controls.update();
+        ```
+28. `[ ]` **Commit JavaScript (SDF Fetch & Parse, 3D Rendering):**
+    *   `git add js/script.js`
+    *   If you added `OrbitControls.js`: `git add js/OrbitControls.js`
+    *   `git commit -m "Implement SDF fetching from NCI Cactus, basic SDF parsing, and dynamic 3D rendering of diatomics"`
+    *   `git push`
+
+**Final Testing & Refinement**
+
+29. `[ ]` **Thorough Testing:**
+    *   Open your GitHub Pages site.
+    *   Click "Next Molecule" many times.
+    *   Verify:
+        *   Random atom pairs are shown.
+        *   Correct formulas are displayed.
+        *   Correct stability indication (✔️/❌) based on your `diatomics.json`.
+        *   For molecules in `diatomics.json` (like "CO", "HCl", "N2", "O2"):
+            *   SDF data is attempted to be fetched.
+            *   3D model is rendered correctly (two spheres, one bond).
+            *   Atom colors match `elements.json`.
+            *   Model is rotatable with mouse (if OrbitControls added).
+        *   For combinations not in `diatomics.json` or for which SDF fails, appropriate messages are shown.
+        *   Console has no critical errors (some warnings or 404s from Cactus for non-existent formulas are expected).
+30. `[ ]` **(If necessary) Populate `diatomics.json` More Thoroughly:**
+    *   Manually add more known stable diatomics from your `elementsList` to `data/diatomics.json` to have more test cases for 3D rendering.
+    *   Commit and push any changes to `data/diatomics.json`.
+31. `[ ]` **(If necessary) Refine SDF Parser:**
+    *   The provided SDF parser is *very basic*. If you encounter issues with specific SDF files from NCI Cactus, you may need to make it more robust (e.g., handle different V2000/V3000 formats, more atom properties). This can be a deep dive.
+32. `[ ]` **(If necessary) Refine CSS and UI Messages:**
+    *   Make any final tweaks to `css/style.css` for better appearance.
+    *   Improve user messages for different states (loading, error, data not found).
+33. `[ ]` **Create/Update `README.md`:**
+    *   Add a `README.md` file to the root of your project.
+    *   Explain what the project is, how to set it up (if someone were to clone it), and link to the live GitHub Pages site.
+34. `[ ]` **Final Commit & Push:**
+    *   `git add .`
+    *   `git commit -m "Phase 0: AlphaMole Web Showcase complete. Final testing and refinements."`
+    *   `git push`
+
+---
+
+This ultra-detailed list provides a strong path. The main areas where an engineer might still hit snags are:
+*   **API Unpredictability:** NCI Cactus might change, rate limit, or not have data for certain simple formulas.
+*   **SDF Parsing Complexity:** Real-world SDF files can be more complex than the simple parser handles.
+*   **Three.js Nuances:** Specific version compatibility or more advanced rendering techniques.
+*   **Browser Quirks:** Minor differences in how browsers handle CSS or JavaScript.
+
+However, by following these steps carefully, debugging patiently, and consulting documentation, the desired outcome should be very closely achieved.

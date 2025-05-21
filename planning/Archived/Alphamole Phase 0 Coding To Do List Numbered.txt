@@ -1,0 +1,409 @@
+Numerically Labeled Coding To-Do List: AlphaMole Web Showcase (Phase 0)
+Goal: To build a functional web application as per the Phase 0 PRD and Project Plan by implementing the client-side code.
+Initial Setup (Local Environment & GitHub)
+1.0 Create Project Folder:
+1.1 On local machine, create a new folder named alphamole-phase0.
+2.0 Initialize Git Repository:
+2.1 Open a terminal/command prompt.
+2.2 Navigate into the alphamole-phase0 folder.
+2.3 Run git init.
+3.0 Create GitHub Repository:
+3.1 Go to GitHub.com.
+3.2 Create a new public repository named alphamole (or alphamole-phase0).
+3.3 Ensure it's initialized without a README, .gitignore, or license.
+4.0 Link Local to Remote Repository:
+4.1 In terminal, execute git remote add origin <URL_of_your_GitHub_repo.git>.
+4.2 In terminal, execute git branch -M main.
+5.0 Create Core File Structure:
+5.1 Inside alphamole-phase0, create index.html.
+5.2 Create subfolder css.
+5.3 Inside css, create style.css.
+5.4 Create subfolder js.
+5.5 Inside js, create script.js.
+5.6 Create subfolder data.
+5.7 Inside data, create elements.json.
+5.8 Inside data, create diatomics.json.
+6.0 Populate data/elements.json:
+6.1 Open data/elements.json.
+6.2 Add JSON array of element objects (symbol, name, atomic_number, color).
+7.0 Populate Initial data/diatomics.json:
+7.1 Open data/diatomics.json.
+7.2 Add JSON object mapping a few known stable diatomic formulas to their name and isStable: true.
+8.0 First Commit & Push:
+8.1 In terminal, execute git add ..
+8.2 In terminal, execute git commit -m "Initial project structure and data files".
+8.3 In terminal, execute git push -u origin main.
+9.0 Enable GitHub Pages:
+9.1 Go to GitHub repository settings.
+9.2 Navigate to the "Pages" section.
+9.3 Select main branch.
+9.4 Select / (root) folder for source.
+9.5 Click "Save".
+9.6 Note the provided GitHub Pages URL.
+HTML Structure (index.html)
+10.0 Add Basic HTML Boilerplate:
+10.1 Open index.html.
+10.2 Add <!DOCTYPE html>, <html>, <head>, <body> tags.
+10.3 Set lang="en".
+11.0 Configure <head>:
+11.1 Add <meta charset="UTF-8">.
+11.2 Add <meta name="viewport" content="width=device-width, initial-scale=1.0">.
+11.3 Add <title>AlphaMole</title>.
+11.4 Link to css/style.css using <link rel="stylesheet">.
+12.0 Create Main Container Div:
+12.1 Inside <body>, add <div class="container">.
+13.0 Create Section A (App Name):
+13.1 Inside .container, add <header id="sectionA">.
+13.2 Inside #sectionA, add <h1>AlphaMole</h1>.
+14.0 Create Section B (Compound Info):
+14.1 Inside .container, add <section id="sectionB">.
+14.2 Inside #sectionB, add <h2>Compound Information</h2>.
+14.3 Add <p>Selected Atoms: <span id="selectedAtomsText">-</span></p>.
+14.4 Add <p>Potential Formula: <span id="formulaText">-</span></p>.
+14.5 Add <p>Common Name: <span id="commonNameText">-</span></p>.
+15.0 Create Section C (3D Representation):
+15.1 Inside .container, add <section id="sectionC">.
+15.2 Inside #sectionC, add <h2>3D Structure</h2>.
+15.3 Add <div id="moleculeViewer"><p>Loading 3D viewer...</p></div>.
+16.0 Create Section D (Stability Indicator):
+16.1 Inside .container, add <section id="sectionD">.
+16.2 Inside #sectionD, add <h2>Known Diatomic?</h2>.
+16.3 Add <p><span id="stabilityIndicator">Checking...</span></p>.
+17.0 Create "Next Molecule" Button:
+17.1 Inside .container (after sections), add <button id="nextButton">Next Molecule</button>.
+18.0 Include JavaScript Files:
+18.1 Before closing </body>, add <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>.
+18.2 (Placeholder) Add comment for OrbitControls.js script tag.
+18.3 Add <script src="js/script.js"></script>.
+19.0 Commit HTML Structure:
+19.1 git add index.html.
+19.2 git commit -m "Add complete HTML structure for AlphaMole UI sections".
+19.3 git push.
+CSS Styling (css/style.css)
+20.0 Style body:
+20.1 Open css/style.css.
+20.2 Set font-family.
+20.3 Remove default margin.
+20.4 Add padding.
+20.5 Set background-color.
+20.6 Set default color.
+20.7 Use flexbox to center content (display: flex, justify-content: center, align-items: flex-start).
+20.8 Set min-height: 100vh.
+21.0 Style .container:
+21.1 Set background-color.
+21.2 Add padding.
+21.3 Add border-radius.
+21.4 Add box-shadow.
+21.5 Set width and max-width.
+22.0 Style Section A Header (header#sectionA h1):
+22.1 Center text.
+22.2 Set color.
+22.3 Set font-size.
+22.4 Set margin-bottom.
+22.5 Add letter-spacing.
+23.0 Style Generic section:
+23.1 Set margin-bottom.
+23.2 Add padding.
+23.3 Add border.
+23.4 Add border-radius.
+23.5 Set background-color.
+24.0 Style Section Headers (section h2):
+24.1 Remove top margin.
+24.2 Set color.
+24.3 Add border-bottom.
+24.4 Add padding-bottom.
+24.5 Set font-size.
+25.0 Style #moleculeViewer Div:
+25.1 Set width.
+25.2 Set height.
+25.3 Set background-color.
+25.4 Add border.
+25.5 Add border-radius.
+25.6 Set position: relative.
+25.7 Set cursor: grab.
+25.8 Style :active state with cursor: grabbing.
+26.0 Style Placeholder Text in #moleculeViewer (#moleculeViewer p):
+26.1 Set color.
+26.2 Center text.
+26.3 Add padding-top.
+26.4 Set font-style: italic.
+27.0 Style #stabilityIndicator Span:
+27.1 Set font-weight: bold.
+27.2 Set font-size.
+28.0 Style Stability Classes (.stable, .unstable, .unknown):
+28.1 Set color for .stable (green).
+28.2 Set color for .unstable (red).
+28.3 Set color for .unknown (grey).
+29.0 Style button#nextButton:
+29.1 Set display: block.
+29.2 Set width.
+29.3 Set margin.
+29.4 Add padding.
+29.5 Set background-color.
+29.6 Set color (text).
+29.7 Remove border.
+29.8 Add border-radius (pill shape).
+29.9 Set cursor: pointer.
+29.10 Set font-size.
+29.11 Set font-weight.
+29.12 Add transition for background-color and transform.
+29.13 Add box-shadow.
+30.0 Style button#nextButton:hover:
+30.1 Change background-color.
+31.0 Style button#nextButton:active:
+31.1 Apply transform: translateY().
+31.2 Adjust box-shadow.
+32.0 Style Generic Paragraphs (p):
+32.1 Set line-height.
+32.2 Set font-size.
+33.0 Style Spans within Section B & D Paragraphs:
+33.1 Set font-weight.
+33.2 Set color.
+34.0 Commit CSS:
+34.1 git add css/style.css.
+34.2 git commit -m "Add comprehensive CSS styling for UI layout and elements".
+34.3 git push.
+JavaScript Logic (js/script.js) - Part 1: Core Data & UI Updates
+35.0 Get DOM Element References:
+35.1 Open js/script.js.
+35.2 Get reference to selectedAtomsTextElem.
+35.3 Get reference to formulaTextElem.
+35.4 Get reference to commonNameTextElem.
+35.5 Get reference to stabilityIndicatorElem.
+35.6 Get reference to nextButton.
+35.7 Get reference to moleculeViewerElem.
+36.0 Declare Global Data Variables:
+36.1 Declare elementsList = [].
+36.2 Declare diatomicsData = {}.
+37.0 Implement loadData() Function:
+37.1 Define async function loadData().
+37.2 Inside try block:
+37.2.1 fetch('../data/elements.json').
+37.2.2 Check response.ok for elements fetch.
+37.2.3 elementsList = await elementsResponse.json().
+37.2.4 fetch('../data/diatomics.json').
+37.2.5 Check response.ok for diatomics fetch.
+37.2.6 diatomicsData = await diatomicsResponse.json().
+37.2.7 console.log success message with data lengths.
+37.2.8 Call initThreeScene() (will be defined later).
+37.2.9 Call displayNewMolecule().
+37.3 Inside catch (error) block:
+37.3.1 console.error the failure.
+37.3.2 Update UI to show data loading error.
+38.0 Implement getRandomElement() Function:
+38.1 Define function getRandomElement().
+38.2 Check if elementsList is empty; return null if so.
+38.3 Calculate randomIndex = Math.floor(Math.random() * elementsList.length).
+38.4 Return elementsList[randomIndex].
+39.0 Implement generateDiatomicInfo() Function:
+39.1 Define function generateDiatomicInfo().
+39.2 Call getRandomElement() to get atom1.
+39.3 Call getRandomElement() to get atom2.
+39.4 Handle !atom1 || !atom2 case by returning a default structure.
+39.5 Create selectedAtomsDisplay string.
+39.6 Initialize formulasToTest = [] and displayFormula = "N/A".
+39.7 If atom1.symbol === atom2.symbol (A2 type):
+39.7.1 Set displayFormula =${atom1.symbol}2``.
+39.7.2 Push displayFormula to `formulasToTest`.
+39.8 Else (AB type):
+39.8.1 Implement canonical ordering logic (H first, then C, N, O, then alphabetical) for `displayFormula`.
+39.8.2 Push `displayFormula` to `formulasToTest`.
+39.9 Return an object with `atom1`, `atom2`, `selectedAtomsText`, `formulasToTest`, `displayFormula`.
+40.0 Implement `checkStabilityAndDisplay()` Function:
+40.1 Define `function checkStabilityAndDisplay(diatomicInfo)`.
+40.2 Update `selectedAtomsTextElem.textContent`.
+40.3 Set default text for `formulaTextElem`, `commonNameTextElem`, `stabilityIndicatorElem`.
+40.4 Reset `stabilityIndicatorElem.className`.
+40.5 Initialize `foundStableMoleculeEntry = null`.
+40.6 Loop through `diatomicInfo.formulasToTest`:
+40.6.1 If `formula` exists in `diatomicsData` and `isStable` is true:
+40.6.1.1 Populate `foundStableMoleculeEntry` with formula, name, etc.
+40.6.1.2 `break` the loop.
+40.7 If `foundStableMoleculeEntry` exists:
+40.7.1 Update `formulaTextElem.textContent`.
+40.7.2 Update `commonNameTextElem.textContent`.
+40.7.3 Update `stabilityIndicatorElem.textContent` (✔️ Yes).
+40.7.4 Set `stabilityIndicatorElem.className = "stable"`.
+40.7.5 Call `initAndRenderMolecule(foundStableMoleculeEntry.formula)` (will be defined later).
+40.8 Else (not found stable):
+40.8.1 Update `formulaTextElem.textContent` with `diatomicInfo.displayFormula`.
+40.8.2 Update `stabilityIndicatorElem.textContent` (❌ No).
+40.8.3 Set `stabilityIndicatorElem.className = "unstable"`.
+40.8.4 Call `clearAndShowMessageInViewer()` with appropriate message (will be defined later).
+41.0 Implement `displayNewMolecule()` Function:
+41.1 Define `function displayNewMolecule()`.
+41.2 Call `generateDiatomicInfo()`.
+41.3 If `diatomicInfo.atom1` (elements were generated):
+41.3.1 Call `checkStabilityAndDisplay(diatomicInfo)`.
+41.4 Else:
+41.4.1 Update UI to show atom generation error.
+42.0 Add Event Listener & Initial Call:
+42.1 Add event listener to `nextButton` for 'click', calling `displayNewMolecule`.
+42.2 Add event listener to `document` for 'DOMContentLoaded', calling `loadData`.
+43.0 Commit JavaScript (Part 1):
+43.1 `git add js/script.js data/elements.json data/diatomics.json`.
+43.2 `git commit -m "Implement core JS: data loading, random selection, stability check, basic UI updates"`.
+43.3 `git push`.
+JavaScript Logic (js/script.js) - Part 2: Three.js Integration
+44.0 Declare Three.js Global Variables:
+44.1 At top of js/script.js, declare scene, camera, renderer, controls.
+44.2 Declare atomRadius and bondRadius constants.
+45.0 Implement initThreeScene() Function:
+45.1 Define function initThreeScene().
+45.2 Check if moleculeViewerElem exists.
+45.3 Create scene = new THREE.Scene().
+45.4 Set scene.background.
+45.5 Create camera = new THREE.PerspectiveCamera(...).
+45.6 Set camera.position.z.
+45.7 Create renderer = new THREE.WebGLRenderer({ antialias: true }).
+45.8 Set renderer.setSize(...).
+45.9 Clear moleculeViewerElem.innerHTML.
+45.10 Append renderer.domElement to moleculeViewerElem.
+45.11 Create and add THREE.AmbientLight to scene.
+45.12 Create and add THREE.DirectionalLight to scene, set its position.
+45.13 (Optional: OrbitControls) If THREE.OrbitControls is defined:
+45.13.1 Create controls = new THREE.OrbitControls(camera, renderer.domElement).
+45.13.2 Configure controls (enableDamping, dampingFactor, etc.).
+45.14 Else (OrbitControls not found):
+45.14.1 console.warn that controls are not available.
+45.15 Define animate() inner function:
+45.15.1 requestAnimationFrame(animate).
+45.15.2 If controls, call controls.update().
+45.15.3 renderer.render(scene, camera).
+45.16 Call animate().
+45.17 Add window.addEventListener('resize', ...):
+45.17.1 Check moleculeViewerElem clientWidth/Height > 0.
+45.17.2 Update camera.aspect.
+45.17.3 Call camera.updateProjectionMatrix().
+45.17.4 Call renderer.setSize(...).
+46.0 Implement clearScene() Function:
+46.1 Define function clearScene().
+46.2 Check if scene exists.
+46.3 Loop while (scene.children.length > 0):
+46.3.1 Get object = scene.children[0].
+46.3.2 If object.geometry, call object.geometry.dispose().
+46.3.3 If object.material, dispose of it (handle arrays of materials).
+46.3.4 scene.remove(object).
+46.4 Re-add lights to the scene.
+47.0 Implement clearAndShowMessageInViewer() Function:
+47.1 Define function clearAndShowMessageInViewer(messageHtml).
+47.2 If scene, call clearScene().
+47.3 Handle display of message: if renderer canvas is present, consider overlay or log; otherwise, set moleculeViewerElem.innerHTML. (This logic might need refinement for visual consistency).
+48.0 Implement initAndRenderMolecule() Function (Initial Structure):
+48.1 Define async function initAndRenderMolecule(formula).
+48.2 Call clearScene().
+48.3 Check if scene and renderer are initialized; show error in viewer if not.
+48.4 Ensure renderer canvas is visible.
+48.5 (Placeholder for SDF fetch/parse logic)
+48.6 (Placeholder for atom/bond rendering logic)
+49.0 Commit JavaScript (Three.js Setup):
+49.1 git add js/script.js.
+49.2 git commit -m "Integrate Three.js: setup scene, camera, renderer, lights, and basic animation loop".
+49.3 git push.
+JavaScript Logic (js/script.js) - Part 3: Fetching & Parsing SDF (NCI Cactus)
+50.0 Implement fetchSDF() Function:
+50.1 Define async function fetchSDF(identifier).
+50.2 Construct url for NCI Cactus (consider CORS proxy if needed).
+50.3 console.log the fetch URL.
+50.4 Inside try block:
+50.4.1 const response = await fetch(url).
+50.4.2 If !response.ok:
+50.4.2.1 console.error status and text.
+50.4.2.2 Await and log response.text() for more error details.
+50.4.2.3 Return null.
+50.4.3 const sdfData = await response.text().
+50.4.4 If sdfData indicates "Page not found" or "No results", console.warn and return null.
+50.4.5 Return sdfData.
+50.5 Inside catch (error):
+50.5.1 console.error network error.
+50.5.2 Return null.
+51.0 Implement parseSDFForDiatomic() Function:
+51.1 Define function parseSDFForDiatomic(sdfData).
+51.2 Initialize atoms = [].
+51.3 Split sdfData into lines (handle \r\n and \n).
+51.4 Initialize atomCount = 0, atomLinesStart = -1.
+51.5 Loop through lines (starting from index 3, typically where counts line is):
+51.5.1 Trim the current line.
+51.5.2 If line.endsWith("V2000"):
+51.5.2.1 Use regex or robust splitting to parse atomCount from this line.
+51.5.2.2 Set atomLinesStart = i + 1.
+51.5.2.3 break.
+51.6 If atomCount === 0 or atomLinesStart === -1, console.warn and return null.
+51.7 Loop i from 0 to atomCount - 1:
+51.7.1 Get atomLineIndex = atomLinesStart + i.
+51.7.2 Check for premature end of lines.
+51.7.3 Get line = lines[atomLineIndex].
+51.7.4 Trim and split line by \s+ to get parts.
+51.7.5 If parts.length >= 4:
+51.7.5.1 Push { x: parseFloat(parts[0]), y: parseFloat(parts[1]), z: parseFloat(parts[2]), symbol: parts[3].trim().toUpperCase() } to atoms.
+51.7.6 Else, console.warn about malformed atom line.
+51.8 If atoms.length === 0, console.warn and return null.
+51.9 If atomCount === 2 && atoms.length !== 2, console.warn about mismatch (optional: return null for strictness).
+51.10 If atomCount !== 2, console.log it's not a diatomic for this viewer (optional: return null).
+51.11 Return atoms.slice(0, 2) (ensure only two atoms for diatomics).
+52.0 Update initAndRenderMolecule() to use Fetch & Parse:
+52.1 Inside async function initAndRenderMolecule(formula):
+52.1.1 Call const sdfData = await fetchSDF(formula).
+52.1.2 If !sdfData, call clearAndShowMessageInViewer() and return.
+52.1.3 Call const parsedAtoms = parseSDFForDiatomic(sdfData).
+52.1.4 If !parsedAtoms or parsedAtoms.length < 2, call clearAndShowMessageInViewer(), console.error details, and return.
+52.1.5 Calculate centerX, centerY, centerZ from parsedAtoms[0] and parsedAtoms[1].
+52.1.6 Loop through parsedAtoms (forEach):
+52.1.6.1 Find elementInfo from elementsList based on atomData.symbol.
+52.1.6.2 Determine color (use default if elementInfo not found).
+52.1.6.3 Create THREE.SphereGeometry.
+52.1.6.4 Create THREE.MeshPhongMaterial with color.
+52.1.6.5 Create sphere = new THREE.Mesh(...).
+52.1.6.6 Set sphere.position relative to center.
+52.1.6.7 scene.add(sphere).
+52.1.7 (Render Bond) If parsedAtoms.length >= 2:
+52.1.7.1 Create atom1Pos and atom2Pos THREE.Vector3 objects from parsed coordinates (centered).
+52.1.7.2 Calculate distance = atom1Pos.distanceTo(atom2Pos).
+52.1.7.3 If distance > 0.01:
+52.1.7.3.1 Create THREE.MeshPhongMaterial for bond.
+52.1.7.3.2 Create THREE.CylinderGeometry for bond.
+52.1.7.3.3 Create bond = new THREE.Mesh(...).
+52.1.7.3.4 Position bond at midpoint of atom1Pos and atom2Pos.
+52.1.7.3.5 Orient bond to connect the atoms (using lookAt and rotateX, or matrix transformations).
+52.1.7.3.6 scene.add(bond).
+52.1.8 Ensure moleculeViewerElem shows the canvas (clear other messages if needed).
+53.0 Integrate OrbitControls (Optional):
+53.1 (If doing this) Download OrbitControls.js and place in js/ folder.
+53.2 (If doing this) Add <script src="js/OrbitControls.js"></script> to index.html.
+53.3 (If doing this) Ensure the OrbitControls related code in initThreeScene() and animate() is uncommented and functional.
+54.0 Commit JavaScript (SDF Fetch, Parse, Dynamic 3D Rendering):
+54.1 git add js/script.js.
+54.2 (If added) git add js/OrbitControls.js.
+54.3 git commit -m "Implement SDF fetch, parse, and dynamic 3D rendering of diatomics".
+54.4 git push.
+Final Testing & Refinement
+55.0 Perform Thorough Testing on GitHub Pages Site:
+55.1 Click "Next Molecule" repeatedly.
+55.2 Verify random atom pairs.
+55.3 Verify correct formula display.
+55.4 Verify correct stability indication (✔️/❌) against diatomics.json.
+55.5 For known diatomics:
+55.5.1 Check if SDF fetch is attempted (see console).
+55.5.2 Verify 3D model renders (2 spheres, 1 bond).
+55.5.3 Verify atom colors.
+55.5.4 Verify model is rotatable (if OrbitControls active).
+55.6 For unknown/unfetchable:
+55.6.1 Verify appropriate messages in Section C and D.
+55.7 Check browser console for critical errors.
+56.0 (If needed) Expand data/diatomics.json:
+56.1 Add more known stable diatomics from elementsList for more test cases.
+56.2 Commit and push changes to data/diatomics.json.
+57.0 (If needed) Refine SDF Parser:
+57.1 Test with various SDFs. If parser fails, analyze SDF structure and adjust parsing logic in parseSDFForDiatomic().
+58.0 (If needed) Refine CSS and UI Messages:
+58.1 Make final CSS adjustments for appearance.
+58.2 Improve clarity of user messages.
+59.0 Create/Update README.md:
+59.1 Create README.md in project root.
+59.2 Add project description.
+59.3 Add setup instructions (if any beyond cloning).
+59.4 Add link to the live GitHub Pages site.
+60.0 Final Commit & Push:
+60.1 git add ..
+60.2 git commit -m "Phase 0: AlphaMole Web Showcase complete. Final testing and refinements.".
+60.3 git push.

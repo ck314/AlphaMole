@@ -1,0 +1,20 @@
+Text: Original PRD
+
+Blurb: The original discussion on creating AlphaMole
+
+Editing Link: https://aistudio.google.com/prompts/1FNX7fqld8GaKpV6wiLC-8NwDV9SH9tuR
+Public Link: https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221FNX7fqld8GaKpV6wiLC-8NwDV9SH9tuR%22%5D,%22action%22:%22open%22,%22userId%22:%22106862238034400258370%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
+
+
+
+Text: Define unstable atoms ChatGPT Playground
+
+Blurb: What are possible ways I can define or source "unstable" atoms for the negative training data?
+
+This is a thought experiment project designed more to teach coding and neural networks in association with chemistry rather than a project to discover something new about the scientific universe.
+
+Link: https://platform.openai.com/playground/p/m1ACjGQuxqQ4BJeL3Ma6yJH6?mode=chat
+
+Text: Deep Research from ChatGPT on testing if a molecule is stable
+https://chatgpt.com/share/682cd38a-97f8-8010-aefe-f9e67a62dc55
+

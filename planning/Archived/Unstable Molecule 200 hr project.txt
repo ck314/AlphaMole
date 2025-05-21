@@ -1,0 +1,237 @@
+Below is a “tool-kit” of ideas that chemists usually fall back on when they want to separate “molecules that could in principle sit in a bottle” from “formulas that are almost certainly impossible (or so short-lived that you could never weigh them).”
+Any of the methods can be turned into code so that you can automatically label input vectors for a neural‐network exercise.
+
+0. Terminology check
+Strictly speaking atoms are always stable; what varies in stability is a molecule (one or more atoms held together by chemical bonds).  I will therefore talk about “molecules” or “molecular formulas”.
+
+──────────────────────────────────────
+
+Positive (“stable”) data – where to get it ──────────────────────────────────────
+A. Public compound databases
+• NIST Chemistry WebBook – contains ca. 35 000 experimentally characterised small molecules (ΔHf°, IR, MS …).
+• PubChem Compound – >100 million structures; filter to ≤4 heavy atoms with the Entrez query “HeavyAtomCount 1:4 AND IsIsotope=0”.
+• ChEMBL, Reaxys, etc. (if you have access).
+All of these contain molecules that chemists have actually prepared or observed spectroscopically, so they are safely “stable enough”.
+
+B. Quantum‐chemistry datasets
+QM9 (134 k neutral, ≤9 heavy atoms, all B3LYP/6-31G* energy minimised) or ANI-1x, GDB17 subsets, etc.  Converged DFT optimisation is a strong indication that the molecule is a true minimum on the potential-energy surface.
+
+──────────────────────────────────────
+2. Strategies for NEGATIVE (“unstable / non-existent”) data
+──────────────────────────────────────
+
+(You do not have to pick only one – mixing several sources usually gives a healthier training set.)
+
+2.1  “Not-in-database” complement
+• Step 1 – enumerate every empirical formula that can be made from the elements you care about (H, C, N, O, F, Cl …) and that contains exactly 2, 3 or 4 atoms in total.
+• Step 2 – look each formula up in the positive database; if it never appears, label it NEGATIVE.
+Example   H3, CH4 (positive); CH5, OF4 (negative).
+Pros: trivial to automate; no chemistry engine needed.
+Cons: “absence of evidence ≠ evidence of absence”: you will mark molecules that are merely unknown, not necessarily impossible.  Good enough for a teaching exercise though.
+
+2.2  Valence-rule violators
+Write a small RDKit (or OpenBabel) script that checks whether you can draw a valence-correct Lewis structure for the formula assuming the common valences
+H1, C4, N3/5, O2, F/Cl/Br/I1, S2/4/6, P3/5, …
+If all atoms must exceed their normal valence, label NEGATIVE.
+Examples
+• F2O (valence OK) → positive possible
+• F4O (O would need valence 4) → negative
+• CH5 (pentavalent carbon) → negative
+Pros: chemically meaningful, tiny code, no QM needed.
+Cons: Misses molecules that break the normal-valence rule but are still real (e.g. SF6, XeF4, hypervalent iodine compounds).
+
+2.3  Octet/18-electron electron-count heuristics
+For very small molecules you can implement the octet rule (or Wade–Mingos rules for boranes if you are brave).  Any formula for which no octet‐satisfying Lewis structure exists → NEGATIVE.  Same spirit as 2.2 but catches electron-deficient species as well (e.g. BH3, BeH2).
+
+2.4  Excessive charge / radicals
+Tag as NEGATIVE any formula that is neutral only by assigning absurd formal charges, or that necessarily contains an unpaired electron.
+Examples
+• HF2 (needs F-- and F+ ?) → negative
+• NO (odd electron but experimentally stable!) – illustrates that this rule alone is too crude, but as part of a mixture it helps.
+
+2.5  High thermodynamic cost
+Run a fast semi-empirical or force-field optimisation (e.g. GFN2-xTB) on each candidate.  If geometry optimisation fails or the heat of formation is > +500 kJ mol-1, mark NEGATIVE.
+Pros: Uses actual energetics, not just valence.
+Cons: Must call a QM backend; slower; needs a reference for elemental energies.
+
+2.6  Reactor product filter
+Generate random SMILES with RDKit for a given formula, compute the total bond order.  Reject molecules that contain
+• two atoms of the same element with bond order > allowed maximum (e.g. “triple-bonded oxygen”),
+• rings of size 2 or 3 made of heavy atoms with double bonds (impossibly strained).
+Again label as NEGATIVE.  This is a quick way of penalising blatant ring strain or impossible multiple bonding patterns.
+
+2.7  “QM9 failure” set
+Start from the full enumeration of formulas, draw all constitutional isomers with RDKit/ETKDG, run a short DFT geometry optimisation.  Any job that does NOT converge within N steps → NEGATIVE.
+Chemistry groups use exactly this trick to build “difficult” or “unreal” sets when benchmarking new methods.
+
+──────────────────────────────────────
+3. Practical recipe for a classroom project
+──────────────────────────────────────
+
+Choose the element set (say H, C, N, O, F) and the atom-count levels you want (2, 3, 4).
+Enumerate every empirical formula that fits. There are only 64 of them for those elements and ≤4 atoms – fits in a CSV.
+Pull the list of known molecules from NIST or PubChem (simple REST call).
+Label formulas present in the database → POSITIVE.
+Apply valence check (2.2) to every formula that is not yet POSITIVE; if it fails, mark NEGATIVE.
+Any formulas left unlabelled are “unknown” – randomly assign half of them to NEGATIVE so the classes stay balanced.
+Encode each formula as an input vector: • counts of each element (H,C,N,O,F) • total valence electrons, parity (odd/even), etc.
+Train a tiny feed-forward network.
+Ask the network to predict on the 5-atom level, or on formulas containing Cl/S to test transferability.
+──────────────────────────────────────
+4. Caveats you should mention to your students
+──────────────────────────────────────
+
+• “Stable” is contextual (temperature, pressure, matrix isolation, gas phase vs. bulk).
+• A molecule can be thermodynamically unstable but kinetically trapped (ozone, acetylene) – a simple label ignores this.
+• Your negative set will contain false negatives; the point of the exercise is coding, not discovering new chemistry.
+
+──────────────────────────────────────
+5. Summary
+──────────────────────────────────────
+
+Negative data can be created in several complementary ways:
+a) “Not in any database” complement set,
+b) Violate simple valence / octet rules,
+c) Require huge formal charges or unpaired electrons,
+d) Fail a quick quantum-chemistry optimisation,
+e) Obviously strained bonding patterns.
+
+All of them are easy to automate with public tools such as RDKit and a web query to NIST or PubChem, so you can have a complete labelled dataset for 2-, 3- and 4-atom systems in a single afternoon.
+
+Below is a “road-map” for turning the original weekend exercise into a 200-hour mini-capstone that teaches equal parts programming and chemistry.
+The hours are only guidelines; redistribute them as you wish.
+
+────────────────────────────────────────
+0. Assumptions
+────────────────────────────────────────
+• You know basic Python, can read simple organic chemistry, and have a laptop + (free) cloud GPU time.
+• You keep all work in a public GitHub repo (good software practice).
+• Preferred stack: Python 3.11, RDKit, PyTorch (or TensorFlow), ASE, Psi4/xtb, Jupyter, VS Code.
+
+────────────────────────────────────────
+
+Foundation (≈20 h) ──────────────────────────────────────── 1.1 Chemistry refresher (10 h) – Lewis structures, formal charge, hypervalence, radicals, stereochemistry. – Thermodynamic vs. kinetic stability; HOMO/LUMO; Hammond postulate. 1.2 Programming refresh (10 h) – Git / GitHub flow, virtual environments, pytest. – Numpy/Pandas basics, plotting with Seaborn.
+Deliverable: a 10-page “cheat-sheet” notebook with code snippets that draw Lewis structures, count electrons, etc.
+
+────────────────────────────────────────
+2. Data Engineering & Curation (≈25 h)
+────────────────────────────────────────
+2.1 Positive set
+• Pull QM9 and PubChem subsets (≤9 heavy atoms).
+• Filter to neutral molecules, ≤4 heavy atoms for V1.
+2.2 Negative set
+• Complement of PubChem formulas.
+• Valence-rule violators (script with RDKit).
+• “DFT-failed” molecules: random SMILES → xtb optimisation; if not converged in 200 steps → negative.
+
+2.3 Metadata
+• For each formula: electron count, total mass, X–Y bond statistics.
+• Store everything in a single Parquet file.
+
+Deliverable: data pipeline with reproducible Makefile or Snakemake.
+
+────────────────────────────────────────
+3. Representation Engineering (≈20 h)
+────────────────────────────────────────
+Task: explore how the input encoding affects performance.
+A. “Bag-of-atoms” (element counts).
+B. Coulomb matrix (3-D); eigenvalue spectrum.
+C. Graph representation (adjacency + feature matrix).
+D. Message-passing ready tensors for a GNN.
+
+Write one module per representation, with unit tests converting SMILES → tensor.
+
+────────────────────────────────────────
+4. Baseline Machine-Learning Models (≈20 h)
+────────────────────────────────────────
+4.1 Logistic regression / random forest on bag-of-atoms.
+4.2 Feed-forward NN on Coulomb eigenvalues.
+4.3 Hyper-parameter scan with Optuna.
+Collect precision/recall/F1 confusion matrices; make plots.
+
+Chemistry angle: interpret feature weights (e.g. “odd electron count strongly predicts instability”).
+
+────────────────────────────────────────
+5. Graph Neural Networks (≈30 h)
+────────────────────────────────────────
+5.1 Read two papers:
+– “Neural Message Passing for Quantum Chemistry” (Gilmer et al.).
+– “Chemprop” (Yang et al.).
+5.2 Implement or adapt a simple MPNN with PyTorch Geometric or DGL.
+5.3 Train on 80 % of dataset; monitor ROC-AUC.
+5.4 Explainability: integrated-gradients or attention maps → which bonds or atoms drive the prediction?
+
+Deliverable: notebook that takes a SMILES, draws coloured molecule highlighting unstable fragments.
+
+────────────────────────────────────────
+6. Quantum-Chemistry Verification Loop (≈25 h)
+────────────────────────────────────────
+Select 200 “borderline” predictions: 100 that the model calls stable but are labelled negative, and 100 vice-versa.
+6.1 Optimise with GFN2-xTB; if converged, refine single-point at B3LYP/def2-SVP with Psi4 (≈1–3 min per molecule).
+6.2 Record ΔHf°(0 K) and HOMO-LUMO gap.
+6.3 Update labels where the model was actually right; you have created an “active learning” loop.
+
+Chemistry skills: interpreting imaginary frequencies (transition states), recognising diradical intermediates.
+
+────────────────────────────────────────
+7. Generative Component (≈20 h)
+────────────────────────────────────────
+7.1 Train a VAE or simple RNN on the positive set.
+7.2 Sample 10 000 new SMILES; pass through your classifier → pick top 100 “very stable” but unknown molecules.
+7.3 Run xtb + DFT to check them.
+Bonus: compare your hit-rate with random sampling.
+
+────────────────────────────────────────
+8. Visualisation & Web App (≈10 h)
+────────────────────────────────────────
+Use Streamlit or Dash.
+Features: input SMILES, see prediction, uncertainty, colour-coded structure, downloadable xyz file.
+Deploy on HuggingFace Spaces or Heroku.
+
+────────────────────────────────────────
+9. Documentation & Teaching Material (≈10 h)
+────────────────────────────────────────
+• 3 × 30-min recorded screencasts (data prep, model, web app).
+• Read-the-Docs site generated from docstrings + MkDocs.
+• A short “lab manual” explaining the chemistry rules implemented.
+
+────────────────────────────────────────
+10. Stretch Modules (pick ~25 h)
+────────────────────────────────────────
+• Kinetics: transition-state searches for a few “unstable” molecules, compute Ea.
+• Stereochemistry: extend model to recognise chiral centres, diastereomers.
+• Larger systems: move to 5 or 6-atom formulas; test transfer learning.
+• HPC: port QM jobs to a Slurm cluster, learn job arrays.
+• Publications: draft an IEEE or J. Chem. Ed. manuscript.
+
+────────────────────────────────────────
+Approximate Time Allocation
+────────────────────────────────────────
+1  Foundation                              20 h
+2  Data engineering                        25 h
+3  Representations                         20 h
+4  Baseline ML                             20 h
+5  Graph NNs                               30 h
+6  QC verification                         25 h
+7  Generative model                        20 h
+8  Visualisation/web                       10 h
+9  Docs + teaching                         10 h
+10 Stretch / buffer                        20 h
+———
+200 h
+
+────────────────────────────────────────
+Key Learning Outcomes
+────────────────────────────────────────
+Coding
+• End-to-end data pipeline, unit testing, version control.
+• Classical ML, deep learning, graph neural networks, hyper-parameter search.
+• REST APIs, front-end deployment, HPC job submission.
+
+Chemistry
+• Deep understanding of electron-count rules, valence, strain, hypervalency.
+• Hands-on experience with semi-empirical and DFT methods; interpreting thermodynamic numbers.
+• Appreciation of the difference between thermodynamic and kinetic stability.
+• Familiarity with cheminformatics toolkits and 3-D molecular representations.
+
+If you walk consistently through these milestones, 200 hours is enough to produce a publishable-quality demonstration of “machine-learning-aided exploration of small-molecule stability” while giving you marketable skills in both data science and computational chemistry.
