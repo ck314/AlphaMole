@@ -55,7 +55,20 @@ body {
     color: #fff;
 }
 
+.main-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
     text-align: center;
     padding: 2rem;
     background: rgba(255, 255, 255, 0.1);
@@ -64,9 +77,9 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     color: #4ecca3;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -128,16 +141,6 @@ h1 {
     justify-content: center;
 }
 
-.evaluation-box {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 10px;
-    min-width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .element {
     font-size: 2rem;
     color: #4ecca3;
@@ -149,8 +152,19 @@ h1 {
     opacity: 0.7;
 }
 
+.evaluation-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .symbol {
     font-size: 2.5rem;
+    color: #4ecca3;
 }
 
 #nextModule {
@@ -171,4 +185,16 @@ h1 {
 
 #nextModule:active {
     transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
 } 
