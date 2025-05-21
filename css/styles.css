@@ -167,7 +167,7 @@ body {
     color: #4ecca3;
 }
 
-#nextModule {
+#nextMolecule {
     background: #4ecca3;
     color: #1a1a2e;
     border: none;
@@ -176,15 +176,19 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s, background 0.2s;
+    display: block;
+    margin: 1rem auto;
 }
 
-#nextModule:hover {
+#nextMolecule:hover {
     background: #45b392;
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#nextModule:active {
+#nextMolecule:active {
     transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
