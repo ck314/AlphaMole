@@ -93,6 +93,13 @@ async function updateDisplay() {
         }
 
         const numElements = parseInt(numberSelect.value);
+
+        // Update stability indicator display
+        const stabilityIndicatorAtoms = document.getElementById('stabilityIndicatorAtoms');
+        if (stabilityIndicatorAtoms) {
+            stabilityIndicatorAtoms.textContent = "Number of atoms: " + numElements;
+        }
+
         const selectedElements = [];
         
         // Get random elements based on selection
