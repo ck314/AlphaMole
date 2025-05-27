@@ -1,0 +1,474 @@
+[
+  {
+    "element": "H",
+    "valence_electrons": 1
+  },
+  {
+    "element": "He",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Li",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Be",
+    "valence_electrons": 2
+  },
+  {
+    "element": "B",
+    "valence_electrons": 3
+  },
+  {
+    "element": "C",
+    "valence_electrons": 4
+  },
+  {
+    "element": "N",
+    "valence_electrons": 5
+  },
+  {
+    "element": "O",
+    "valence_electrons": 6
+  },
+  {
+    "element": "F",
+    "valence_electrons": 7
+  },
+  {
+    "element": "Ne",
+    "valence_electrons": 8
+  },
+  {
+    "element": "Na",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Mg",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Al",
+    "valence_electrons": 3
+  },
+  {
+    "element": "Si",
+    "valence_electrons": 4
+  },
+  {
+    "element": "P",
+    "valence_electrons": 5
+  },
+  {
+    "element": "S",
+    "valence_electrons": 6
+  },
+  {
+    "element": "Cl",
+    "valence_electrons": 7
+  },
+  {
+    "element": "Ar",
+    "valence_electrons": 8
+  },
+  {
+    "element": "K",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Ca",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Sc",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ti",
+    "valence_electrons": 2
+  },
+  {
+    "element": "V",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Cr",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Mn",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Fe",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Co",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ni",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Cu",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Zn",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ga",
+    "valence_electrons": 3
+  },
+  {
+    "element": "Ge",
+    "valence_electrons": 4
+  },
+  {
+    "element": "As",
+    "valence_electrons": 5
+  },
+  {
+    "element": "Se",
+    "valence_electrons": 6
+  },
+  {
+    "element": "Br",
+    "valence_electrons": 7
+  },
+  {
+    "element": "Kr",
+    "valence_electrons": 8
+  },
+  {
+    "element": "Rb",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Sr",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Y",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Zr",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Nb",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Mo",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Tc",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ru",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Rh",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Pd",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ag",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Cd",
+    "valence_electrons": 2
+  },
+  {
+    "element": "In",
+    "valence_electrons": 3
+  },
+  {
+    "element": "Sn",
+    "valence_electrons": 4
+  },
+  {
+    "element": "Sb",
+    "valence_electrons": 5
+  },
+  {
+    "element": "Te",
+    "valence_electrons": 6
+  },
+  {
+    "element": "I",
+    "valence_electrons": 7
+  },
+  {
+    "element": "Xe",
+    "valence_electrons": 8
+  },
+  {
+    "element": "Cs",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Ba",
+    "valence_electrons": 2
+  },
+  {
+    "element": "La",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ce",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Pr",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Nd",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Pm",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Sm",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Eu",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Gd",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Tb",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Dy",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ho",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Er",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Tm",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Yb",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Lu",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Hf",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ta",
+    "valence_electrons": 2
+  },
+  {
+    "element": "W",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Re",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Os",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ir",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Pt",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Au",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Hg",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Tl",
+    "valence_electrons": 3
+  },
+  {
+    "element": "Pb",
+    "valence_electrons": 4
+  },
+  {
+    "element": "Bi",
+    "valence_electrons": 5
+  },
+  {
+    "element": "Po",
+    "valence_electrons": 6
+  },
+  {
+    "element": "At",
+    "valence_electrons": 7
+  },
+  {
+    "element": "Rn",
+    "valence_electrons": 8
+  },
+  {
+    "element": "Fr",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Ra",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ac",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Th",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Pa",
+    "valence_electrons": 2
+  },
+  {
+    "element": "U",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Np",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Pu",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Am",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Cm",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Bk",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Cf",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Es",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Fm",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Md",
+    "valence_electrons": 2
+  },
+  {
+    "element": "No",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Lr",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Rf",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Db",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Sg",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Bh",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Hs",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Mt",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Ds",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Rg",
+    "valence_electrons": 1
+  },
+  {
+    "element": "Cn",
+    "valence_electrons": 2
+  },
+  {
+    "element": "Nh",
+    "valence_electrons": 3
+  },
+  {
+    "element": "Fl",
+    "valence_electrons": 4
+  },
+  {
+    "element": "Mc",
+    "valence_electrons": 5
+  },
+  {
+    "element": "Lv",
+    "valence_electrons": 6
+  },
+  {
+    "element": "Ts",
+    "valence_electrons": 7
+  },
+  {
+    "element": "Og",
+    "valence_electrons": 8
+  }
+]

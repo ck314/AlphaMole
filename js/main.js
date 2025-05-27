@@ -124,6 +124,29 @@ async function updateDisplay() {
         if (elementCountsDiv) {
             elementCountsDiv.textContent = countsText;
         }
+
+        // Calculate total valence electrons
+        const response = await fetch('data/elements.json');
+        const elementsData = await response.json();
+        const colorMap = {};
+        let totalValenceElectrons = 0;
+        let valenceElectronsByElement = [];
+        
+        elementsData.forEach(element => {
+            colorMap[element.symbol] = element.color;
+            // Add valence electrons for each occurrence of the element
+            if (elementCounts[element.symbol]) {
+                const elementValence = element.valenceElectrons * elementCounts[element.symbol];
+                totalValenceElectrons += elementValence;
+                valenceElectronsByElement.push(`${element.symbol}: ${element.valenceElectrons} × ${elementCounts[element.symbol]} = ${elementValence}`);
+            }
+        });
+
+        // Update valence electrons display
+        const valenceElectronsDiv = document.getElementById('stabilityIndicatorValenceElectrons');
+        if (valenceElectronsDiv) {
+            valenceElectronsDiv.innerHTML = `Valence Electrons:<br>${valenceElectronsByElement.join('<br>')}<br>Total: ${totalValenceElectrons}`;
+        }
         
         // Get single random symbol
         const randomSymbol = getRandomSymbol();
@@ -134,12 +157,6 @@ async function updateDisplay() {
         combinedWord.textContent = selectedElements.join('');
 
         // Apply colors after updating the content
-        const response = await fetch('data/elements.json');
-        const elementsData = await response.json();
-        const colorMap = {};
-        elementsData.forEach(element => {
-            colorMap[element.symbol] = element.color;
-        });
         updateElementColors(colorMap);
     } catch (error) {
         console.error('Error updating display:', error);
