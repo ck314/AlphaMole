@@ -106,6 +106,24 @@ async function updateDisplay() {
         for (let i = 0; i < numElements; i++) {
             selectedElements.push(getRandomElement());
         }
+
+        // Count element occurrences
+        const elementCounts = {};
+        for (const element of selectedElements) {
+            elementCounts[element] = (elementCounts[element] || 0) + 1;
+        }
+
+        let countsText = "Element Counts: ";
+        if (Object.keys(elementCounts).length === 0) {
+            countsText += "None";
+        } else {
+            countsText += Object.entries(elementCounts).map(([key, value]) => `${key}: ${value}`).join(', ');
+        }
+
+        const elementCountsDiv = document.getElementById('stabilityIndicatorElementCounts');
+        if (elementCountsDiv) {
+            elementCountsDiv.textContent = countsText;
+        }
         
         // Get single random symbol
         const randomSymbol = getRandomSymbol();

@@ -3,708 +3,826 @@
     "symbol": "H",
     "name": "Hydrogen",
     "atomic_number": 1,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 1
   },
   {
     "symbol": "He",
     "name": "Helium",
     "atomic_number": 2,
-    "color": "#C0FFFF"
+    "color": "#C0FFFF",
+    "valenceElectrons": 2
   },
   {
     "symbol": "Li",
     "name": "Lithium",
     "atomic_number": 3,
-    "color": "#FF6666"
+    "color": "#FF6666",
+    "valenceElectrons": 1
   },
   {
     "symbol": "Be",
     "name": "Beryllium",
     "atomic_number": 4,
-    "color": "#FFDEAD"
+    "color": "#FFDEAD",
+    "valenceElectrons": 2
   },
   {
     "symbol": "B",
     "name": "Boron",
     "atomic_number": 5,
-    "color": "#66CDAA"
+    "color": "#66CDAA",
+    "valenceElectrons": 3
   },
   {
     "symbol": "C",
     "name": "Carbon",
     "atomic_number": 6,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 4
   },
   {
     "symbol": "N",
     "name": "Nitrogen",
     "atomic_number": 7,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 5
   },
   {
     "symbol": "O",
     "name": "Oxygen",
     "atomic_number": 8,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 6
   },
   {
     "symbol": "F",
     "name": "Fluorine",
     "atomic_number": 9,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Ne",
     "name": "Neon",
     "atomic_number": 10,
-    "color": "#C0FFFF"
+    "color": "#C0FFFF",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Na",
     "name": "Sodium",
     "atomic_number": 11,
-    "color": "#FF6666"
+    "color": "#FF6666",
+    "valenceElectrons": 1
   },
   {
     "symbol": "Mg",
     "name": "Magnesium",
     "atomic_number": 12,
-    "color": "#FFDEAD"
+    "color": "#FFDEAD",
+    "valenceElectrons": 2
   },
   {
     "symbol": "Al",
     "name": "Aluminum",
     "atomic_number": 13,
-    "color": "#CCCCCC"
+    "color": "#CCCCCC",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Si",
     "name": "Silicon",
     "atomic_number": 14,
-    "color": "#66CDAA"
+    "color": "#66CDAA",
+    "valenceElectrons": 4
   },
   {
     "symbol": "P",
     "name": "Phosphorus",
     "atomic_number": 15,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 5
   },
   {
     "symbol": "S",
     "name": "Sulfur",
     "atomic_number": 16,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 6
   },
   {
     "symbol": "Cl",
     "name": "Chlorine",
     "atomic_number": 17,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Ar",
     "name": "Argon",
     "atomic_number": 18,
-    "color": "#C0FFFF"
+    "color": "#C0FFFF",
+    "valenceElectrons": 8
   },
   {
     "symbol": "K",
     "name": "Potassium",
     "atomic_number": 19,
-    "color": "#FF6666"
+    "color": "#FF6666",
+    "valenceElectrons": 1
   },
   {
     "symbol": "Ca",
     "name": "Calcium",
     "atomic_number": 20,
-    "color": "#FFDEAD"
+    "color": "#FFDEAD",
+    "valenceElectrons": 2
   },
   {
     "symbol": "Sc",
     "name": "Scandium",
     "atomic_number": 21,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Ti",
     "name": "Titanium",
     "atomic_number": 22,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 4
   },
   {
     "symbol": "V",
     "name": "Vanadium",
     "atomic_number": 23,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 5
   },
   {
     "symbol": "Cr",
     "name": "Chromium",
     "atomic_number": 24,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 6
   },
   {
     "symbol": "Mn",
     "name": "Manganese",
     "atomic_number": 25,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Fe",
     "name": "Iron",
     "atomic_number": 26,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Co",
     "name": "Cobalt",
     "atomic_number": 27,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 9
   },
   {
     "symbol": "Ni",
     "name": "Nickel",
     "atomic_number": 28,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 10
   },
   {
     "symbol": "Cu",
     "name": "Copper",
     "atomic_number": 29,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 11
   },
   {
     "symbol": "Zn",
     "name": "Zinc",
     "atomic_number": 30,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 12
   },
   {
     "symbol": "Ga",
     "name": "Gallium",
     "atomic_number": 31,
-    "color": "#CCCCCC"
+    "color": "#CCCCCC",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Ge",
     "name": "Germanium",
     "atomic_number": 32,
-    "color": "#66CDAA"
+    "color": "#66CDAA",
+    "valenceElectrons": 4
   },
   {
     "symbol": "As",
     "name": "Arsenic",
     "atomic_number": 33,
-    "color": "#66CDAA"
+    "color": "#66CDAA",
+    "valenceElectrons": 5
   },
   {
     "symbol": "Se",
     "name": "Selenium",
     "atomic_number": 34,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 6
   },
   {
     "symbol": "Br",
     "name": "Bromine",
     "atomic_number": 35,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Kr",
     "name": "Krypton",
     "atomic_number": 36,
-    "color": "#C0FFFF"
+    "color": "#C0FFFF",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Rb",
     "name": "Rubidium",
     "atomic_number": 37,
-    "color": "#FF6666"
+    "color": "#FF6666",
+    "valenceElectrons": 1
   },
   {
     "symbol": "Sr",
     "name": "Strontium",
     "atomic_number": 38,
-    "color": "#FFDEAD"
+    "color": "#FFDEAD",
+    "valenceElectrons": 2
   },
   {
     "symbol": "Y",
     "name": "Yttrium",
     "atomic_number": 39,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Zr",
     "name": "Zirconium",
     "atomic_number": 40,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 4
   },
   {
     "symbol": "Nb",
     "name": "Niobium",
     "atomic_number": 41,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 5
   },
   {
     "symbol": "Mo",
     "name": "Molybdenum",
     "atomic_number": 42,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 6
   },
   {
     "symbol": "Tc",
     "name": "Technetium",
     "atomic_number": 43,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Ru",
     "name": "Ruthenium",
     "atomic_number": 44,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Rh",
     "name": "Rhodium",
     "atomic_number": 45,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 9
   },
   {
     "symbol": "Pd",
     "name": "Palladium",
     "atomic_number": 46,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 10
   },
   {
     "symbol": "Ag",
     "name": "Silver",
     "atomic_number": 47,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 11
   },
   {
     "symbol": "Cd",
     "name": "Cadmium",
     "atomic_number": 48,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 12
   },
   {
     "symbol": "In",
     "name": "Indium",
     "atomic_number": 49,
-    "color": "#CCCCCC"
+    "color": "#CCCCCC",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Sn",
     "name": "Tin",
     "atomic_number": 50,
-    "color": "#CCCCCC"
+    "color": "#CCCCCC",
+    "valenceElectrons": 4
   },
   {
     "symbol": "Sb",
     "name": "Antimony",
     "atomic_number": 51,
-    "color": "#66CDAA"
+    "color": "#66CDAA",
+    "valenceElectrons": 5
   },
   {
     "symbol": "Te",
     "name": "Tellurium",
     "atomic_number": 52,
-    "color": "#66CDAA"
+    "color": "#66CDAA",
+    "valenceElectrons": 6
   },
   {
     "symbol": "I",
     "name": "Iodine",
     "atomic_number": 53,
-    "color": "#7EC0EE"
+    "color": "#7EC0EE",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Xe",
     "name": "Xenon",
     "atomic_number": 54,
-    "color": "#C0FFFF"
+    "color": "#C0FFFF",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Cs",
     "name": "Cesium",
     "atomic_number": 55,
-    "color": "#FF6666"
+    "color": "#FF6666",
+    "valenceElectrons": 1
   },
   {
     "symbol": "Ba",
     "name": "Barium",
     "atomic_number": 56,
-    "color": "#FFDEAD"
+    "color": "#FFDEAD",
+    "valenceElectrons": 2
   },
   {
     "symbol": "La",
     "name": "Lanthanum",
     "atomic_number": 57,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Ce",
     "name": "Cerium",
     "atomic_number": 58,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 4
   },
   {
     "symbol": "Pr",
     "name": "Praseodymium",
     "atomic_number": 59,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 5
   },
   {
     "symbol": "Nd",
     "name": "Neodymium",
     "atomic_number": 60,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 6
   },
   {
     "symbol": "Pm",
     "name": "Promethium",
     "atomic_number": 61,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Sm",
     "name": "Samarium",
     "atomic_number": 62,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Eu",
     "name": "Europium",
     "atomic_number": 63,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 9
   },
   {
     "symbol": "Gd",
     "name": "Gadolinium",
     "atomic_number": 64,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 10
   },
   {
     "symbol": "Tb",
     "name": "Terbium",
     "atomic_number": 65,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 11
   },
   {
     "symbol": "Dy",
     "name": "Dysprosium",
     "atomic_number": 66,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 12
   },
   {
     "symbol": "Ho",
     "name": "Holmium",
     "atomic_number": 67,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 13
   },
   {
     "symbol": "Er",
     "name": "Erbium",
     "atomic_number": 68,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 14
   },
   {
     "symbol": "Tm",
     "name": "Thulium",
     "atomic_number": 69,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 15
   },
   {
     "symbol": "Yb",
     "name": "Ytterbium",
     "atomic_number": 70,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 16
   },
   {
     "symbol": "Lu",
     "name": "Lutetium",
     "atomic_number": 71,
-    "color": "#FFBFFF"
+    "color": "#FFBFFF",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Hf",
     "name": "Hafnium",
     "atomic_number": 72,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 4
   },
   {
     "symbol": "Ta",
     "name": "Tantalum",
     "atomic_number": 73,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 5
   },
   {
     "symbol": "W",
     "name": "Tungsten",
     "atomic_number": 74,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 6
   },
   {
     "symbol": "Re",
     "name": "Rhenium",
     "atomic_number": 75,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Os",
     "name": "Osmium",
     "atomic_number": 76,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Ir",
     "name": "Iridium",
     "atomic_number": 77,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 9
   },
   {
     "symbol": "Pt",
     "name": "Platinum",
     "atomic_number": 78,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 10
   },
   {
     "symbol": "Au",
     "name": "Gold",
     "atomic_number": 79,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 11
   },
   {
     "symbol": "Hg",
     "name": "Mercury",
     "atomic_number": 80,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 12
   },
   {
     "symbol": "Tl",
     "name": "Thallium",
     "atomic_number": 81,
-    "color": "#CCCCCC"
+    "color": "#CCCCCC",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Pb",
     "name": "Lead",
     "atomic_number": 82,
-    "color": "#CCCCCC"
+    "color": "#CCCCCC",
+    "valenceElectrons": 4
   },
   {
     "symbol": "Bi",
     "name": "Bismuth",
     "atomic_number": 83,
-    "color": "#CCCCCC"
+    "color": "#CCCCCC",
+    "valenceElectrons": 5
   },
   {
     "symbol": "Po",
     "name": "Polonium",
     "atomic_number": 84,
-    "color": "#66CDAA"
+    "color": "#66CDAA",
+    "valenceElectrons": 6
   },
   {
     "symbol": "At",
     "name": "Astatine",
     "atomic_number": 85,
-    "color": "#66CDAA"
+    "color": "#66CDAA",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Rn",
     "name": "Radon",
     "atomic_number": 86,
-    "color": "#C0FFFF"
+    "color": "#C0FFFF",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Fr",
     "name": "Francium",
     "atomic_number": 87,
-    "color": "#FF6666"
+    "color": "#FF6666",
+    "valenceElectrons": 1
   },
   {
     "symbol": "Ra",
     "name": "Radium",
     "atomic_number": 88,
-    "color": "#FFDEAD"
+    "color": "#FFDEAD",
+    "valenceElectrons": 2
   },
   {
     "symbol": "Ac",
     "name": "Actinium",
     "atomic_number": 89,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Th",
     "name": "Thorium",
     "atomic_number": 90,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 4
   },
   {
     "symbol": "Pa",
     "name": "Protactinium",
     "atomic_number": 91,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 5
   },
   {
     "symbol": "U",
     "name": "Uranium",
     "atomic_number": 92,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 6
   },
   {
     "symbol": "Np",
     "name": "Neptunium",
     "atomic_number": 93,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Pu",
     "name": "Plutonium",
     "atomic_number": 94,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Am",
     "name": "Americium",
     "atomic_number": 95,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 9
   },
   {
     "symbol": "Cm",
     "name": "Curium",
     "atomic_number": 96,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 10
   },
   {
     "symbol": "Bk",
     "name": "Berkelium",
     "atomic_number": 97,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 11
   },
   {
     "symbol": "Cf",
     "name": "Californium",
     "atomic_number": 98,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 12
   },
   {
     "symbol": "Es",
     "name": "Einsteinium",
     "atomic_number": 99,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 13
   },
   {
     "symbol": "Fm",
     "name": "Fermium",
     "atomic_number": 100,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 14
   },
   {
     "symbol": "Md",
     "name": "Mendelevium",
     "atomic_number": 101,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 15
   },
   {
     "symbol": "No",
     "name": "Nobelium",
     "atomic_number": 102,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 16
   },
   {
     "symbol": "Lr",
     "name": "Lawrencium",
     "atomic_number": 103,
-    "color": "#FF99CC"
+    "color": "#FF99CC",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Rf",
     "name": "Rutherfordium",
     "atomic_number": 104,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 4
   },
   {
     "symbol": "Db",
     "name": "Dubnium",
     "atomic_number": 105,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 5
   },
   {
     "symbol": "Sg",
     "name": "Seaborgium",
     "atomic_number": 106,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 6
   },
   {
     "symbol": "Bh",
     "name": "Bohrium",
     "atomic_number": 107,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Hs",
     "name": "Hassium",
     "atomic_number": 108,
-    "color": "#FFD700"
+    "color": "#FFD700",
+    "valenceElectrons": 8
   },
   {
     "symbol": "Mt",
     "name": "Meitnerium",
     "atomic_number": 109,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 9
   },
   {
     "symbol": "Ds",
     "name": "Darmstadtium",
     "atomic_number": 110,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 10
   },
   {
     "symbol": "Rg",
     "name": "Roentgenium",
     "atomic_number": 111,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 11
   },
   {
     "symbol": "Cn",
     "name": "Copernicium",
     "atomic_number": 112,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 12
   },
   {
     "symbol": "Nh",
     "name": "Nihonium",
     "atomic_number": 113,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 3
   },
   {
     "symbol": "Fl",
     "name": "Flerovium",
     "atomic_number": 114,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 4
   },
   {
     "symbol": "Mc",
     "name": "Moscovium",
     "atomic_number": 115,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 5
   },
   {
     "symbol": "Lv",
     "name": "Livermorium",
     "atomic_number": 116,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 6
   },
   {
     "symbol": "Ts",
     "name": "Tennessine",
     "atomic_number": 117,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 7
   },
   {
     "symbol": "Og",
     "name": "Oganesson",
     "atomic_number": 118,
-    "color": "#D3D3D3"
+    "color": "#D3D3D3",
+    "valenceElectrons": 8
   }
 ]
