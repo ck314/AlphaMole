@@ -136,4 +136,22 @@ p {
     color: #666;
     padding: 2rem;
     font-style: italic;
+}
+
+.blog-content {
+    margin-top: 3.5rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.blog-content h1 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.blog-content .blog-date {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
 } 

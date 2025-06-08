@@ -113,41 +113,93 @@ async function updateDisplay() {
             elementCounts[element] = (elementCounts[element] || 0) + 1;
         }
 
-        let countsText = "Element Counts: ";
-        if (Object.keys(elementCounts).length === 0) {
-            countsText += "None";
-        } else {
-            countsText += Object.entries(elementCounts).map(([key, value]) => `${key}: ${value}`).join(', ');
-        }
-
-        const elementCountsDiv = document.getElementById('stabilityIndicatorElementCounts');
-        if (elementCountsDiv) {
-            elementCountsDiv.textContent = countsText;
-        }
-
         // Calculate total valence electrons
         const response = await fetch('data/elements.json');
         const elementsData = await response.json();
         const colorMap = {};
         let totalValenceElectrons = 0;
-        let valenceElectronsByElement = [];
         
-        elementsData.forEach(element => {
-            colorMap[element.symbol] = element.color;
-            // Add valence electrons for each occurrence of the element
-            if (elementCounts[element.symbol]) {
-                const elementValence = element.valenceElectrons * elementCounts[element.symbol];
-                totalValenceElectrons += elementValence;
-                valenceElectronsByElement.push(`${element.symbol}: ${element.valenceElectrons} × ${elementCounts[element.symbol]} = ${elementValence}`);
-            }
-        });
-
-        // Update valence electrons display
-        const valenceElectronsDiv = document.getElementById('stabilityIndicatorValenceElectrons');
-        if (valenceElectronsDiv) {
-            valenceElectronsDiv.innerHTML = `Valence Electrons:<br>${valenceElectronsByElement.join('<br>')}<br>Total: ${totalValenceElectrons}`;
+        // Clear existing table rows
+        const tableBody = document.getElementById('stabilityTableBody');
+        if (tableBody) {
+            tableBody.innerHTML = '';
         }
+
+        // Create rows for each unique element
+        for (const [symbol, count] of Object.entries(elementCounts)) {
+            const element = elementsData.find(e => e.symbol === symbol);
+            if (element) {
+                colorMap[symbol] = element.color;
+                const elementValence = element.valenceElectrons * count;
+                totalValenceElectrons += elementValence;
+
+                // Create new row
+                const row = document.createElement('tr');
+                
+                // Element column
+                const elementCell = document.createElement('td');
+                elementCell.textContent = symbol;
+                elementCell.style.color = element.color;
+                row.appendChild(elementCell);
+
+                // Count column
+                const countCell = document.createElement('td');
+                countCell.textContent = count;
+                row.appendChild(countCell);
+
+                // Valence electrons column
+                const valenceCell = document.createElement('td');
+                valenceCell.textContent = `${elementValence} (${element.valenceElectrons} × ${count})`;
+                row.appendChild(valenceCell);
+
+                // Electronegativity column
+                const electronegativityCell = document.createElement('td');
+                electronegativityCell.textContent = element.electronegativity !== null ? element.electronegativity : 'No Data';
+                row.appendChild(electronegativityCell);
+
+                // Atomic radius column
+                const radiusCell = document.createElement('td');
+                radiusCell.textContent = element.atomic_radius;
+                row.appendChild(radiusCell);
+
+                // Group number column
+                const groupCell = document.createElement('td');
+                groupCell.textContent = element.group_number;
+                row.appendChild(groupCell);
+
+                // Add row to table
+                tableBody.appendChild(row);
+            }
+        }
+
+        // Add total row
+        const totalRow = document.createElement('tr');
+        totalRow.style.fontWeight = 'bold';
         
+        // Element column
+        const totalElementCell = document.createElement('td');
+        totalElementCell.textContent = 'Total';
+        totalRow.appendChild(totalElementCell);
+
+        // Count column
+        const totalCountCell = document.createElement('td');
+        totalCountCell.textContent = numElements;
+        totalRow.appendChild(totalCountCell);
+
+        // Valence electrons column
+        const totalValenceCell = document.createElement('td');
+        totalValenceCell.textContent = totalValenceElectrons;
+        totalRow.appendChild(totalValenceCell);
+
+        // Empty cells for other columns
+        for (let i = 0; i < 3; i++) {
+            const emptyCell = document.createElement('td');
+            totalRow.appendChild(emptyCell);
+        }
+
+        // Add total row to table
+        tableBody.appendChild(totalRow);
+
         // Get single random symbol
         const randomSymbol = getRandomSymbol();
         
