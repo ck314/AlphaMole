@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaMole Changelog</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="changelog.css">
+    <style>
+        .header {
+            text-align: center;
+            margin: 4rem 0 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #4ecca3 0%, #2c3e50 100%);
+            border-radius: 15px;
+            color: white;
+        }
+        .header h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            border: none;
+        }
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            margin: 0;
+        }
+        .changelog-toc {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .changelog-entry {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .changelog-entry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .changelog-number {
+            font-size: 0.9rem;
+            color: #4ecca3;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .changelog-date {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .changelog-title {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        .changelog-summary {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="header">
+        <h1 style="color: white;">AlphaMole Changelog</h1>
+        <p>Tracking the evolution of our molecular neural network</p>
+    </div>
+    <div id="changelog-toc" class="changelog-toc"></div>
+
+    <script>
+        // Load navbar immediately
+        const navbarDiv = document.getElementById('navbar');
+        console.log('Loading navbar...');
+        
+        fetch('../navbar.html')
+            .then(response => {
+                console.log('Navbar response:', response.status);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('Navbar content loaded');
+                navbarDiv.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="../blog/index.html">Blog</a><a href="index.html">Changes</a><a href="../checklist/index.html">Checklist</a></div></nav>';
+            });
+
+        // Changelog entries configuration - Updated to include all three entries
+        const changelogEntries = [
+            {
+                number: '007',
+                filename: 'changelog007.html',
+                title: 'Sprint 2 Launch and Enhanced Analysis',
+                date: 'June 7, 2025',
+                summary: 'Launched Sprint 2, implemented table-based stability indicators, and enhanced project organization.'
+            },
+            {
+                number: '006',
+                filename: 'changelog006.html',
+                title: 'Stability Indicators Enhancement',
+                date: 'May 26, 2025',
+                summary: 'Added detailed stability metrics including atom counts, element distribution, and valence electron information.'
+            },
+            {
+                number: '005',
+                filename: 'changelog005.html',
+                title: 'Standardization and Color Overhaul',
+                date: 'May 20, 2025',
+                summary: 'Recreated folder structure, restored elements.json, updated color scheme, and added AlphaMain/AlphaTest boxes.'
+            },
+            {
+                number: '004',
+                filename: 'changelog004.html',
+                title: 'Unified Navigation Bar',
+                date: 'May 12, 2025',
+                summary: 'A unified, fixed navigation bar now appears on every page and subpage of AlphaMole.'
+            },
+            {
+                number: '003',
+                filename: 'changelog003.html',
+                title: 'Adding a checklist for the first phase of building',
+                date: 'May 11, 2025',
+                summary: 'AlphaMole now has a checklist for what we are going to build going forward.'
+            },
+            {
+                number: '002',
+                filename: 'changelog002.html',
+                title: 'GitHub Setup',
+                date: 'May 5, 2025',
+                summary: 'Set up GitHub repository and custom domain.'
+            },
+            {
+                number: '001',
+                filename: 'changelog001.html',
+                title: 'Initial Setup',
+                date: 'May 4, 2025',
+                summary: 'Initial project setup and structure.'
+            }
+        ];
+
+        // Function to create a changelog entry element
+        function createChangelogEntryElement(entry) {
+            const div = document.createElement('a');
+            div.href = entry.filename;
+            div.className = 'changelog-entry';
+            div.innerHTML = `
+                <div class="changelog-number">Changelog #${entry.number}</div>
+                <div class="changelog-date">${entry.date}</div>
+                <h2 class="changelog-title">${entry.title}</h2>
+                <p class="changelog-summary">${entry.summary}</p>
+            `;
+            return div;
+        }
+
+        // Function to load the table of contents
+        function loadTableOfContents() {
+            const container = document.getElementById('changelog-toc');
+            container.innerHTML = '<p class="loading">Loading changelog entries...</p>';
+            
+            try {
+                container.innerHTML = ''; // Clear loading message
+                changelogEntries.forEach(entry => {
+                    const element = createChangelogEntryElement(entry);
+                    container.appendChild(element);
+                });
+            } catch (error) {
+                console.error('Error loading changelog entries:', error);
+                container.innerHTML = `
+                    <div class="error-message">
+                        <h2>Error Loading Changelog</h2>
+                        <p>Sorry, there was an error loading the changelog entries: ${error.message}</p>
+                    </div>`;
+            }
+        }
+
+        // Load the table of contents when the page loads
+        window.addEventListener('load', loadTableOfContents);
+    </script>
+</body>
+</html> 

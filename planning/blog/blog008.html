@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaMole Blog</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="blog-content">
+        <h1>🧠🔬 A Week of Deep Learning and Chemistry: Building Toward Smarter Molecular Models</h1>
+        <div class="blog-date">June 4, 2025</div>
+
+        <p>This week has been a deep dive into the intersection of machine learning and molecular science. As part of my journey toward building a neural network that predicts molecular stability, I've been laying the groundwork with both theoretical and practical study—combining the languages of math, computer science, and chemistry.</p>
+
+        <h2>📘 Deep Learning Illustrated: The Spark</h2>
+        <p>My journey started with <em>Deep Learning Illustrated</em>—an accessible and visually engaging book that breaks down the foundations of neural networks. It's given me a better sense of how deep learning architectures mimic the brain, how data flows through networks, and why training matters. The intuition behind backpropagation and activation functions clicked into place, making it easier to see how we can apply these ideas to chemistry.</p>
+
+        <h2>➗ Back to Calculus Basics</h2>
+        <p>To make sense of optimization techniques in neural networks—especially gradient descent—I reviewed key calculus tools:</p>
+        <ul>
+            <li><strong>Power Rule</strong>: Useful for quickly taking derivatives of polynomials.</li>
+            <li><strong>Chain Rule</strong>: Essential for differentiating composite functions, just like backpropagation through layers.</li>
+            <li><strong>Quotient Rule</strong>: Handy when dealing with rational functions—especially relevant when normalizing chemical data.</li>
+        </ul>
+        <p>Understanding these helped demystify how models learn, improve, and generalize.</p>
+
+        <h2>⚛️ Chemistry Deep Dive: From Electrons to Stability</h2>
+        <p>Neural networks are powerful, but what we feed into them—our <em>features</em>—matters even more. To create meaningful input data about molecules, I explored key chemical concepts that influence atomic and molecular behavior:</p>
+        <ul>
+            <li><strong>Valence & Electrons</strong>: The number of valence electrons determines how atoms bond and interact. It's foundational to understanding reactivity and molecular structure.</li>
+            <li><strong>Electronegativity</strong>: A measure of how strongly an atom attracts electrons. It's crucial for predicting bond polarity and molecular stability.</li>
+            <li><strong>Atomic Radius</strong>: Tells us how "big" an atom is—affecting bond lengths and molecular shape.</li>
+            <li><strong>Group Number</strong>: Reveals an atom's column in the periodic table, which correlates with its properties like valence electron count and typical charge.</li>
+        </ul>
+        <p>By researching these properties and compiling datasets (including atomic radii and electronegativity on the Pauling scale), I've started creating a structured input space for my model.</p>
+    </div>
+
+    <script>
+        // Load navbar
+        const navbarDiv = document.getElementById('navbar');
+        fetch('../navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                navbarDiv.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="index.html">Blog</a><a href="../changes/index.html">Changes</a><a href="../checklist/index.html">Checklist</a></div></nav>';
+            });
+    </script>
+</body>
+</html> 

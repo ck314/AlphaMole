@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaMole Blog</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="blog-content">
+        <h1>🧠 Why Some Neurons Don't Belong at the End: A Neural Network Insight</h1>
+        <div class="blog-date">May 29, 2025</div>
+
+        <p>When you're first learning about neural networks, the inner workings of layers and neurons can feel like a black box of math magic. But as you dig deeper, patterns start to emerge—like the role different neurons play within the architecture.</p>
+
+        <p>One interesting insight I came across recently: <strong>not all neurons are meant to be used at the end of a neural network</strong>. Some are specifically designed for use <strong>within hidden layers</strong>—not as output neurons. This includes some of the most common activation functions:</p>
+
+        <ul>
+            <li>ReLU (Rectified Linear Unit)</li>
+            <li>Tanh (Hyperbolic Tangent)</li>
+            <li>Sigmoid</li>
+        </ul>
+
+        <p>But why is that the case?</p>
+
+        <h2>🔍 Understanding the Role of Neurons</h2>
+
+        <p>Each neuron in a neural network processes input and passes it along to the next layer. Most neurons apply a <strong>nonlinear activation function</strong>, which introduces complexity and allows the network to learn intricate patterns.</p>
+
+        <h3>Hidden Layer Neurons:</h3>
+        <p>Functions like <code>ReLU</code>, <code>Tanh</code>, and <code>Sigmoid</code> are typically used in <strong>hidden layers</strong> to help the network model complex relationships. They're great for transforming signals in the middle of your model—but they <strong>don't inherently know anything about the task you're solving</strong>.</p>
+
+        <p>That's because these activations:</p>
+        <ul>
+            <li>Don't produce outputs that directly correspond to class labels or specific values</li>
+            <li>Don't normalize probabilities or constrain output ranges in task-specific ways</li>
+            <li><strong>Have no trainable parameters</strong>, so they can't adapt their behavior based on the problem</li>
+        </ul>
+
+        <h2>🚫 Why Not Use ReLU or Tanh at the End?</h2>
+
+        <p>Imagine you're building a network for <strong>classification</strong>—say, determining if an image is a cat or a dog. Your final output layer needs to make a prediction. If you used <code>ReLU</code> at the end, your output could be any positive number, and you'd have <strong>no way to interpret it as a probability</strong>.</p>
+
+        <p>Instead, you'd use a function like <code>Softmax</code>, which converts the output into a probability distribution (values between 0 and 1 that add up to 1). For <strong>regression</strong>, you might use a linear output or something like <code>sigmoid</code> if you're predicting probabilities.</p>
+
+        <p>So while ReLU is fantastic in the middle of your network for keeping gradients alive and making training efficient, it's not equipped to <strong>output interpretable results</strong> on its own.</p>
+
+        <h2>✅ What Should You Use at the End?</h2>
+
+        <p>Depending on the task:</p>
+        <ul>
+            <li><strong>Classification</strong> → Use <code>Softmax</code> (for multiclass) or <code>Sigmoid</code> (for binary)</li>
+            <li><strong>Regression</strong> → Use <code>Linear</code> (no activation)</li>
+            <li><strong>Probability outputs</strong> → Use <code>Sigmoid</code> to constrain between 0 and 1</li>
+        </ul>
+
+        <p>These functions are specifically chosen because their <strong>outputs match the format of the task's labels</strong>, and they enable loss functions like cross-entropy or mean squared error to work correctly.</p>
+
+        <h2>🧠 TL;DR</h2>
+
+        <ul>
+            <li>ReLU, Tanh, and Sigmoid are great <strong>activation functions for hidden layers</strong>.</li>
+            <li>They <strong>don't have trainable parameters</strong>, so they're used for transformation—not decision-making.</li>
+            <li>The <strong>final layer</strong> of a neural network needs a task-specific function like <code>Softmax</code> or <code>Linear</code> to produce usable outputs.</li>
+        </ul>
+
+        <p>Understanding the purpose of different neurons helps demystify how neural networks actually work—and makes it easier to design better models from the ground up.</p>
+    </div>
+
+    <script>
+        // Load navbar
+        const navbarDiv = document.getElementById('navbar');
+        fetch('../navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                navbarDiv.innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading navbar:', error);
+                navbarDiv.innerHTML = '<nav class="navbar"><div class="navbar-left"><a href="../index.html" class="navbar-brand">AlphaMole</a></div><div class="navbar-right"><a href="index.html">Blog</a><a href="../changes/index.html">Changes</a><a href="../checklist/index.html">Checklist</a></div></nav>';
+            });
+    </script>
+</body>
+</html>
