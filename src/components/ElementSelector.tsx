@@ -1,15 +1,38 @@
 import React, { useState } from 'react';
+
+type Element = {
+  atomicNumber: number;
+  symbol: string;
+  name: string;
+  group: string;
+  valenceElectrons: number;
+  electronegativity: number;
+  atomicRadius: number;
+  ionizationEnergy: number;
+  xPos: number;
+  yPos: number;
+};
+
 type Mode = 'select' | 'filter';
+
+type ElementSelectorProps = {
+  elements: Element[];
+  selectedElements: Element[];
+  onElementSelect: (element: Element) => void;
+  onFilterChange: (element: Element) => void;
+  filteredElements: Element[];
+};
+
 export const ElementSelector = ({
   elements,
   selectedElements,
   onElementSelect,
   onFilterChange,
   filteredElements
-}) => {
+}: ElementSelectorProps) => {
   const [mode, setMode] = useState<Mode>('select');
   // Get color based on element group
-  const getElementColor = group => {
+  const getElementColor = (group: string) => {
     const colors = {
       'Alkali Metals': 'bg-red-100 border-red-300 hover:bg-red-200',
       'Alkaline Earth Metals': 'bg-orange-100 border-orange-300 hover:bg-orange-200',
@@ -23,15 +46,15 @@ export const ElementSelector = ({
       Actinides: 'bg-rose-100 border-rose-300 hover:bg-rose-200',
       Unknown: 'bg-gray-100 border-gray-300 hover:bg-gray-200'
     };
-    return colors[group] || colors['Unknown'];
+    return colors[group as keyof typeof colors] || colors['Unknown'];
   };
-  const isSelected = element => {
+  const isSelected = (element: Element) => {
     return selectedElements.some(e => e.atomicNumber === element.atomicNumber);
   };
-  const isFiltered = element => {
+  const isFiltered = (element: Element) => {
     return filteredElements.some(e => e.atomicNumber === element.atomicNumber);
   };
-  const handleElementClick = element => {
+  const handleElementClick = (element: Element) => {
     if (mode === 'select') {
       onElementSelect(element);
     } else {
@@ -48,13 +71,36 @@ export const ElementSelector = ({
   });
   return <div className="element-selector">
       <div className="mb-6 flex items-center justify-between">
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center">
           <button onClick={() => setMode('select')} className={`px-4 py-2 rounded-lg font-medium transition-colors ${mode === 'select' ? 'bg-blue-700 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}>
             Select Mode
           </button>
           <button onClick={() => setMode('filter')} className={`px-4 py-2 rounded-lg font-medium transition-colors ${mode === 'filter' ? 'bg-blue-700 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}>
             Filter Mode
           </button>
+          {mode === 'filter' && (
+            <>
+              <button
+                onClick={() => {
+                  // Select all elements for filtering
+                  const notFiltered = elements.filter(e => !filteredElements.some(f => f.atomicNumber === e.atomicNumber));
+                  notFiltered.forEach(e => onFilterChange(e));
+                }}
+                className="ml-4 px-3 py-2 rounded-lg font-medium bg-green-600 text-white hover:bg-green-700 transition-colors"
+              >
+                Select All
+              </button>
+              <button
+                onClick={() => {
+                  // Deselect all elements from filtering
+                  filteredElements.forEach(e => onFilterChange(e));
+                }}
+                className="ml-2 px-3 py-2 rounded-lg font-medium bg-red-600 text-white hover:bg-red-700 transition-colors"
+              >
+                Deselect All
+              </button>
+            </>
+          )}
         </div>
         <div className="text-sm text-gray-600">
           {mode === 'select' ? 'Click elements to add to compound' : 'Click elements to include in random generation'}
